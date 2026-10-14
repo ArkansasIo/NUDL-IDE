@@ -229,6 +229,12 @@ export default function App() {
     if (!name || !name.trim()) return;
 
     const trimmed = name.trim();
+    if (files.some((file) => file.name.toLowerCase() === trimmed.toLowerCase())) {
+      setOutputLog(`[File Error] "${trimmed}" already exists in this workspace.`);
+      setStatus('Error');
+      return;
+    }
+
     const isBlueprint = trimmed.endsWith('.nblueprint');
     const newFile: VirtualFile = {
       name: trimmed,
@@ -239,22 +245,28 @@ export default function App() {
       blueprintData: isBlueprint ? DEFAULT_BLUEPRINT_EXAMPLES.begin : undefined,
     };
 
-    setFiles((prev) => [...prev, newFile]);
-    setActiveFileIndex(files.length);
-    if (isBlueprint) {
-      setMode('blueprint');
-    } else {
-      setMode('text');
-    }
-  }, [files.length]);
+    setFiles((prev) => {
+      setActiveFileIndex(prev.length);
+      return [...prev, newFile];
+    });
+    setMode(isBlueprint ? 'blueprint' : 'text');
+    setOutputLog(`[File] Created "${trimmed}".`);
+    setStatus('Ready');
+  }, [files]);
 
-  // Delete file
+  // Delete file and preserve the selected file when possible.
   const handleDeleteFile = useCallback((idx: number) => {
     setFiles((prev) => {
+      if (prev.length <= 1 || idx < 0 || idx >= prev.length) return prev;
       const updated = prev.filter((_, i) => i !== idx);
+      setActiveFileIndex((currentIndex) => {
+        if (currentIndex > idx) return currentIndex - 1;
+        if (currentIndex === idx) return Math.min(idx, updated.length - 1);
+        return currentIndex;
+      });
       return updated;
     });
-    setActiveFileIndex((prev) => Math.max(0, prev - 1));
+    setOutputLog(`[File] Deleted workspace file at index ${idx}.`);
   }, []);
 
   // Reset workspace
