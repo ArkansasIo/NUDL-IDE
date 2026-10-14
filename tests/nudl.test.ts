@@ -58,3 +58,21 @@ test('lexer reports unterminated strings', () => {
   const { diagnostics } = lex('print("unfinished)');
   assert.ok(diagnostics.some((d) => d.message.toLowerCase().includes('unterminated string')));
 });
+
+test('delimiter analysis ignores braces and parentheses inside strings and comments', () => {
+  const source = 'fn main() { print("} ) ]"); // } ) ]\n }';
+  const { diagnostics } = compile(source);
+  assert.equal(diagnostics.filter((d) => d.code === 'E104' || d.code === 'E105').length, 0);
+});
+
+test('semantic analysis reports unknown fields in schema-backed data', () => {
+  const source = 'schema Person { name: string required } data people: Person { { name: "Ada", nickname: "A" } }';
+  const { diagnostics } = compile(source);
+  assert.ok(diagnostics.some((d) => d.code === 'E204' && d.message.includes("Field 'nickname'")));
+});
+
+test('semantic analysis reports duplicate schema fields', () => {
+  const source = 'schema Person { name: string, name: text }';
+  const { diagnostics } = compile(source);
+  assert.ok(diagnostics.some((d) => d.code === 'E206'));
+});
