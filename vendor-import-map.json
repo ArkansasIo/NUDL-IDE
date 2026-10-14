@@ -625,6 +625,54 @@
       "mode": "100644",
       "sourceSha": "9d7b07b9775ddc25933398dabacc1b964eb7468d",
       "targetSha": "9d7b07b9775ddc25933398dabacc1b964eb7468d"
+    },
+    {
+      "path": "11-education/books/elementary-advanced.md",
+      "mode": "100644",
+      "sourceSha": "792dd532ac817c014b4cb1deb4c3bc36debdc137",
+      "targetSha": "792dd532ac817c014b4cb1deb4c3bc36debdc137"
+    },
+    {
+      "path": "11-education/books/elementary-beginner.md",
+      "mode": "100644",
+      "sourceSha": "7ff28e963abcfd41a09bcdd96603930cdad11fde",
+      "targetSha": "7ff28e963abcfd41a09bcdd96603930cdad11fde"
+    },
+    {
+      "path": "11-education/books/elementary-intermediate.md",
+      "mode": "100644",
+      "sourceSha": "6731f70e9c7204677054b6db0195a6c59b0c5a8f",
+      "targetSha": "6731f70e9c7204677054b6db0195a6c59b0c5a8f"
+    },
+    {
+      "path": "11-education/books/high-school-beginner.md",
+      "mode": "100644",
+      "sourceSha": "301e782fdab501750dc034b1b633e6939437a4d1",
+      "targetSha": "301e782fdab501750dc034b1b633e6939437a4d1"
+    },
+    {
+      "path": "11-education/books/middle-school-advanced.md",
+      "mode": "100644",
+      "sourceSha": "bd525d85108b6c9e57538874cee8b4a61a2012e5",
+      "targetSha": "bd525d85108b6c9e57538874cee8b4a61a2012e5"
+    },
+    {
+      "path": "11-education/books/middle-school-beginner.md",
+      "mode": "100644",
+      "sourceSha": "d09161e678c47c222254a3f7c5ea9646befd6f9e",
+      "targetSha": "d09161e678c47c222254a3f7c5ea9646befd6f9e"
+    },
+    {
+      "path": "11-education/books/middle-school-intermediate.md",
+      "mode": "100644",
+      "sourceSha": "09a6fc2fa3c475a37b01102d5bfa0b88b75167b6",
+      "targetSha": "09a6fc2fa3c475a37b01102d5bfa0b88b75167b6"
+    },
+    {
+      "path": "11-education/curriculum/00-sequence.md",
+      "mode": "100644",
+      "sourceSha": "56698b5a25734aa07147a2454c1051216be002f1",
+      "targetSha": "56698b5a25734aa07147a2454c1051216be002f1"
     }
   ]
 }
