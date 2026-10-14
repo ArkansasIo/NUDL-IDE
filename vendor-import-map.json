@@ -1093,6 +1093,42 @@
       "mode": "100644",
       "sourceSha": "2b23d253676e6920d5cc5bebd0091a5ef87ccdeb",
       "targetSha": "2b23d253676e6920d5cc5bebd0091a5ef87ccdeb"
+    },
+    {
+      "path": "examples/omni-to-nudl/01-hello-values.nudl",
+      "mode": "100644",
+      "sourceSha": "d4d31ba9eea1fca3faced42f337d010181fbd6ff",
+      "targetSha": "d4d31ba9eea1fca3faced42f337d010181fbd6ff"
+    },
+    {
+      "path": "examples/omni-to-nudl/02-functions-control.nudl",
+      "mode": "100644",
+      "sourceSha": "dac20f62e60da8b488d6cc5bba1eb4379b862de9",
+      "targetSha": "dac20f62e60da8b488d6cc5bba1eb4379b862de9"
+    },
+    {
+      "path": "examples/omni-to-nudl/03-record-validation.nudl",
+      "mode": "100644",
+      "sourceSha": "8a4abf9db6f96b184ddecaac76e7f729fd75a2df",
+      "targetSha": "8a4abf9db6f96b184ddecaac76e7f729fd75a2df"
+    },
+    {
+      "path": "examples/omni-to-nudl/04-collections-transform.nudl",
+      "mode": "100644",
+      "sourceSha": "88eda22d394020c92ee47953780ec2133ed636d0",
+      "targetSha": "88eda22d394020c92ee47953780ec2133ed636d0"
+    },
+    {
+      "path": "examples/omni-to-nudl/05-input-output-pipeline.nudl",
+      "mode": "100644",
+      "sourceSha": "4ed646fc0bb43dbe26f37eaf38ff2e00d0f116da",
+      "targetSha": "4ed646fc0bb43dbe26f37eaf38ff2e00d0f116da"
+    },
+    {
+      "path": "examples/omni-to-nudl/06-deterministic-processing.nudl",
+      "mode": "100644",
+      "sourceSha": "958a4acfd3eadb30935a72991cf8b7bb5434c2b2",
+      "targetSha": "958a4acfd3eadb30935a72991cf8b7bb5434c2b2"
     }
   ]
 }
