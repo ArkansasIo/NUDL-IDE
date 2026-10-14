@@ -1,64 +1,74 @@
-# NUDL 0.3 Studio
+# NUDL 0.3 Studio — Browser IDE
 
-A browser-based IDE for the Noodle Unified Data Language (NUDL) with a text editor, visual blueprint editor, lexer/parser/semantic diagnostics, an interpreter, AST/token inspectors, and target-code generation.
+NUDL-IDE is a browser-based development environment for Noodle Unified Data Language (NUDL) 0.3. It provides source editing, project/workspace management, a lexer/parser, diagnostics, an in-browser interpreter, AST/token inspection, a visual Blueprint editor, examples, and target source generation.
+
+> **Status:** The browser IDE and language front end are under active development. A visible target option or source emitter is not proof that every feature compiles or behaves equivalently in that target language.
+
+## Open the IDE
+
+- **GitHub Pages:** https://arkansasio.github.io/NUDL-IDE/
+- **Source repository:** https://github.com/ArkansasIo/NUDL-IDE
+- **Language specification and native reference implementation:** https://github.com/ArkansasIo/NUDL-0.3
 
 ## Run locally
 
 Requirements: Node.js 22+ and npm.
 
-```bash
+```sh
 npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite (normally `http://localhost:3000`).
+Vite normally serves the IDE at `http://localhost:3000`.
 
-## Build, test, and verify
+## Test and build
 
-```bash
+```sh
 npm test
+npm run lint
 npm run build
 npm run preview
 ```
 
-- `npm test` runs the Node test-runner regression suite through `tsx`, covering lexer tokens/diagnostics, parser plus interpreter execution, required schema fields, and code-generation output.
-- `npm run build` runs TypeScript checking before creating the static site in `dist/`.
-- `npm run preview` serves the built site locally.
+Run these commands locally or inspect the GitHub Actions workflow before claiming a build or deployment is verified.
 
-Tests should be expanded alongside language features. The current suite is a baseline regression suite, not proof of full NUDL 0.3 specification conformance or that every generated target compiles natively.
+## Documentation
 
-## GitHub Pages
+- [IDE architecture](docs/IDE-ARCHITECTURE.md)
+- [Language support matrix](docs/LANGUAGE-SUPPORT-MATRIX.md)
+- [Standard-library reference](docs/STANDARD-LIBRARY-REFERENCE.md)
+- [Testing guide](docs/TESTING.md)
+- [Build and deployment](docs/BUILD-AND-DEPLOY.md)
+- [Native NUDL language specification](https://github.com/ArkansasIo/NUDL-0.3/tree/main/spec)
 
-The workflow in `.github/workflows/deploy.yml` builds the application and deploys `dist/` to GitHub Pages after each push to `main`. The Vite base path is set to `/NUDL-IDE/` in GitHub Actions so asset URLs work for this project site.
+## Source layout
 
-In repository **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**. Then inspect the Actions tab for the first deployment. Published URL should be:
-
-https://arkansasio.github.io/NUDL-IDE/
-
-## Included modules
-
-- `src/nudl/lexer.ts`, `parser.ts`, `analyzer.ts`: language front end and diagnostics.
-- `src/nudl/interpreter.ts`: in-browser NUDL interpreter.
-- `src/nudl/codegen.ts`: target source code generation.
-- `src/nudl/blueprintEngine.ts` and `src/components/BlueprintEditor.tsx`: visual graph model and editor.
-- `src/components/`: IDE chrome, editor, inspectors, terminal, and documentation modal.
-- `src/nudl/examples.ts`: starter projects.
+- `src/nudl/types.ts`: token, AST, diagnostic, target-language, and Blueprint types.
+- `src/nudl/lexer.ts`: tokenization.
+- `src/nudl/parser.ts`: syntax parser.
+- `src/nudl/analyzer.ts`: diagnostics and semantic checks.
+- `src/nudl/interpreter.ts`: bounded in-browser runtime and built-ins.
+- `src/nudl/codegen.ts`: target source emitters.
+- `src/nudl/blueprintEngine.ts` and `src/components/BlueprintEditor.tsx`: visual graph tooling.
 - `tests/nudl.test.ts`: baseline compiler-pipeline regression tests.
+- `public/NUDL-0.3/`: vendored language specification, documentation, examples, and native compiler reference snapshot.
 
-## Notes and limitations
+## Workspace handling
 
-This is a client-side IDE. Files are stored in browser local storage unless downloaded; clearing browser site data may remove the workspace. Generated C/C++/Rust/etc. source is exported source code, not a guarantee that a native compiler is available in the browser. Browser execution is limited to the bundled interpreter.
+Use the File menu to create/open files and export/import a portable workspace JSON. Workspace files are browser-local unless downloaded. Export important work regularly.
 
-## Workspace projects
+## Important limitations
 
-Use **File → Export Workspace (.json)** to save every open source file and blueprint graph in a portable `nudl-workspace.json` file. Use **File → Import Workspace (.json)** to restore an exported project. Workspace imports are validated for the expected format, non-empty file lists, relative paths, and duplicate names before replacing the current workspace. Create files with relative paths such as `src/main.nudl` to organize files into folders; the Solution Explorer displays these paths as a collapsible folder tree.
+- The browser interpreter is a TypeScript implementation; it does not invoke the native C++ compiler automatically.
+- Generated C/C++/Rust/Python/etc. files are source text. A corresponding toolchain is required to compile or run them.
+- Backend correctness must be validated with target-specific tests.
+- Native C++ and browser TypeScript behavior is not guaranteed to be identical until shared conformance fixtures are in place.
+- Optional AI features may require configuration and should never expose API keys in client-side code.
 
-## Vendored NUDL 0.3 reference library
+## Development priorities
 
-The full tracked source snapshot from [ArkansasIo/NUDL-0.3](https://github.com/ArkansasIo/NUDL-0.3) is mirrored in `public/NUDL-0.3/` and published with the IDE. It includes the specification, grammar, C++ reference compiler, runtime/standard-library notes, examples, tests, self-hosting and Noodle-source experiments, education material, interoperability docs, plugins, and the upstream documentation mini-site.
-
-- Deployed library entry: `/NUDL-IDE/NUDL-0.3/index.html`
-- Mirror integration notes: `public/NUDL-0.3/IDE-INTEGRATION.md`
-- Upstream revision: `39d3571a888094fe8d908b67133fbaaf8241d38d`
-
-The vendored C++ and Noodle sources are reference material. The browser IDE continues to execute through the TypeScript implementation under `src/nudl/` until cross-implementation conformance and integration are implemented.
+1. Keep parser/runtime behavior covered by tests.
+2. Maintain the language-support matrix as features change.
+3. Add shared native/browser conformance fixtures.
+4. Validate generated source with real target toolchains in CI.
+5. Keep the Pages base path correct and check the live deployment for missing assets.
