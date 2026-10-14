@@ -481,6 +481,54 @@
       "mode": "100644",
       "sourceSha": "e1a163a2580c73414e539ee0958733433d07f99b",
       "targetSha": "e1a163a2580c73414e539ee0958733433d07f99b"
+    },
+    {
+      "path": "10-noodle-source/compiler/semantic.nudl",
+      "mode": "100644",
+      "sourceSha": "c11a0508f1fb8379b7ccb16626b3e9104a2c061c",
+      "targetSha": "c11a0508f1fb8379b7ccb16626b3e9104a2c061c"
+    },
+    {
+      "path": "10-noodle-source/compiler/token.nudl",
+      "mode": "100644",
+      "sourceSha": "648b129e087242bb348c3010f82240a50c99b88c",
+      "targetSha": "648b129e087242bb348c3010f82240a50c99b88c"
+    },
+    {
+      "path": "10-noodle-source/compiler/types.nudl",
+      "mode": "100644",
+      "sourceSha": "ac22ed100135dbb9f05ef686e2e435a0c0b1c684",
+      "targetSha": "ac22ed100135dbb9f05ef686e2e435a0c0b1c684"
+    },
+    {
+      "path": "10-noodle-source/examples/calculator.nudl",
+      "mode": "100644",
+      "sourceSha": "f1a23cbf359299db7021ba2a8c09c8aa3d902a9b",
+      "targetSha": "f1a23cbf359299db7021ba2a8c09c8aa3d902a9b"
+    },
+    {
+      "path": "10-noodle-source/logic/README.nudl",
+      "mode": "100644",
+      "sourceSha": "8096c9223f39dbc6e605742051036924cac1904a",
+      "targetSha": "8096c9223f39dbc6e605742051036924cac1904a"
+    },
+    {
+      "path": "10-noodle-source/logic/boolean.nudl",
+      "mode": "100644",
+      "sourceSha": "6969daf1ef1dc0df0d1174ec25b71ac4c6a3971a",
+      "targetSha": "6969daf1ef1dc0df0d1174ec25b71ac4c6a3971a"
+    },
+    {
+      "path": "10-noodle-source/logic/cnf.nudl",
+      "mode": "100644",
+      "sourceSha": "7e1a861e139de3fba8f7411d93048545e2a73d1a",
+      "targetSha": "7e1a861e139de3fba8f7411d93048545e2a73d1a"
+    },
+    {
+      "path": "10-noodle-source/logic/dpll.nudl",
+      "mode": "100644",
+      "sourceSha": "b6b06e64ec476bb6b3b6add8669b43fa348edd46",
+      "targetSha": "b6b06e64ec476bb6b3b6add8669b43fa348edd46"
     }
   ]
 }
