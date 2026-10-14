@@ -721,6 +721,54 @@
       "mode": "100644",
       "sourceSha": "b347ba00212f2aad41e309aa3ae071cf80b5cf9b",
       "targetSha": "b347ba00212f2aad41e309aa3ae071cf80b5cf9b"
+    },
+    {
+      "path": "13-interoperability/README.md",
+      "mode": "100644",
+      "sourceSha": "e1bdc226280b5760268dfa43c66f0f6e7608c30d",
+      "targetSha": "e1bdc226280b5760268dfa43c66f0f6e7608c30d"
+    },
+    {
+      "path": "13-interoperability/TARGET-MATRIX.md",
+      "mode": "100644",
+      "sourceSha": "fc8f1d561a220ab69774c8250b9546dd46e11375",
+      "targetSha": "fc8f1d561a220ab69774c8250b9546dd46e11375"
+    },
+    {
+      "path": "13-interoperability/build-info.schema.json",
+      "mode": "100644",
+      "sourceSha": "e425ff6abbec92abf22ebbdbb022e8c279c6e327",
+      "targetSha": "e425ff6abbec92abf22ebbdbb022e8c279c6e327"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.c.expected",
+      "mode": "100644",
+      "sourceSha": "aef98c1c9c3a83f4293bef5114937792d803367a",
+      "targetSha": "aef98c1c9c3a83f4293bef5114937792d803367a"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.cpp.expected",
+      "mode": "100644",
+      "sourceSha": "54e47ecd1ebcec327363da2dbffbf97c84de9e52",
+      "targetSha": "54e47ecd1ebcec327363da2dbffbf97c84de9e52"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.cs.expected",
+      "mode": "100644",
+      "sourceSha": "e8cfebbfe4c98bb8112000c4123f04a1fe50fdad",
+      "targetSha": "e8cfebbfe4c98bb8112000c4123f04a1fe50fdad"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.java.expected",
+      "mode": "100644",
+      "sourceSha": "39fd604b3da1c330b8b236334eebd4445d55952c",
+      "targetSha": "39fd604b3da1c330b8b236334eebd4445d55952c"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.js.expected",
+      "mode": "100644",
+      "sourceSha": "a8141d3b18d3421ad3fd4ba372edf6e319252622",
+      "targetSha": "a8141d3b18d3421ad3fd4ba372edf6e319252622"
     }
   ]
 }
