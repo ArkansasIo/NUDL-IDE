@@ -193,6 +193,54 @@
       "mode": "100644",
       "sourceSha": "99318de793d56b22d1c9b4ec6ba9141c8b37e691",
       "targetSha": "99318de793d56b22d1c9b4ec6ba9141c8b37e691"
+    },
+    {
+      "path": "06-examples/math/04-geometry-trigonometry-ode.nudl",
+      "mode": "100644",
+      "sourceSha": "81cb00a4034557718becc47cc23b147771a81565",
+      "targetSha": "81cb00a4034557718becc47cc23b147771a81565"
+    },
+    {
+      "path": "06-examples/performance/01-vector-sum-benchmark.nudl",
+      "mode": "100644",
+      "sourceSha": "2ab2f7dfbb0139e690f07c4aeb2379ab5b2ff45d",
+      "targetSha": "2ab2f7dfbb0139e690f07c4aeb2379ab5b2ff45d"
+    },
+    {
+      "path": "07-tests/cpp/README.md",
+      "mode": "100644",
+      "sourceSha": "8154c6e63d9e77954391414af821360fda5dc415",
+      "targetSha": "8154c6e63d9e77954391414af821360fda5dc415"
+    },
+    {
+      "path": "07-tests/cpp/codegen_test.cpp",
+      "mode": "100644",
+      "sourceSha": "dca310826f2d16188043ef90fc2aff751ecf405b",
+      "targetSha": "dca310826f2d16188043ef90fc2aff751ecf405b"
+    },
+    {
+      "path": "07-tests/cpp/interpreter_test.cpp",
+      "mode": "100644",
+      "sourceSha": "0e1528fc2b95eb41eccd49adc664b3df121acbad",
+      "targetSha": "0e1528fc2b95eb41eccd49adc664b3df121acbad"
+    },
+    {
+      "path": "07-tests/cpp/smoke_test.cpp",
+      "mode": "100644",
+      "sourceSha": "359e5648c64dc22c96796316d2cdbbc97e65086d",
+      "targetSha": "359e5648c64dc22c96796316d2cdbbc97e65086d"
+    },
+    {
+      "path": "08-documentation/API/ACCELERATOR.md",
+      "mode": "100644",
+      "sourceSha": "489aaae4a2cf590ab6b8d1cb48e487ad50afd476",
+      "targetSha": "489aaae4a2cf590ab6b8d1cb48e487ad50afd476"
+    },
+    {
+      "path": "08-documentation/API/MATH.md",
+      "mode": "100644",
+      "sourceSha": "a21d2a4f48c31506961203cb7405f76e2da07369",
+      "targetSha": "a21d2a4f48c31506961203cb7405f76e2da07369"
     }
   ]
 }
