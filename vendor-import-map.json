@@ -1,5 +1,54 @@
 {
   "source": "ArkansasIo/NUDL-0.3",
   "sourceCommit": "39d3571a888094fe8d908b67133fbaaf8241d38d",
-  "files": []
+  "files": [
+    {
+      "path": ".github/CODEOWNERS",
+      "mode": "100644",
+      "sourceSha": "1fd12cbcbe6156a1087750cf5a96810a66329f1e",
+      "targetSha": "1fd12cbcbe6156a1087750cf5a96810a66329f1e"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "mode": "100644",
+      "sourceSha": "6bb0aaf6377a0c3cf28b8acfda5b879e3016f536",
+      "targetSha": "6bb0aaf6377a0c3cf28b8acfda5b879e3016f536"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature.yml",
+      "mode": "100644",
+      "sourceSha": "73de76cbd6191e1822747f76789bd1ffaa2a05d5",
+      "targetSha": "73de76cbd6191e1822747f76789bd1ffaa2a05d5"
+    },
+    {
+      "path": ".github/workflows/cpp.yml",
+      "mode": "100644",
+      "sourceSha": "483678dcbd5120b0958dcaa0c06cc6f8b33949e2",
+      "targetSha": "483678dcbd5120b0958dcaa0c06cc6f8b33949e2"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "mode": "100644",
+      "sourceSha": "86531bf3f238ae4cc71927b8f069a8105fbaeadf",
+      "targetSha": "86531bf3f238ae4cc71927b8f069a8105fbaeadf"
+    },
+    {
+      "path": "01-specification/SPEC-0.3.md",
+      "mode": "100644",
+      "sourceSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c",
+      "targetSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c"
+    },
+    {
+      "path": "02-grammar/NUDL-0.3.ebnf",
+      "mode": "100644",
+      "sourceSha": "83eff6c4169b1f688e8537032ede7220798808b7",
+      "targetSha": "83eff6c4169b1f688e8537032ede7220798808b7"
+    },
+    {
+      "path": "03-compiler/README.md",
+      "mode": "100644",
+      "sourceSha": "a85759db773ab43741270fe20988094b94ba512a",
+      "targetSha": "a85759db773ab43741270fe20988094b94ba512a"
+    }
+  ]
 }
