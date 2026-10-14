@@ -22,19 +22,10 @@ import { RightPane } from './components/RightPane';
 import { BottomDock, BottomTabType } from './components/BottomDock';
 import { DocsModal } from './components/DocsModal';
 import { DEFAULT_BLUEPRINT_EXAMPLES } from './nudl/blueprintEngine';
+import { clearSavedWorkspace, loadWorkspace, saveWorkspace, validateWorkspaceFiles, MAX_WORKSPACE_JSON_LENGTH } from './nudl/workspace';
 
 export default function App() {
-  const [files, setFiles] = useState<VirtualFile[]>(() => {
-    const saved = localStorage.getItem('nudl_workspace_files');
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch {
-        return INITIAL_FILES;
-      }
-    }
-    return INITIAL_FILES;
-  });
+  const [files, setFiles] = useState<VirtualFile[]>(() => loadWorkspace(INITIAL_FILES));
 
   const [activeFileIndex, setActiveFileIndex] = useState(0);
   const [mode, setMode] = useState<'text' | 'blueprint'>('text');
@@ -53,9 +44,13 @@ export default function App() {
   // Active File
   const activeFile = files[activeFileIndex] || files[0];
 
-  // Save to localStorage
+  // Browser storage is best-effort; failure must not prevent in-memory editing.
   useEffect(() => {
-    localStorage.setItem('nudl_workspace_files', JSON.stringify(files));
+    if (!saveWorkspace(files)) {
+      setOutputLog((current) => current.includes('[Storage Warning]')
+        ? current
+        : current + '\n[Storage Warning] Browser storage is unavailable or full. Export the workspace to keep a backup.');
+    }
   }, [files]);
 
   // If selecting a blueprint file, automatically switch to blueprint mode
@@ -195,9 +190,11 @@ export default function App() {
 
   // Save current file
   const handleSave = useCallback(() => {
-    localStorage.setItem('nudl_workspace_files', JSON.stringify(files));
-    setOutputLog(`[File] Saved "${activeFile.name}" to workspace.`);
-    setStatus('Ready');
+    const saved = saveWorkspace(files);
+    setOutputLog(saved
+      ? `[File] Saved "${activeFile.name}" to browser workspace.`
+      : '[Storage Warning] Could not save in browser storage. Export the workspace JSON for a backup.');
+    setStatus(saved ? 'Ready' : 'Error');
   }, [activeFile.name, files]);
 
   // Download .nudl
@@ -254,46 +251,23 @@ export default function App() {
     if (!selectedFile) return;
 
     try {
+      if (selectedFile.size > MAX_WORKSPACE_JSON_LENGTH) {
+        throw new Error('Workspace import exceeds the 20 MB limit.');
+      }
       const parsed: unknown = JSON.parse(await selectedFile.text());
       if (!parsed || typeof parsed !== 'object' || !('format' in parsed) ||
-          parsed.format !== 'NUDL-IDE-workspace' || !('files' in parsed) ||
-          !Array.isArray(parsed.files) || parsed.files.length === 0) {
+          parsed.format !== 'NUDL-IDE-workspace' || !('files' in parsed)) {
         throw new Error('This is not a valid NUDL IDE workspace export.');
       }
-
-      const importedFiles: VirtualFile[] = [];
-      const names = new Set<string>();
-      for (const entry of parsed.files) {
-        if (!entry || typeof entry !== 'object' ||
-            !('name' in entry) || typeof entry.name !== 'string' || !entry.name.trim() ||
-            !('content' in entry) || typeof entry.content !== 'string') {
-          throw new Error('A workspace file is missing a valid name or text content.');
-        }
-        const name = entry.name.trim().replace(/\\/g, '/');
-        if (name.startsWith('/') || name.split('/').some((part: string) => !part || part === '.' || part === '..')) {
-          throw new Error(`Invalid relative path in workspace: "${name}".`);
-        }
-        const normalizedName = name.toLowerCase();
-        if (names.has(normalizedName)) {
-          throw new Error(`Duplicate filename in imported workspace: "${name}".`);
-        }
-        names.add(normalizedName);
-        importedFiles.push({
-          name,
-          content: entry.content,
-          isBlueprint: 'isBlueprint' in entry && typeof entry.isBlueprint === 'boolean'
-            ? entry.isBlueprint : name.endsWith('.nblueprint'),
-          blueprintData: 'blueprintData' in entry ? entry.blueprintData as BlueprintGraph | undefined : undefined,
-          readOnly: 'readOnly' in entry && typeof entry.readOnly === 'boolean' ? entry.readOnly : false,
-        });
-      }
-
+      const importedFiles = validateWorkspaceFiles(parsed);
       setFiles(importedFiles);
       setActiveFileIndex(0);
       setMode(importedFiles[0].isBlueprint || importedFiles[0].name.endsWith('.nblueprint') ? 'blueprint' : 'text');
-      localStorage.setItem('nudl_workspace_files', JSON.stringify(importedFiles));
-      setOutputLog(`[Workspace] Imported ${importedFiles.length} file(s) from "${selectedFile.name}".`);
-      setStatus('Success');
+      const persisted = saveWorkspace(importedFiles);
+      setOutputLog(persisted
+        ? `[Workspace] Imported ${importedFiles.length} file(s) from "${selectedFile.name}".`
+        : `[Workspace] Imported ${importedFiles.length} file(s), but browser storage is unavailable. Export a backup after editing.`);
+      setStatus(persisted ? 'Success' : 'Error');
       setBottomTab('output');
     } catch (error) {
       setOutputLog(`[Workspace Import Error] ${error instanceof Error ? error.message : 'Could not read workspace file.'}`);
@@ -359,7 +333,7 @@ export default function App() {
       setFiles(INITIAL_FILES);
       setActiveFileIndex(0);
       setMode('text');
-      localStorage.removeItem('nudl_workspace_files');
+      clearSavedWorkspace();
       setOutputLog('[Workspace] Reset to repository defaults.');
     }
   }, []);
