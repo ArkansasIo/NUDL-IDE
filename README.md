@@ -47,3 +47,14 @@ This is a client-side IDE. Files are stored in browser local storage unless down
 ## Workspace projects
 
 Use **File → Export Workspace (.json)** to save every open source file and blueprint graph in a portable `nudl-workspace.json` file. Use **File → Import Workspace (.json)** to restore an exported project. Workspace imports are validated for the expected format, non-empty file lists, relative paths, and duplicate names before replacing the current workspace. Create files with relative paths such as `src/main.nudl` to organize files into folders; the Solution Explorer displays these paths as a collapsible folder tree.
+
+
+## Vendored NUDL 0.3 reference library
+
+The full tracked source snapshot from [ArkansasIo/NUDL-0.3](https://github.com/ArkansasIo/NUDL-0.3) is mirrored in `public/NUDL-0.3/` and published with the IDE. It includes the specification, grammar, C++ reference compiler, runtime/standard-library notes, examples, tests, self-hosting and Noodle-source experiments, education material, interoperability docs, plugins, and the upstream documentation mini-site.
+
+- Deployed library entry: `/NUDL-IDE/NUDL-0.3/index.html`
+- Mirror integration notes: `public/NUDL-0.3/IDE-INTEGRATION.md`
+- Upstream revision: `39d3571a888094fe8d908b67133fbaaf8241d38d`
+
+The vendored C++ and Noodle sources are reference material. The browser IDE continues to execute through the TypeScript implementation under `src/nudl/` until cross-implementation conformance and integration are implemented.

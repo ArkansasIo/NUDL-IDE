@@ -81,10 +81,18 @@ export const DocsModal: React.FC<DocsModalProps> = ({ isOpen, onClose }) => {
           </button>
 
           <a
-            href="https://github.com/ArkansasIo/NUDL-0.3"
+            href={`${import.meta.env.BASE_URL}NUDL-0.3/index.html`}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-auto flex items-center gap-1 text-xs text-[#6ee7ff] hover:underline"
+          >
+            Full Reference Library <ExternalLink className="w-3 h-3" />
+          </a>
+          <a
+            href="https://github.com/ArkansasIo/NUDL-0.3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-xs text-[#6ee7ff] hover:underline"
           >
             GitHub Repository <ExternalLink className="w-3 h-3" />
           </a>
