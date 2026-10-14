@@ -1,0 +1,44 @@
+# NUDL 0.3 Studio
+
+A browser-based IDE for the Noodle Unified Data Language (NUDL) with a text editor, visual blueprint editor, lexer/parser/semantic diagnostics, an interpreter, AST/token inspectors, and target-code generation.
+
+## Run locally
+
+Requirements: Node.js 22+ and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite (normally `http://localhost:3000`).
+
+## Build and verify
+
+```bash
+npm run build
+npm run preview
+```
+
+The build runs TypeScript checking before creating the static site in `dist/`.
+
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` builds the application and deploys `dist/` to GitHub Pages after each push to `main`. The Vite base path is set to `/NUDL-IDE/` in GitHub Actions so asset URLs work for this project site.
+
+In repository **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions**. Then inspect the Actions tab for the first deployment. Published URL should be:
+
+https://arkansasio.github.io/NUDL-IDE/
+
+## Included modules
+
+- `src/nudl/lexer.ts`, `parser.ts`, `analyzer.ts`: language front end and diagnostics.
+- `src/nudl/interpreter.ts`: in-browser NUDL interpreter.
+- `src/nudl/codegen.ts`: target source code generation.
+- `src/nudl/blueprintEngine.ts` and `src/components/BlueprintEditor.tsx`: visual graph model and editor.
+- `src/components/`: IDE chrome, editor, inspectors, terminal, and documentation modal.
+- `src/nudl/examples.ts`: starter projects.
+
+## Notes and limitations
+
+This is a client-side IDE. Files are stored in browser local storage unless downloaded; clearing browser site data may remove the workspace. Generated C/C++/Rust/etc. source is exported source code, not a guarantee that a native compiler is available in the browser. Browser execution is limited to the bundled interpreter.
