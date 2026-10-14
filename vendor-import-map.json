@@ -817,6 +817,54 @@
       "mode": "100644",
       "sourceSha": "fd213eac727a851cd08bf87e80f81295750e1336",
       "targetSha": "fd213eac727a851cd08bf87e80f81295750e1336"
+    },
+    {
+      "path": "ROADMAP.md",
+      "mode": "100644",
+      "sourceSha": "c52464120d881ee7f9641361b9a1c66f5758773e",
+      "targetSha": "c52464120d881ee7f9641361b9a1c66f5758773e"
+    },
+    {
+      "path": "TEAM.md",
+      "mode": "100644",
+      "sourceSha": "ec320e6a18fea79a58353a5fd9002ebdc0d2e5f8",
+      "targetSha": "ec320e6a18fea79a58353a5fd9002ebdc0d2e5f8"
+    },
+    {
+      "path": "build/manifest.json",
+      "mode": "100644",
+      "sourceSha": "68cbf583a703224d8800aae3cf2c78b07e27bd4f",
+      "targetSha": "68cbf583a703224d8800aae3cf2c78b07e27bd4f"
+    },
+    {
+      "path": "compiler/README.md",
+      "mode": "100644",
+      "sourceSha": "a85759db773ab43741270fe20988094b94ba512a",
+      "targetSha": "a85759db773ab43741270fe20988094b94ba512a"
+    },
+    {
+      "path": "docs/.nojekyll",
+      "mode": "100644",
+      "sourceSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "targetSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/404.html",
+      "mode": "100644",
+      "sourceSha": "03fc26ff8dcf8586f3e753d0425d3a3afb6f17ce",
+      "targetSha": "03fc26ff8dcf8586f3e753d0425d3a3afb6f17ce"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "mode": "100644",
+      "sourceSha": "1da58747222a4fe19772a361ace3504270abb20a",
+      "targetSha": "1da58747222a4fe19772a361ace3504270abb20a"
+    },
+    {
+      "path": "docs/CROSS-LANGUAGE-COMPILATION.md",
+      "mode": "100644",
+      "sourceSha": "f944550140709374d2991a6032c5ea92a61a6304",
+      "targetSha": "f944550140709374d2991a6032c5ea92a61a6304"
     }
   ]
 }
