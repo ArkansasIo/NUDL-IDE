@@ -145,6 +145,54 @@
       "mode": "100644",
       "sourceSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4",
       "targetSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4"
+    },
+    {
+      "path": "05-standard-library/collections.nudl",
+      "mode": "100644",
+      "sourceSha": "8919258d65502c3d2b01a35c23d7aac39e151efa",
+      "targetSha": "8919258d65502c3d2b01a35c23d7aac39e151efa"
+    },
+    {
+      "path": "05-standard-library/core.nudl",
+      "mode": "100644",
+      "sourceSha": "3a6453238aa7dbe839a218ac1e0cc50e5c7505be",
+      "targetSha": "3a6453238aa7dbe839a218ac1e0cc50e5c7505be"
+    },
+    {
+      "path": "05-standard-library/math.nudl",
+      "mode": "100644",
+      "sourceSha": "3ad3688de05d38692e8c94f0933cbfe3f9385234",
+      "targetSha": "3ad3688de05d38692e8c94f0933cbfe3f9385234"
+    },
+    {
+      "path": "06-examples/data.nudl",
+      "mode": "100644",
+      "sourceSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709",
+      "targetSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709"
+    },
+    {
+      "path": "06-examples/hello.nudl",
+      "mode": "100644",
+      "sourceSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c",
+      "targetSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c"
+    },
+    {
+      "path": "06-examples/math/01-numeric-arithmetic.nudl",
+      "mode": "100644",
+      "sourceSha": "490b49024e831198ac301007eac3f601f24d1a86",
+      "targetSha": "490b49024e831198ac301007eac3f601f24d1a86"
+    },
+    {
+      "path": "06-examples/math/02-algebra-calculus.nudl",
+      "mode": "100644",
+      "sourceSha": "83803da932f61588759786b7c395cfda4fc96b8a",
+      "targetSha": "83803da932f61588759786b7c395cfda4fc96b8a"
+    },
+    {
+      "path": "06-examples/math/03-linear-algebra-statistics.nudl",
+      "mode": "100644",
+      "sourceSha": "99318de793d56b22d1c9b4ec6ba9141c8b37e691",
+      "targetSha": "99318de793d56b22d1c9b4ec6ba9141c8b37e691"
     }
   ]
 }
