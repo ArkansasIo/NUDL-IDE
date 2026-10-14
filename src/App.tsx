@@ -270,7 +270,7 @@ export default function App() {
           throw new Error('A workspace file is missing a valid name or text content.');
         }
         const name = entry.name.trim().replace(/\\/g, '/');
-        if (name.startsWith('/') || name.split('/').some((part) => !part || part === '.' || part === '..')) {
+        if (name.startsWith('/') || name.split('/').some((part: string) => !part || part === '.' || part === '..')) {
           throw new Error(`Invalid relative path in workspace: "${name}".`);
         }
         const normalizedName = name.toLowerCase();
