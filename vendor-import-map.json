@@ -337,6 +337,54 @@
       "mode": "100644",
       "sourceSha": "371c944bcf45fce825a494235c91b7c893598947",
       "targetSha": "371c944bcf45fce825a494235c91b7c893598947"
+    },
+    {
+      "path": "09-self-hosting/CROSS-COMPILER.md",
+      "mode": "100644",
+      "sourceSha": "26144b711bab5c52f822f77db579a6613062fe8d",
+      "targetSha": "26144b711bab5c52f822f77db579a6613062fe8d"
+    },
+    {
+      "path": "09-self-hosting/README.md",
+      "mode": "100644",
+      "sourceSha": "1f9db9661908c008eceafe5faab8e0df626942fc",
+      "targetSha": "1f9db9661908c008eceafe5faab8e0df626942fc"
+    },
+    {
+      "path": "09-self-hosting/backend/native.nudl",
+      "mode": "100644",
+      "sourceSha": "38a8bb35a2d0c63e1ae584d8d49fd6abf24d2546",
+      "targetSha": "38a8bb35a2d0c63e1ae584d8d49fd6abf24d2546"
+    },
+    {
+      "path": "09-self-hosting/bootstrap.nudl",
+      "mode": "100644",
+      "sourceSha": "ee12e87e34abaefa725e232a59e86c7f21677f50",
+      "targetSha": "ee12e87e34abaefa725e232a59e86c7f21677f50"
+    },
+    {
+      "path": "09-self-hosting/driver.nudl",
+      "mode": "100644",
+      "sourceSha": "94c45506b8c7450a13f14c40f3910cd85baa4c68",
+      "targetSha": "94c45506b8c7450a13f14c40f3910cd85baa4c68"
+    },
+    {
+      "path": "09-self-hosting/ir/ir.nudl",
+      "mode": "100644",
+      "sourceSha": "39007d484e09fcd1a0567ab3dc46204e0c1f0be7",
+      "targetSha": "39007d484e09fcd1a0567ab3dc46204e0c1f0be7"
+    },
+    {
+      "path": "09-self-hosting/ir/lower.nudl",
+      "mode": "100644",
+      "sourceSha": "6c4e01e97647c59902f1ff43e1edecdbc2f00908",
+      "targetSha": "6c4e01e97647c59902f1ff43e1edecdbc2f00908"
+    },
+    {
+      "path": "09-self-hosting/lexer/lexer.nudl",
+      "mode": "100644",
+      "sourceSha": "ce2761ef82e0ffa0077ef21793c5f065184fde53",
+      "targetSha": "ce2761ef82e0ffa0077ef21793c5f065184fde53"
     }
   ]
 }
