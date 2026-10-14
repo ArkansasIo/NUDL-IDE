@@ -1165,6 +1165,24 @@
       "mode": "100644",
       "sourceSha": "f1dc6fc9339dab59c7fe092406a8fb255df7bd7a",
       "targetSha": "f1dc6fc9339dab59c7fe092406a8fb255df7bd7a"
+    },
+    {
+      "path": "examples/omni-to-nudl/13-quantum-simulation.nudl",
+      "mode": "100644",
+      "sourceSha": "95a0a80c22c7ebcbe546f40049e744fd0e6b1bca",
+      "targetSha": "95a0a80c22c7ebcbe546f40049e744fd0e6b1bca"
+    },
+    {
+      "path": "examples/omni-to-nudl/14-cross-language-composition.nudl",
+      "mode": "100644",
+      "sourceSha": "8655a49e950dc41c59c5a78e60748ff396023e18",
+      "targetSha": "8655a49e950dc41c59c5a78e60748ff396023e18"
+    },
+    {
+      "path": "examples/omni-to-nudl/README.md",
+      "mode": "100644",
+      "sourceSha": "44bce9d495ee8514b784a1bb585bdff37dd214ba",
+      "targetSha": "44bce9d495ee8514b784a1bb585bdff37dd214ba"
     }
   ]
 }
