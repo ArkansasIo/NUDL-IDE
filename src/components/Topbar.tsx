@@ -384,6 +384,13 @@ export const Topbar: React.FC<TopbarProps> = ({
                   <BookOpen className="w-3.5 h-3.5" /> Specification & Docs
                 </button>
                 <a
+                  href={`${import.meta.env.BASE_URL}NUDL-0.3/index.html`}
+                  onClick={closeMenu}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#16334b] text-[#6ee7ff] flex items-center gap-2"
+                >
+                  <BookOpen className="w-3.5 h-3.5" /> Local NUDL 0.3 Reference Library
+                </a>
+                <a
                   href="https://github.com/ArkansasIo/NUDL-0.3"
                   target="_blank"
                   rel="noopener noreferrer"
