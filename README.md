@@ -13,14 +13,19 @@ npm run dev
 
 Open the local URL printed by Vite (normally `http://localhost:3000`).
 
-## Build and verify
+## Build, test, and verify
 
 ```bash
+npm test
 npm run build
 npm run preview
 ```
 
-The build runs TypeScript checking before creating the static site in `dist/`.
+- `npm test` runs the Node test-runner regression suite through `tsx`, covering lexer tokens/diagnostics, parser plus interpreter execution, required schema fields, and code-generation output.
+- `npm run build` runs TypeScript checking before creating the static site in `dist/`.
+- `npm run preview` serves the built site locally.
+
+Tests should be expanded alongside language features. The current suite is a baseline regression suite, not proof of full NUDL 0.3 specification conformance or that every generated target compiles natively.
 
 ## GitHub Pages
 
@@ -38,16 +43,15 @@ https://arkansasio.github.io/NUDL-IDE/
 - `src/nudl/blueprintEngine.ts` and `src/components/BlueprintEditor.tsx`: visual graph model and editor.
 - `src/components/`: IDE chrome, editor, inspectors, terminal, and documentation modal.
 - `src/nudl/examples.ts`: starter projects.
+- `tests/nudl.test.ts`: baseline compiler-pipeline regression tests.
 
 ## Notes and limitations
 
 This is a client-side IDE. Files are stored in browser local storage unless downloaded; clearing browser site data may remove the workspace. Generated C/C++/Rust/etc. source is exported source code, not a guarantee that a native compiler is available in the browser. Browser execution is limited to the bundled interpreter.
 
-
 ## Workspace projects
 
 Use **File → Export Workspace (.json)** to save every open source file and blueprint graph in a portable `nudl-workspace.json` file. Use **File → Import Workspace (.json)** to restore an exported project. Workspace imports are validated for the expected format, non-empty file lists, relative paths, and duplicate names before replacing the current workspace. Create files with relative paths such as `src/main.nudl` to organize files into folders; the Solution Explorer displays these paths as a collapsible folder tree.
-
 
 ## Vendored NUDL 0.3 reference library
 
