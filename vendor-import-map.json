@@ -1009,6 +1009,54 @@
       "mode": "100644",
       "sourceSha": "74f93a8b0768c3390c20c0f29dd0bc576a678632",
       "targetSha": "74f93a8b0768c3390c20c0f29dd0bc576a678632"
+    },
+    {
+      "path": "examples/21-order-of-operations.nudl",
+      "mode": "100644",
+      "sourceSha": "2681d395b8e70031d020a3dae7b4b6a8849bc769",
+      "targetSha": "2681d395b8e70031d020a3dae7b4b6a8849bc769"
+    },
+    {
+      "path": "examples/22-function-evaluation-order.nudl",
+      "mode": "100644",
+      "sourceSha": "ef80b22b080e6e5304c154996f1f5f0909959818",
+      "targetSha": "ef80b22b080e6e5304c154996f1f5f0909959818"
+    },
+    {
+      "path": "examples/23-compiler-pipeline.nudl",
+      "mode": "100644",
+      "sourceSha": "b7b8d0fcbe5de80d6e10a826969e961691736420",
+      "targetSha": "b7b8d0fcbe5de80d6e10a826969e961691736420"
+    },
+    {
+      "path": "examples/24-numerical-order.nudl",
+      "mode": "100644",
+      "sourceSha": "c9e4f3282989862a01c9c7bb05296acd3c0b3986",
+      "targetSha": "c9e4f3282989862a01c9c7bb05296acd3c0b3986"
+    },
+    {
+      "path": "examples/25-data-validation-order.nudl",
+      "mode": "100644",
+      "sourceSha": "f6cbea0353c647cab288d47e1a0681e758778c89",
+      "targetSha": "f6cbea0353c647cab288d47e1a0681e758778c89"
+    },
+    {
+      "path": "examples/26-parallel-order.nudl",
+      "mode": "100644",
+      "sourceSha": "080848ad1d2b3aa0ad21a45482349f70eb4c7e9f",
+      "targetSha": "080848ad1d2b3aa0ad21a45482349f70eb4c7e9f"
+    },
+    {
+      "path": "examples/27-thesis-experiment.nudl",
+      "mode": "100644",
+      "sourceSha": "34a416b6bf231b2ad71e82d2c83a055471eb5e0d",
+      "targetSha": "34a416b6bf231b2ad71e82d2c83a055471eb5e0d"
+    },
+    {
+      "path": "examples/28-regex.nudl",
+      "mode": "100644",
+      "sourceSha": "7873c5b5ebb8a1a770ca3d2419d0aaa4e3eeefaf",
+      "targetSha": "7873c5b5ebb8a1a770ca3d2419d0aaa4e3eeefaf"
     }
   ]
 }
