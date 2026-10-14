@@ -76,3 +76,44 @@ test('semantic analysis reports duplicate schema fields', () => {
   const { diagnostics } = compile(source);
   assert.ok(diagnostics.some((d) => d.code === 'E206'));
 });
+
+
+import {
+  validateWorkspaceFiles,
+  MAX_WORKSPACE_FILES,
+  MAX_FILE_CONTENT_LENGTH,
+} from '../src/nudl/workspace.ts';
+
+test('workspace validation normalizes relative paths and fills safe defaults', () => {
+  const files = validateWorkspaceFiles([
+    { name: 'src\\\\main.nudl', content: 'fn main() {}' },
+  ]);
+  assert.equal(files[0].name, 'src/main.nudl');
+  assert.equal(files[0].isBlueprint, false);
+  assert.equal(files[0].readOnly, false);
+});
+
+test('workspace validation rejects absolute paths and traversal', () => {
+  assert.throws(() => validateWorkspaceFiles([{ name: '../secrets.txt', content: 'x' }]), /Invalid relative path/);
+  assert.throws(() => validateWorkspaceFiles([{ name: '/root.nudl', content: 'x' }]), /Invalid relative path/);
+  assert.throws(() => validateWorkspaceFiles([{ name: 'C:\\\\temp\\\\x.nudl', content: 'x' }]), /Invalid relative path/);
+});
+
+test('workspace validation rejects duplicate names without case sensitivity', () => {
+  assert.throws(() => validateWorkspaceFiles([
+    { name: 'Main.nudl', content: '' },
+    { name: 'main.NUDL', content: '' },
+  ]), /Duplicate filename/);
+});
+
+test('workspace validation rejects invalid envelopes and empty workspaces', () => {
+  assert.throws(() => validateWorkspaceFiles({ format: 'other', files: [] }), /Unsupported/);
+  assert.throws(() => validateWorkspaceFiles([]), /at least one file/);
+});
+
+test('workspace validation enforces file count and source-size limits', () => {
+  assert.throws(() => validateWorkspaceFiles(
+    Array.from({ length: MAX_WORKSPACE_FILES + 1 }, (_, i) => ({ name: `file-${i}.nudl`, content: '' }))
+  ), /at most/);
+  assert.throws(() => validateWorkspaceFiles([{ name: 'large.nudl', content: 'x'.repeat(MAX_FILE_CONTENT_LENGTH + 1) }]), /content limit/);
+});

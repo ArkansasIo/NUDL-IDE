@@ -2,6 +2,12 @@
 
 ## Unreleased — NUDL-IDE development
 
+### IDE architecture
+- Added defensive workspace storage and validation.
+- Added typed HTTP API contracts and an optional client.
+- Added feature, menu and tool registries plus module documentation.
+
+
 ### Language tooling
 - Added baseline regression tests for lexer, parser/interpreter execution, required schema fields, and code generation.
 - Improved delimiter diagnostics to use lexer tokens rather than counting raw characters, so delimiters inside strings and comments do not create false positives.
