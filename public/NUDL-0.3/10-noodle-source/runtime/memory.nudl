@@ -1,0 +1,10 @@
+module runtime.memory;
+
+schema Allocation {
+    address: i64 required;
+    size: i64 required;
+}
+
+fn allocation(address: i64, size: i64) -> Allocation {
+    return Allocation { address: address, size: size };
+}

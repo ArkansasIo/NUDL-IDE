@@ -1,0 +1,11 @@
+// NUDL Notepad input example
+// Save this plain-text file as: notepad-input.nudl
+schema Person {
+  id: u64 required
+  name: text required
+}
+
+data people: Person {
+  { id: 1, name: "Alice" }
+  { id: 2, name: "Bob" }
+}

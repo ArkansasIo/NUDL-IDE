@@ -1,0 +1,6 @@
+let count: i64 = 42;
+let ratio: f64 = 3.14159;
+let enabled: bool = true;
+let name: string = "Noodle";
+print(name);
+print(count);

@@ -1,0 +1,13 @@
+module compiler.semantic;
+
+fn analyze(program: Program) -> bool {
+    # Required semantic passes:
+    # declarations
+    # scopes
+    # names
+    # types
+    # returns
+    # nullability
+    # control flow
+    return true;
+}

@@ -1,0 +1,32 @@
+// NUDL universal-target example.
+// Proposed syntax; target directives are design-stage examples.
+//
+// One semantic program can eventually compile to several targets.
+
+target cpp
+target rust
+target python
+target javascript
+target wasm
+
+schema Message {
+  id: u64 required
+  text: text required
+}
+
+data messages: Message {
+  { id: 1, text: "Hello from NUDL" }
+  { id: 2, text: "One semantic program, multiple targets" }
+}
+
+fn count_messages(input: Message[]) -> u64 {
+  return count(input)
+}
+
+// Intended model:
+// source -> NUDL AST -> typed NUDL IR -> target emitter
+//
+// Possible outputs:
+// C++, Rust, Python, JavaScript, WebAssembly.
+//
+// The compiler must preserve NUDL semantics across targets.

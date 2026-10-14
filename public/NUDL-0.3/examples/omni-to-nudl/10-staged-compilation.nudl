@@ -1,0 +1,13 @@
+// NUDL translation example: staged compiler model
+module example.stages
+
+compile source {
+  stage lex -> tokens
+  stage parse(tokens) -> ast
+  stage check(ast) -> typed_ast
+  stage lower(typed_ast) -> nudl_ir
+  stage optimize(nudl_ir) -> optimized_ir
+  stage emit(optimized_ir, target: native_cpu) -> artifact
+}
+
+// The stages are compiler design notation until the compiler exposes them as syntax.

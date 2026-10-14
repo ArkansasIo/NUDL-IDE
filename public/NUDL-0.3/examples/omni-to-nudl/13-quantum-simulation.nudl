@@ -1,0 +1,12 @@
+// NUDL translation example: optional quantum-simulation library model
+module example.quantum
+
+import std.quantum
+
+let circuit = quantum.circuit(qubits: 2)
+circuit.h(cbit: 0)
+circuit.cx(control: 0, target: 1)
+let result = circuit.measure()
+print(result)
+
+// This models a simulator API; it does not imply access to quantum hardware.

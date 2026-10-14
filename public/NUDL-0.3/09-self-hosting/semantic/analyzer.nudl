@@ -1,0 +1,14 @@
+module compiler.semantic;
+
+fn analyze(program: Program) -> bool {
+    # Planned checks:
+    # - declarations and scopes
+    # - duplicate names
+    # - undefined names
+    # - function signatures
+    # - expression types
+    # - return types
+    # - nullability
+    # - control-flow validity
+    return true;
+}

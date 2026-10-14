@@ -1,0 +1,15 @@
+module compiler.driver;
+
+fn compile(source: string, target: string) -> string {
+    let tokens = compiler.lexer.lex(source);
+    let program = compiler.parser.parse_program(tokens);
+    let valid = compiler.semantic.analyze(program);
+
+    if (valid) {
+        let ir = compiler.ir.lower(program);
+        let optimized = compiler.optimizer.optimize(ir);
+        return compiler.backend.emit_native(optimized, target);
+    }
+
+    return "";
+}

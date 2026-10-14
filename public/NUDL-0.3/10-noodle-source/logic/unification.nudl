@@ -1,0 +1,25 @@
+module logic.unification;
+
+schema Term {
+    name: string required;
+    variable: bool required;
+}
+
+fn occurs(variable: string, term: Term) -> bool {
+    return variable == term.name && term.variable;
+}
+
+fn unify(left: Term, right: Term) -> bool {
+    if (left.name == right.name) {
+        return true;
+    }
+    return !occurs(left.name, right);
+}
+
+fn main() -> i64 {
+    print(unify(
+        Term { name: "X", variable: true },
+        Term { name: "a", variable: false }
+    ));
+    return 0;
+}

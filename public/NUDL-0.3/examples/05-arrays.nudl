@@ -1,0 +1,5 @@
+let values = [10, 20, 30, 40, 50];
+let first = values[0];
+let last = values[4];
+print(first);
+print(last);

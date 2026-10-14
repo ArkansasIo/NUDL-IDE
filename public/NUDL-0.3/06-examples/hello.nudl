@@ -1,0 +1,13 @@
+schema Person {
+  id: u64 required
+  name: text required
+}
+
+data people: Person {
+  { id: 1, name: "Stephen" }
+  { id: 2, name: "Example" }
+}
+
+fn first_name(input: Person) -> text {
+  return input.name
+}

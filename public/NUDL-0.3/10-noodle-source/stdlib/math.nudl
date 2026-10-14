@@ -1,0 +1,7 @@
+module std.math;
+
+fn abs(value: f64) -> f64;
+fn sqrt(value: f64) -> f64;
+fn sin(value: f64) -> f64;
+fn cos(value: f64) -> f64;
+fn pow(base: f64, exponent: f64) -> f64;

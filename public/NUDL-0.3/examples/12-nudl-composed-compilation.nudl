@@ -1,0 +1,78 @@
+// NUDL-EX-005
+// Nested compilation / composition example.
+//
+// Unit A: calculate A + B.
+// Unit B: independently calculate A + B.
+// Composition: combine the two compiled NUDL units.
+// Final result: one combined NUDL program.
+//
+// Proposed compiler model; module linking and arithmetic execution are
+// future implementation stages.
+
+schema Pair {
+  a: i64 required
+  b: i64 required
+}
+
+schema Result {
+  name: text required
+  value: i64 required
+}
+
+module UnitA {
+  fn add_a(input: Pair) -> i64 {
+    return input.a + input.b
+  }
+}
+
+module UnitB {
+  fn add_b(input: Pair) -> i64 {
+    return input.a + input.b
+  }
+}
+
+module Combined {
+  import UnitA
+  import UnitB
+
+  fn combine(input: Pair) -> Result[] {
+    let result_a = UnitA.add_a(input)
+    let result_b = UnitB.add_b(input)
+
+    return [
+      { name: "UnitA", value: result_a }
+      { name: "UnitB", value: result_b }
+    ]
+  }
+}
+
+// INPUT:
+//   a = 10
+//   b = 20
+//
+// UnitA output: 30
+// UnitB output: 30
+//
+// Combined output:
+//   UnitA = 30
+//   UnitB = 30
+//
+// Conceptual pipeline:
+//
+// source-A.nudl -> NUDL compiler -> UnitA IR
+// source-B.nudl -> NUDL compiler -> UnitB IR
+//
+// UnitA IR + UnitB IR
+//          |
+//          v
+//    NUDL linker/compiler
+//          |
+//          v
+//     Combined NUDL IR
+//          |
+//          +--> C / C++ / Rust / Go / Java / C#
+//          +--> Python / JS / TS
+//          +--> WASM / LLVM
+//
+// This demonstrates composition inside NUDL rather than manually rewriting
+// either source module.

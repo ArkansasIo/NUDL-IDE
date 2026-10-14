@@ -1,0 +1,9 @@
+module compiler.bootstrap;
+
+fn bootstrap(source: string) -> string {
+    return compiler.compile(source, "native");
+}
+
+let compiler_source = "fn main() -> i64 { return 0; }";
+let output = bootstrap(compiler_source);
+print(output);

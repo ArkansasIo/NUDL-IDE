@@ -1,0 +1,29 @@
+# NUDL illustrative syntax — linear algebra and statistics
+# File ID: NUDL-MATH-EX-003
+# NOTE: Illustrative specification examples, not an executable feature claim.
+
+program LinearAlgebraAndStatistics {
+    let vector_a = vector(3, -4)
+    let matrix_a = matrix([[1, 2], [3, 4]])
+    let matrix_det = determinant(matrix_a)
+    # Expected determinant: -2
+
+    let solution = solve_linear(
+        matrix([[1, 1], [1, -1]]),
+        vector(10, 4)
+    )
+    # Represents x+y=10 and x-y=4; expected x=7, y=3.
+
+    let observations = [25, 35, 10, 17, 29, 14, 21, 31]
+    let average = mean(observations)
+    # Expected mean: 22.75
+
+    let median_value = median(observations)
+    # Expected median: 23
+
+    output(vector_a)
+    output(matrix_det)
+    output(solution)
+    output(average)
+    output(median_value)
+}

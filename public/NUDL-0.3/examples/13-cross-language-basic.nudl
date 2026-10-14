@@ -1,0 +1,36 @@
+// NUDL-EX-CROSS-001
+// Original cross-language concept corpus sample.
+//
+// The examples below deliberately use simple operations so that their
+// semantics can be compared across languages.
+
+schema Numbers {
+  a: i64 required
+  b: i64 required
+}
+
+fn add(a: i64, b: i64) -> i64 {
+  return a + b
+}
+
+fn multiply(a: i64, b: i64) -> i64 {
+  return a * b
+}
+
+fn pipeline(input: Numbers) -> i64 {
+  let sum = add(input.a, input.b)
+  return multiply(sum, 2)
+}
+
+// Test input:
+// a = 10
+// b = 20
+//
+// Expected:
+// add(10, 20) = 30
+// multiply(30, 2) = 60
+// pipeline = 60
+//
+// Semantic equivalents can eventually be imported from C, C++, Rust,
+// Go, Java, C#, Python, JavaScript, TypeScript, SQL, Haskell, etc.
+// and normalized into the same NUDL IR.

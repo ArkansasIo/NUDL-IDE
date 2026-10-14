@@ -1,0 +1,7 @@
+module compiler.backend;
+
+fn emit_native(module: ModuleIR, target: string) -> string {
+    # Target backends:
+    # x86_64, aarch64, riscv64, wasm32, gpu
+    return "";
+}

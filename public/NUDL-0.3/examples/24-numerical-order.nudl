@@ -1,0 +1,8 @@
+let x = 10.0;
+let y = 3.0;
+let a = x + y * 2.0;
+let b = (x + y) * 2.0;
+let c = x / y + 2.0;
+print(a);
+print(b);
+print(c);

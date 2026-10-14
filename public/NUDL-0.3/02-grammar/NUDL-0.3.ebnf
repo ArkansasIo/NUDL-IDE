@@ -1,0 +1,27 @@
+# NUDL 0.3 EBNF Draft
+
+```ebnf
+program     = { declaration } ;
+declaration = schema | data | function | binding ;
+schema      = "schema" , identifier , "{" , { field } , "}" ;
+field       = identifier , ":" , type , [ "required" ] , [ "=" , expression ] ;
+data        = "data" , identifier , ":" , identifier , "{" , { record } , "}" ;
+function    = "fn" , identifier , "(" , [ parameters ] , ")" , "->" , type , block ;
+binding     = ( "let" | "const" ) , identifier , [ ":" , type ] , "=" , expression ;
+record      = "{" , [ fields ] , "}" ;
+fields      = field-value , { "," , field-value } ;
+field-value = identifier , ":" , expression ;
+parameters  = parameter , { "," , parameter } ;
+parameter   = identifier , ":" , type ;
+type        = identifier , [ "[ ]" ] ;
+block       = "{" , { statement } , "}" ;
+statement   = binding | "return" , expression ;
+expression  = literal | identifier | call | binary ;
+call        = identifier , "(" , [ expression , { "," , expression } ] , ")" ;
+binary      = expression , operator , expression ;
+operator    = "==" | "!=" | "<" | "<=" | ">" | ">=" | "+" | "-" | "*" | "/" ;
+literal     = string | number | "true" | "false" | "null" ;
+identifier  = letter , { letter | digit | "_" } ;
+```
+
+This EBNF is a draft grammar and should be treated as a design artifact until parser tests establish conformance.

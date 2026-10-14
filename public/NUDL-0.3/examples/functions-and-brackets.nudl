@@ -1,0 +1,7 @@
+fn add(a: i64, b: i64) -> i64 {
+    return a + b;
+}
+
+let values = [1, 2, 3, 4];
+let total = add(values[0], values[1]);
+print(total);

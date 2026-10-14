@@ -1,0 +1,9 @@
+module std.core
+
+type Option<T>
+type Result<T, E>
+
+fn assert(condition: Bool) -> Unit
+fn panic(message: String) -> Never
+fn print(value: Any) -> Unit
+fn format(value: Any) -> String

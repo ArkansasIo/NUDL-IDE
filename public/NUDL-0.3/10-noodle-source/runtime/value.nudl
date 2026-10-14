@@ -1,0 +1,17 @@
+module runtime.value;
+
+schema Value {
+    type: string required;
+    text: string;
+}
+
+fn null_value() -> Value {
+    return Value { type: "null", text: "" };
+}
+
+fn boolean_value(value: bool) -> Value {
+    if (value) {
+        return Value { type: "bool", text: "true" };
+    }
+    return Value { type: "bool", text: "false" };
+}

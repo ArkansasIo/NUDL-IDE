@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Noodle Plugin Manifest",
+  "type": "object",
+  "required": ["id","name","version","api","nudl","kind","entry"],
+  "properties": {
+    "id": {"type":"string"},
+    "name": {"type":"string"},
+    "version": {"type":"string"},
+    "api": {"type":"string"},
+    "nudl": {"type":"string"},
+    "kind": {"type":"string"},
+    "entry": {"type":"string"},
+    "platforms": {"type":"array","items":{"type":"string"}},
+    "capabilities": {"type":"array","items":{"type":"string"}},
+    "dependencies": {"type":"array","items":{"type":"string"}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+module compiler.lexer;
+
+fn is_letter(c: string) -> bool {
+    return regex.is_match("^[A-Za-z_]$", c);
+}
+
+fn is_digit(c: string) -> bool {
+    return regex.is_match("^[0-9]$", c);
+}
+
+fn lex(source: string) -> Array<Token> {
+    let tokens = [];
+    # Tokenization implementation is expanded as the Noodle runtime gains
+    # mutable arrays, indexing, character iteration, and records.
+    return tokens;
+}

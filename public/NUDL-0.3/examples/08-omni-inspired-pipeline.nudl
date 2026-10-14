@@ -1,0 +1,40 @@
+// NUDL-EX-OMNI-001
+// Omni-inspired data pipeline.
+// Proposed NUDL syntax; this file documents the intended model.
+
+schema SensorReading {
+  id: u64 required
+  sensor: text required
+  value: f64 required
+  unit: text required
+  valid: bool = true
+}
+
+data input_readings: SensorReading {
+  { id: 1, sensor: "TEMP-A", value: 21.5, unit: "C", valid: true }
+  { id: 2, sensor: "TEMP-A", value: 22.0, unit: "C", valid: true }
+  { id: 3, sensor: "TEMP-B", value: -999.0, unit: "C", valid: false }
+  { id: 4, sensor: "TEMP-B", value: 20.5, unit: "C", valid: true }
+}
+
+fn valid_readings(input: SensorReading[]) -> SensorReading[] {
+  return input where item.valid == true
+}
+
+fn average_value(input: SensorReading[]) -> f64 {
+  // Intended aggregate operation for a future NUDL standard library.
+  return average(input.value)
+}
+
+data output_valid: SensorReading {
+  // Expected logical output:
+  // 1 TEMP-A 21.5 C true
+  // 2 TEMP-A 22.0 C true
+  // 4 TEMP-B 20.5 C true
+}
+
+// INPUT: input_readings
+// TRANSFORM: valid_readings(input_readings)
+// OUTPUT: output_valid
+// AGGREGATE: average_value(output_valid)
+// EXPECTED AVERAGE: 21.3333333333...

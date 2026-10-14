@@ -1,0 +1,11 @@
+module compiler.bootstrap;
+
+fn bootstrap(source: string) -> string {
+    return compiler.driver.compile(source, "native");
+}
+
+fn self_test() -> bool {
+    let source = "fn identity(x: i64) -> i64 { return x; }";
+    let output = bootstrap(source);
+    return output != "";
+}

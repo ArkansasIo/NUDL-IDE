@@ -1,0 +1,24 @@
+module logic.forward_chain;
+
+schema Fact {
+    name: string required;
+}
+
+schema Rule {
+    premise: string required;
+    conclusion: string required;
+}
+
+fn infer(fact: Fact, rule: Rule) -> Fact {
+    if (fact.name == rule.premise) {
+        return Fact { name: rule.conclusion };
+    }
+    return fact;
+}
+
+fn main() -> i64 {
+    let fact = Fact { name: "human" };
+    let rule = Rule { premise: "human", conclusion: "mortal" };
+    print(infer(fact, rule).name);
+    return 0;
+}

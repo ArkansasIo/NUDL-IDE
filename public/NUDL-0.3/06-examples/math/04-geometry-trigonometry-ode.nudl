@@ -1,0 +1,26 @@
+# NUDL illustrative syntax — geometry, trigonometry, differential equations
+# File ID: NUDL-MATH-EX-004
+# NOTE: Intended language examples; requires the respective math modules.
+
+program GeometryTrigonometryAndODE {
+    let circle_area = pi * 5 ^ 2
+    # Expected symbolic result: 25*pi; approximate result about 78.5398163397
+
+    let trig_value = sin(pi / 6)
+    # Expected exact result: 1/2
+
+    let triangle = right_triangle(adjacent: 3, opposite: 4)
+    let hypotenuse = triangle.hypotenuse
+    # Expected: 5
+
+    let ode = solve_ode(
+        equation: derivative(y(x), x, order: 2) + y(x) == 0,
+        initial_conditions: [y(0) == 2, derivative(y(x), x) at x == 0 == 1]
+    )
+    # Expected general solution satisfying conditions: y(x) = 2*cos(x) + sin(x)
+
+    output(circle_area)
+    output(trig_value)
+    output(hypotenuse)
+    output(ode)
+}

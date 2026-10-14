@@ -1,0 +1,11 @@
+// NUDL translation example: explicit native interoperability boundary
+module example.native
+
+extern "c" fn native_hash(data: bytes) -> u64
+
+fn safe_hash(data: bytes) -> Result<u64, text> {
+  if data.length() > 1048576 { return error("input too large") }
+  return ok(native_hash(data))
+}
+
+// Native calls are explicit capabilities; imported data is never executed automatically.

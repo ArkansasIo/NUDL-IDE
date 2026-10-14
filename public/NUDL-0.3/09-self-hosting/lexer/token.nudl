@@ -1,0 +1,17 @@
+module compiler.lexer;
+
+schema Token {
+    kind: string required;
+    text: string required;
+    line: i64 required;
+    column: i64 required;
+}
+
+fn token(kind: string, text: string, line: i64, column: i64) -> Token {
+    return Token {
+        kind: kind,
+        text: text,
+        line: line,
+        column: column
+    };
+}

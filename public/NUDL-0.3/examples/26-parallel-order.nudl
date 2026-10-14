@@ -1,0 +1,5 @@
+parallel {
+    for item in dataset {
+        result[item] = calculate(item);
+    }
+}

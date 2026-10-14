@@ -1,0 +1,10 @@
+module logic.graph_closure;
+
+fn reachable(a: bool, b: bool) -> bool {
+    return a && b;
+}
+
+fn main() -> i64 {
+    print(reachable(true, true));
+    return 0;
+}

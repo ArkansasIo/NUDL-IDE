@@ -1,0 +1,16 @@
+module compiler.ir;
+
+schema IRInstruction {
+    opcode: string required;
+    operands: Array<string>;
+    result: string;
+}
+
+schema IRFunction {
+    name: string required;
+    instructions: Array<IRInstruction>;
+}
+
+schema Module {
+    functions: Array<IRFunction>;
+}

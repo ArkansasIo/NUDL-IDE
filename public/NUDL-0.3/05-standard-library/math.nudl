@@ -1,0 +1,15 @@
+module std.math
+
+const pi: Real
+const e: Real
+
+fn abs<T: Number>(x: T) -> T
+fn sqrt(x: Real) -> Real
+fn pow(x: Real, y: Real) -> Real
+fn sin(x: Real) -> Real
+fn cos(x: Real) -> Real
+fn tan(x: Real) -> Real
+fn gcd(a: Integer, b: Integer) -> Integer
+fn lcm(a: Integer, b: Integer) -> Integer
+fn min<T: Ordered>(a: T, b: T) -> T
+fn max<T: Ordered>(a: T, b: T) -> T

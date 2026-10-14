@@ -1,0 +1,8 @@
+// NUDL translation example: basic values and output
+module example.hello
+
+let name: text = "Noodle"
+let version: u32 = 3
+
+print("Hello, " + name)
+print("NUDL version: " + version)

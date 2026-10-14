@@ -1,0 +1,16 @@
+module logic.model_check;
+
+schema State {
+    name: string required;
+    accepting: bool required;
+}
+
+fn satisfies(state: State, proposition: bool) -> bool {
+    return state.accepting == proposition;
+}
+
+fn main() -> i64 {
+    let initial = State { name: "initial", accepting: true };
+    print(satisfies(initial, true));
+    return 0;
+}

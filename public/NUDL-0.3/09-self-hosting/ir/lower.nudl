@@ -1,0 +1,5 @@
+module compiler.ir;
+
+fn lower(program: Program) -> Module {
+    return Module { functions: [] };
+}

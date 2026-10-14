@@ -1,0 +1,16 @@
+module compiler.lexer;
+
+fn is_digit(value: string) -> bool {
+    return regex.is_match("^[0-9]$", value);
+}
+
+fn is_identifier(value: string) -> bool {
+    return regex.is_match("^[A-Za-z_][A-Za-z0-9_]*$", value);
+}
+
+fn lex(source: string) -> Array<Token> {
+    let tokens = [];
+    # Full character iteration and append operations become executable
+    # when the mutable collection runtime is complete.
+    return tokens;
+}

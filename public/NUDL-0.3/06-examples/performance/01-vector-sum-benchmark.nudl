@@ -1,0 +1,26 @@
+# NUDL illustrative example — vector sum benchmark
+# File ID: NUDL-PERF-EX-001
+# Design/test fixture only: syntax and vector API may not yet be executable.
+
+program VectorSumBenchmark {
+    let count = 1_000_000
+    let values = numeric_array(count, initialize_with: index => index * 0.5)
+
+    # The compiler/runtime may select scalar CPU, SIMD CPU, or an accelerator.
+    # Selection must preserve the same specified result.
+    let result = sum(values)
+
+    assert_approx(result, 249999750000.0, tolerance: 0.01)
+    output("elements=" + to_string(count))
+    output("sum=" + to_string(result))
+    output(runtime_backend())
+    output(performance_report())
+}
+
+# Benchmark protocol:
+# 1. Verify result before timing.
+# 2. Warm up the selected backend.
+# 3. Run multiple iterations and report median plus spread.
+# 4. Measure host-to-device transfers separately from GPU kernel time.
+# 5. Record CPU/GPU model, OS, compiler revision, backend and flags.
+# 6. Compare scalar CPU, SIMD CPU and GPU only when each performs identical work.

@@ -1,0 +1,12 @@
+{
+  "id": "nudl.regex",
+  "name": "Noodle Regular Expression Extension",
+  "version": "0.1.0",
+  "api": "0.1",
+  "nudl": "0.3",
+  "kind": "stdlib",
+  "entry": "nudl_regex",
+  "platforms": ["windows", "linux", "macos", "android", "ios"],
+  "capabilities": [],
+  "dependencies": []
+}

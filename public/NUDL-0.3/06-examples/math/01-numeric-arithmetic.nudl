@@ -1,0 +1,17 @@
+# NUDL illustrative syntax — numeric arithmetic
+# File ID: NUDL-MATH-EX-001
+# NOTE: Proposed syntax for the language design; not guaranteed executable yet.
+
+program NumericArithmetic {
+    let integer_sum = 125 + 375
+    let fraction_value = 1 / 4 * (4 - 1 / 2)
+    let square_root = sqrt(2)
+    let remainder = 17 mod 5
+    let gcd_value = gcd(84, 30)
+
+    output(integer_sum)      # Expected: 500
+    output(fraction_value)   # Expected exact value: 7/8
+    output(square_root)      # Expected approximate value: 1.4142135623730951...
+    output(remainder)        # Expected: 2
+    output(gcd_value)        # Expected: 6
+}

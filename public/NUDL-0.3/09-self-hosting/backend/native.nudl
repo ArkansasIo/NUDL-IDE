@@ -1,0 +1,7 @@
+module compiler.backend.native;
+
+fn emit_native(module: Module, target: string) -> string {
+    # Native emitter interface.
+    # Target-specific lowering is deliberately isolated from the language front end.
+    return "";
+}

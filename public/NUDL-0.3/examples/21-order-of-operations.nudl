@@ -1,0 +1,9 @@
+let a = 2;
+let b = 3;
+let c = 4;
+let first = a + b * c;
+let second = (a + b) * c;
+let third = a * b + c;
+print(first);
+print(second);
+print(third);

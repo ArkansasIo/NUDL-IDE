@@ -1,0 +1,10 @@
+# Noodle Regex extension example
+
+let email_pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+let email = "research@example.org";
+
+let valid = regex.is_match(email_pattern, email);
+print(valid);
+
+let normalized = regex.replace("[[:space:]]+", email, "_");
+print(normalized);

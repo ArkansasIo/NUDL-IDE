@@ -1,0 +1,12 @@
+// NUDL translation example: explicit error handling
+module example.errors
+
+fn load_number(source: text) -> Result<i64, text> {
+  if source == "" { return error("empty input") }
+  return parse_i64(source)
+}
+
+match load_number("123") {
+  ok(value) => print(value)
+  error(message) => print("error: " + message)
+}

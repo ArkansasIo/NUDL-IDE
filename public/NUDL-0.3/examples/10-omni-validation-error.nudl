@@ -1,0 +1,25 @@
+// NUDL-EX-OMNI-003
+// Validation and deterministic error example.
+// Proposed syntax.
+
+schema Account {
+  id: u64 required
+  name: text required
+  balance: f64
+}
+
+data accounts: Account {
+  { id: 1, name: "Alice", balance: 125.50 }
+  { id: 2, name: "Bob", balance: -10.00 }
+}
+
+// Intended validation rule:
+// balance must be >= 0.
+//
+// Expected result:
+// account 1 -> valid
+// account 2 -> validation error NUDL-V001
+//
+// The runtime should report the record ID, field name,
+// observed value, constraint, and source location.
+// No external command or imported SQL is executed.

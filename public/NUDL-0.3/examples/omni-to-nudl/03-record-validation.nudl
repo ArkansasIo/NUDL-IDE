@@ -1,0 +1,13 @@
+// NUDL translation example: typed records and validation
+module example.validation
+
+schema Account {
+  id: u64 required
+  name: text required
+  balance: f64 required
+}
+
+fn validate(a: Account) -> Result<Account, text> {
+  if a.balance < 0.0 { return error("balance must be non-negative") }
+  return ok(a)
+}

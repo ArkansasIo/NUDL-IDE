@@ -1,0 +1,5 @@
+fn polynomial(x: f64) -> f64 {
+    return x * x + 2.0 * x + 1.0;
+}
+let result = polynomial(10.0);
+print(result);

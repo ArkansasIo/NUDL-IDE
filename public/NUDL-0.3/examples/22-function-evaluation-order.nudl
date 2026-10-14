@@ -1,0 +1,5 @@
+fn combine(a: i64, b: i64, c: i64) -> i64 {
+    return a * b + c;
+}
+let x = combine(2 + 1, 3 * 2, 10 - 4);
+print(x);

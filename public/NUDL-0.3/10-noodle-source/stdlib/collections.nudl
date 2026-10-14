@@ -1,0 +1,5 @@
+module std.collections;
+
+fn length(values: Array<any>) -> i64;
+fn empty(values: Array<any>) -> bool;
+fn push(values: Array<any>, value: any) -> Array<any>;

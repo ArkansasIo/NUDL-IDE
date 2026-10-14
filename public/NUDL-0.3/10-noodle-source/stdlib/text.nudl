@@ -1,0 +1,6 @@
+module std.text;
+
+fn length(value: string) -> i64;
+fn contains(value: string, needle: string) -> bool;
+fn trim(value: string) -> string;
+fn replace(value: string, old: string, new_value: string) -> string;

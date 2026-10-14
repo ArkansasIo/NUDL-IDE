@@ -1,0 +1,20 @@
+module examples.calculator;
+
+fn add(a: f64, b: f64) -> f64 {
+    return a + b;
+}
+
+fn subtract(a: f64, b: f64) -> f64 {
+    return a - b;
+}
+
+fn multiply(a: f64, b: f64) -> f64 {
+    return a * b;
+}
+
+fn main() -> i64 {
+    print(add(2.0, 3.0));
+    print(subtract(8.0, 3.0));
+    print(multiply(4.0, 5.0));
+    return 0;
+}

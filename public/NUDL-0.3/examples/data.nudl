@@ -1,0 +1,11 @@
+schema Product {
+  id: u64 required
+  name: text required
+  price: f64
+  active: bool = true
+}
+
+data products: Product {
+  { id: 100, name: "Example", price: 19.95, active: true }
+  { id: 101, name: "Sample", price: 4.50 }
+}

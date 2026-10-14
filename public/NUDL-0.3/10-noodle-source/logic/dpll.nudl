@@ -1,0 +1,30 @@
+module logic.dpll;
+
+schema Assignment {
+    variable: string required;
+    value: bool required;
+}
+
+fn unit_propagation() -> bool {
+    return true;
+}
+
+fn pure_literal_elimination() -> bool {
+    return true;
+}
+
+fn dpll() -> bool {
+    # Research implementation stages:
+    # 1. simplify
+    # 2. unit propagate
+    # 3. eliminate pure literals
+    # 4. choose a branching variable
+    # 5. recursively search
+    # 6. backtrack on contradiction
+    return true;
+}
+
+fn main() -> i64 {
+    print(dpll());
+    return 0;
+}

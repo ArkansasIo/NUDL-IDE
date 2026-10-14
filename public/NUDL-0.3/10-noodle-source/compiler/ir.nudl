@@ -1,0 +1,20 @@
+module compiler.ir;
+
+schema Instruction {
+    opcode: string required;
+    operands: Array<string>;
+    result: string;
+}
+
+schema FunctionIR {
+    name: string required;
+    instructions: Array<Instruction>;
+}
+
+schema ModuleIR {
+    functions: Array<FunctionIR>;
+}
+
+fn lower(program: Program) -> ModuleIR {
+    return ModuleIR { functions: [] };
+}

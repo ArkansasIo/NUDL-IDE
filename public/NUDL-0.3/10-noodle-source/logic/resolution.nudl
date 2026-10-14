@@ -1,0 +1,20 @@
+module logic.resolution;
+
+schema Literal {
+    name: string required;
+    negated: bool required;
+}
+
+schema Clause {
+    literals: Array<Literal>;
+}
+
+fn resolve() -> bool {
+    # Resolution derives a clause from complementary literals.
+    return true;
+}
+
+fn main() -> i64 {
+    print(resolve());
+    return 0;
+}

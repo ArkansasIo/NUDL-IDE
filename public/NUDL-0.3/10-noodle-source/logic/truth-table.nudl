@@ -1,0 +1,13 @@
+module logic.truth_table;
+
+fn implication(a: bool, b: bool) -> bool {
+    return !a || b;
+}
+
+fn main() -> i64 {
+    print(implication(false, false));
+    print(implication(false, true));
+    print(implication(true, false));
+    print(implication(true, true));
+    return 0;
+}

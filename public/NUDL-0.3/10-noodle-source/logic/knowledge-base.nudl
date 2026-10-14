@@ -1,0 +1,20 @@
+module logic.knowledge_base;
+
+schema Fact {
+    subject: string required;
+    predicate: string required;
+    object: string required;
+}
+
+fn same_relation(a: Fact, b: Fact) -> bool {
+    return a.subject == b.subject &&
+           a.predicate == b.predicate &&
+           a.object == b.object;
+}
+
+fn main() -> i64 {
+    let a = Fact { subject: "Socrates", predicate: "is", object: "human" };
+    let b = Fact { subject: "Socrates", predicate: "is", object: "human" };
+    print(same_relation(a, b));
+    return 0;
+}

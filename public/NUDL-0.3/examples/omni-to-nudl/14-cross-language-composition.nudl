@@ -1,0 +1,13 @@
+// NUDL translation example: cross-language composition through typed IR
+module example.interop
+
+foreign python function normalize(text) -> text
+foreign c function fast_sum(values: f64[]) -> f64
+foreign javascript function render(value: text) -> Unit
+
+let source = "  Noodle  "
+let normalized = normalize(source)
+let total = fast_sum([1.0, 2.0, 3.0])
+render(normalized + " total=" + total)
+
+// The compiler should lower all foreign calls through explicit typed interfaces.

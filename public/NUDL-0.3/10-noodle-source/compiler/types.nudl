@@ -1,0 +1,13 @@
+module compiler.types;
+
+schema Type {
+    name: string required;
+    nullable: bool;
+}
+
+fn primitive(name: string) -> Type {
+    return Type {
+        name: name,
+        nullable: false
+    };
+}

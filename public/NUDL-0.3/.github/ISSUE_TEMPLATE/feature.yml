@@ -1,0 +1,41 @@
+name: Noodle feature request
+description: Propose a language, compiler, runtime, IDE, math, or interoperability feature
+title: "[FEATURE] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What should Noodle be able to do?
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed design
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Owning area
+      options:
+        - Language
+        - Compiler
+        - Runtime
+        - Backend
+        - IDE
+        - Mathematics
+        - Standard Library
+        - Interoperability
+        - Testing
+        - Documentation
+        - Education
+        - Infrastructure
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Tests, benchmarks, conformance checks, or proofs needed

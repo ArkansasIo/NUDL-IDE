@@ -1,0 +1,5 @@
+module std.regex;
+
+fn is_match(pattern: string, value: string) -> bool;
+fn find(pattern: string, value: string) -> Array<string>;
+fn replace(pattern: string, value: string, replacement: string) -> string;

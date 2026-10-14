@@ -1,0 +1,28 @@
+// NUDL-EX-OMNI-004
+// Transformation example.
+// Proposed syntax.
+
+schema Sale {
+  id: u64 required
+  product: text required
+  amount: f64 required
+  region: text required
+}
+
+data sales: Sale {
+  { id: 1, product: "A", amount: 10.0, region: "CA" }
+  { id: 2, product: "A", amount: 15.0, region: "US" }
+  { id: 3, product: "B", amount: 20.0, region: "CA" }
+}
+
+fn canadian_sales(input: Sale[]) -> Sale[] {
+  return input where item.region == "CA"
+}
+
+// Expected output:
+// 1 A 10.0 CA
+// 3 B 20.0 CA
+//
+// INPUT -> FILTER -> OUTPUT
+// This is the basic deterministic transformation model
+// that can later lower into NUDL's typed IR.

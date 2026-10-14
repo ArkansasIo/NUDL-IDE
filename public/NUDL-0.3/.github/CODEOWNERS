@@ -1,0 +1,42 @@
+# Noodle ownership map
+# Replace placeholders with real GitHub handles when maintainers are assigned.
+
+# Project-wide architecture
+* @NOODLE-LANGUAGE-ARCHITECT
+
+# Compiler
+/03-compiler/ @NOODLE-COMPILER
+/CMakeLists.txt @NOODLE-COMPILER @NOODLE-INFRA
+
+# Runtime
+/04-runtime/ @NOODLE-RUNTIME
+
+# Standard library
+/05-standard-library/ @NOODLE-STDLIB
+
+# Examples and tests
+/06-examples/ @NOODLE-EDUCATION
+/07-tests/ @NOODLE-TESTING
+
+# Documentation and education
+/08-documentation/ @NOODLE-DOCS
+/11-education/ @NOODLE-EDUCATION
+/12-math-source/ @NOODLE-MATH
+
+# Interoperability and backends
+/13-interoperability/ @NOODLE-BACKENDS @NOODLE-STDLIB
+
+# Self-hosting
+/09-self-hosting/ @NOODLE-COMPILER
+
+# Noodle source corpus
+/10-noodle-source/ @NOODLE-COMPILER @NOODLE-MATH
+
+# IDE
+/docs/ide/ @NOODLE-IDE
+
+# Plugins
+/plugins/ @NOODLE-STDLIB @NOODLE-BACKENDS
+
+# CI / infrastructure
+/.github/ @NOODLE-INFRA

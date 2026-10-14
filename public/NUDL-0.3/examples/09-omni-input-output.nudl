@@ -1,0 +1,27 @@
+// NUDL-EX-OMNI-002
+// Explicit input/output example.
+// Proposed syntax.
+
+schema Product {
+  id: u64 required
+  name: text required
+  price: f64 required
+  quantity: u64 required
+}
+
+data input: Product {
+  { id: 101, name: "Widget", price: 10.00, quantity: 3 }
+  { id: 102, name: "Cable", price: 5.50, quantity: 4 }
+}
+
+fn line_total(item: Product) -> f64 {
+  return item.price * item.quantity
+}
+
+// Intended output:
+// Product 101 -> 30.00
+// Product 102 -> 22.00
+// Grand total -> 52.00
+//
+// INPUT: input
+// OUTPUT: line totals + grand total

@@ -1,0 +1,30 @@
+# NUDL illustrative syntax — algebra and calculus
+# File ID: NUDL-MATH-EX-002
+# NOTE: These examples specify desired behavior; parser/runtime support is future work.
+
+program AlgebraAndCalculus {
+    let expanded = expand((x + 2) ^ 2)
+    # Expected symbolic result: x^2 + 4*x + 4
+
+    let factored = factor(x ^ 2 - 9)
+    # Expected symbolic result: (x - 3) * (x + 3)
+
+    let roots = solve(x ^ 2 - 5*x + 6 == 0, for: x)
+    # Expected solutions: x = 2, x = 3
+
+    let derivative = differentiate(x ^ 4 * sin(x), with_respect_to: x)
+    # Expected: 4*x^3*sin(x) + x^4*cos(x)
+
+    let definite_integral = integrate(x ^ 2, x, from: 0, to: 3)
+    # Expected exact result: 9
+
+    let limit_value = limit(sin(x) / x, x, approaches: 0)
+    # Expected result: 1
+
+    output(expanded)
+    output(factored)
+    output(roots)
+    output(derivative)
+    output(definite_integral)
+    output(limit_value)
+}

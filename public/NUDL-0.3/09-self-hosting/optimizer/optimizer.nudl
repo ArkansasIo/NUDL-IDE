@@ -1,0 +1,11 @@
+module compiler.optimizer;
+
+fn optimize(module: Module) -> Module {
+    # Initial optimization passes:
+    # constant folding
+    # dead-code elimination
+    # algebraic simplification
+    # common subexpression elimination
+    # later: SSA, inlining, vectorization
+    return module;
+}

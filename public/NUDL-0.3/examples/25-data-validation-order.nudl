@@ -1,0 +1,8 @@
+schema Person {
+    name: string required;
+    age: i64 required;
+}
+data people: Person {
+    { name: "Ada", age: 36 },
+    { name: "Grace", age: 28 }
+}

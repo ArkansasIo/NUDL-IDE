@@ -1,0 +1,12 @@
+{
+  "id":"example.analytics",
+  "name":"Example Analytics Plugin",
+  "version":"0.1.0",
+  "api":"0.1",
+  "nudl":"0.3",
+  "kind":"runtime",
+  "entry":"analytics_plugin",
+  "platforms":["windows","linux","macos"],
+  "capabilities":[],
+  "dependencies":[]
+}

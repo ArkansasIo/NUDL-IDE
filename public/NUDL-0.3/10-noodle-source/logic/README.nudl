@@ -1,0 +1,25 @@
+module logic;
+
+# Noodle Logic Algorithm Corpus
+#
+# Families:
+# Boolean logic
+# Truth tables
+# CNF/DNF/NNF
+# SAT/DPLL/CDCL
+# Resolution
+# Unification
+# Forward/backward chaining
+# Horn logic
+# Theorem proving
+# Term rewriting
+# Congruence closure
+# Temporal/modal logic
+# Model checking
+# Knowledge bases
+# Graph closure
+# Constraint solving
+# Probabilistic/fuzzy logic
+#
+# Each implementation is accompanied by a research specification
+# describing semantics, invariants, complexity, and tests.

@@ -1,0 +1,19 @@
+// NUDL translation example: explicit input -> transform -> output
+module example.pipeline
+
+schema Product {
+  id: u64 required
+  name: text required
+  price: f64 required
+  quantity: u64 required
+}
+
+fn line_total(p: Product) -> f64 {
+  return p.price * p.quantity
+}
+
+pipeline sales {
+  input products: Product[]
+  transform totals = products.map(line_total)
+  output totals
+}

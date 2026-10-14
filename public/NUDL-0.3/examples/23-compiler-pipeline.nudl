@@ -1,0 +1,7 @@
+fn calculate(x: i64) -> i64 {
+    let doubled = x * 2;
+    let result = doubled + 1;
+    return result;
+}
+let answer = calculate(20);
+print(answer);

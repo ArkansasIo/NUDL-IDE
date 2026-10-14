@@ -1,0 +1,10 @@
+module runtime.errors;
+
+schema Error {
+    code: i64 required;
+    message: string required;
+}
+
+fn error(code: i64, message: string) -> Error {
+    return Error { code: code, message: message };
+}

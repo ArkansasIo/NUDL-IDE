@@ -1,0 +1,13 @@
+// NUDL translation example: modular library use
+module example.library
+
+import std.core
+import std.collections
+import std.math
+
+fn mean(values: Real[]) -> Real {
+  return values.reduce(0.0, (a, b) => a + b) / values.length()
+}
+
+let data = [2.0, 4.0, 8.0, 10.0]
+print(mean(data))

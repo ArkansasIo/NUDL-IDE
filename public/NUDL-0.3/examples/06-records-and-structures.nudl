@@ -1,0 +1,11 @@
+struct Point {
+    x: f64;
+    y: f64;
+}
+struct Rectangle {
+    origin: Point;
+    width: f64;
+    height: f64;
+}
+let origin = Point { x: 0.0, y: 0.0 };
+let box = Rectangle { origin: origin, width: 100.0, height: 50.0 };

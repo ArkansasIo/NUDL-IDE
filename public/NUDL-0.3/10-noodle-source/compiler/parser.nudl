@@ -1,0 +1,15 @@
+module compiler.parser;
+
+fn parse_expression(tokens: Array<Token>) -> Expression {
+    return Expression {
+        kind: "expression",
+        value: ""
+    };
+}
+
+fn parse_program(tokens: Array<Token>) -> Program {
+    return Program {
+        functions: [],
+        statements: []
+    };
+}

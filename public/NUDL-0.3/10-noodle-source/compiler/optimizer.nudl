@@ -1,0 +1,14 @@
+module compiler.optimizer;
+
+fn constant_fold(module: ModuleIR) -> ModuleIR {
+    return module;
+}
+
+fn eliminate_dead_code(module: ModuleIR) -> ModuleIR {
+    return module;
+}
+
+fn optimize(module: ModuleIR) -> ModuleIR {
+    let folded = constant_fold(module);
+    return eliminate_dead_code(folded);
+}

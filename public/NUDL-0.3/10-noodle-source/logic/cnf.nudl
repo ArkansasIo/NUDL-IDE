@@ -1,0 +1,17 @@
+module logic.cnf;
+
+# CNF research representation:
+# (A OR B) AND (NOT C OR D)
+
+schema Clause {
+    literals: Array<string>;
+}
+
+schema Formula {
+    clauses: Array<Clause>;
+}
+
+fn main() -> i64 {
+    print("CNF: (A OR B) AND (NOT C OR D)");
+    return 0;
+}

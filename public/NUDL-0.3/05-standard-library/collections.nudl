@@ -1,0 +1,10 @@
+module std.collections
+
+type Array<T>
+type Map<K, V>
+type Set<T>
+
+fn length<T>(items: Array<T>) -> Integer
+fn map<T, U>(items: Array<T>, transform: fn(T) -> U) -> Array<U>
+fn filter<T>(items: Array<T>, predicate: fn(T) -> Bool) -> Array<T>
+fn reduce<T, U>(items: Array<T>, initial: U, combine: fn(U, T) -> U) -> U

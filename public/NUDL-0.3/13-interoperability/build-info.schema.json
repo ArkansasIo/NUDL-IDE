@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Noodle Build Information",
+  "type": "object",
+  "required": ["product", "build_id", "build_name", "version", "build_number", "target"],
+  "properties": {
+    "product": {"type": "string"},
+    "project": {"type": "string"},
+    "build_id": {"type": "string"},
+    "build_name": {"type": "string"},
+    "version": {"type": "string"},
+    "build_number": {"type": "integer", "minimum": 1},
+    "release_channel": {"type": "string"},
+    "target": {"type": "string"},
+    "architecture": {"type": "string"},
+    "git_commit": {"type": "string"},
+    "developers": {"type": "array", "items": {"type": "string"}},
+    "teams": {"type": "array", "items": {"type": "string"}}
+  }
+}

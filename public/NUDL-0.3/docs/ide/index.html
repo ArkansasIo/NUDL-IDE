@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Noodle IDE 0.3">
+<title>Noodle IDE 0.3</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./blueprint.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="windowTitle"><b class="logo">N</b><div><strong>Noodle IDE</strong><small>Noodle 0.3 • main.nudl</small></div></div>
+  <nav class="menubar">
+    <div class="menu"><button>File ▾</button><div class="submenu"><button id="newBtn">New</button><button id="saveBtn">Save</button><button id="downloadCppBtn">Export C++</button></div></div>
+    <div class="menu"><button>Edit ▾</button><div class="submenu"><button id="formatBtn">Format</button><button id="clearBtn">Clear</button></div></div>
+    <div class="menu"><button>Build ▾</button><div class="submenu"><button id="compileBtn">Compile</button><button id="runBtn">Run</button><button id="checkBtn">Diagnostics</button></div></div>
+    <div class="menu"><button>View ▾</button><div class="submenu"><button id="textModeBtn">Text Editor</button><button id="blueprintModeBtn">Blueprint Editor</button></div></div>
+    <div class="menu"><button>Tools ▾</button><div class="submenu"><button id="exampleBtn">Load example</button><button id="tokensBtn">Inspect tokens</button><button id="astBtn">Inspect AST</button></div></div>
+    <div class="menu"><button>Help ▾</button><div class="submenu"><a href="https://github.com/ArkansasIo/NUDL-0.3" target="_blank">GitHub ↗</a><button id="aboutBtn">About</button></div></div>
+  </nav>
+  <div class="actions"><label>Target <select id="target"><option>Interpreter</option><option>C++</option><option>C</option><option>Rust</option><option>Python</option><option>JavaScript</option><option>TypeScript</option><option>C#</option><option>Java</option><option>Swift</option><option>WASM</option></select></label><button id="quickCompile" class="primary">▶ Build</button></div>
+</header>
+<div class="toolstrip">
+  <button id="sidebarToggle" title="Toggle project panel">☰</button><button id="quickNew">＋</button><button id="quickSave">💾</button><button id="quickCompile2">▶</button><button id="quickRun2">⏵</button>
+  <span class="tool-sep"></span><span class="crumb">Noodle / Workspace / main.nudl</span><span class="modeBadge" id="modeBadge">TEXT</span><span class="tool-spacer"></span><span class="build-state">Ready</span>
+</div>
+<main class="workspace">
+  <aside class="sidebar" id="sidebar">
+    <h2>PROJECT</h2><button class="file active">● main.nudl</button><button class="file">ƒ math.nudl</button><button class="file">λ hello.nudl</button><button class="file">◇ Player.nblueprint</button>
+    <h2>VIEWS</h2><button id="sidebarText">Text Editor</button><button id="sidebarBlueprint">Blueprint Editor</button>
+    <h2>TOOLS</h2><button id="sidebarFormat">Format source</button><button id="sidebarExample">Load example</button><button id="sidebarTokens">Token inspector</button>
+    <h2>TERMINAL</h2><button id="clearTerminal">Clear terminal</button>
+  </aside>
+  <section class="centerPane">
+    <section class="textEditorView" id="textEditorView">
+      <div class="tabs"><span class="tab">main.nudl</span><span id="status">Ready</span></div>
+      <textarea id="editor" spellcheck="false" aria-label="Noodle source editor">fn main() -> i64 {
+    print("Hello, Noodle!");
+    return 0;
+}</textarea>
+    </section>
+    <section class="blueprintPane" id="blueprintPane">
+      <div class="bpToolbar"><strong>Player.nblueprint</strong><button id="bpExampleBegin">Begin Play</button><button id="bpExampleHealth">Damage / Health</button><button id="bpAddNode">＋ Node</button><button id="bpFit">Fit</button><span class="bpSpacer"></span><span id="bpStatus">Blueprint graph</span><button id="bpCompile" class="primary">Compile to Noodle</button></div>
+      <div class="bpBody"><div class="bpCanvas"><div class="bpNodes" id="bpNodes"></div></div><aside class="bpSide"><h3>PALETTE</h3><button>Events</button><button>Flow Control</button><button>Variables</button><button>Math</button><button>Logic</button><button>Functions</button><button>Objects</button><button>Data</button><h3>GENERATED NOODLE</h3><textarea id="bpSource" class="bpSource" spellcheck="false"></textarea></aside></div>
+    </section>
+  </section>
+  <aside class="rightPane">
+    <div class="dockTabs"><button class="dock active">Solution</button><button class="dock">Outline</button><button class="dock">Properties</button></div>
+    <div class="panel"><h2>DIAGNOSTICS</h2><pre id="diagnostics">No diagnostics.</pre></div>
+    <div class="panel"><h2>COMPILER</h2><pre id="compiler">Target: Interpreter
+Backend: browser analyzer
+Status: ready</pre></div>
+    <div class="panel"><h2>CONSOLE</h2><pre id="console">[IDE] Noodle 0.3 ready.</pre></div>
+  </aside>
+</main>
+<section class="bottomDock"><div class="bottomTabs"><button class="bottomTab active">TERMINAL</button><button class="bottomTab">OUTPUT</button><button class="bottomTab">PROBLEMS</button><button class="bottomTab">DEBUG CONSOLE</button><span class="dockSpacer"></span><button id="clearTerminal2">Clear</button></div><pre id="bottomOutput">Noodle terminal ready.
+$ _</pre></section>
+<footer><span>Noodle 0.3</span><span>Ln 1, Col 1</span><span>Spaces: 4</span><span>UTF-8</span><span>Target: Interpreter</span><span class="footerRight">Ready • Noodle Language Service</span></footer>
+<script src="./app.js"></script><script src="./blueprint.js"></script>
+</body></html>

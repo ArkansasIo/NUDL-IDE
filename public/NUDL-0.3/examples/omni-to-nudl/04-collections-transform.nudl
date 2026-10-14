@@ -1,0 +1,9 @@
+// NUDL translation example: collection transformation
+module example.transform
+
+let values: i64[] = [1, 2, 3, 4, 5]
+let doubled = values.map(x => x * 2)
+let even = doubled.filter(x => x % 2 == 0)
+let total = even.reduce(0, (a, b) => a + b)
+
+print(total)

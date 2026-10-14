@@ -1,0 +1,21 @@
+module compiler.parser;
+
+schema Expression {
+    kind: string required;
+    text: string;
+}
+
+schema Statement {
+    kind: string required;
+    text: string;
+}
+
+schema Function {
+    name: string required;
+    return_type: string required;
+}
+
+schema Program {
+    functions: Array<Function>;
+    statements: Array<Statement>;
+}

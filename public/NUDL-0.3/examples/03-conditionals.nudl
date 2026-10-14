@@ -1,0 +1,9 @@
+fn classify(value: i64) -> i64 {
+    if (value > 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+let positive = classify(7);
+print(positive);

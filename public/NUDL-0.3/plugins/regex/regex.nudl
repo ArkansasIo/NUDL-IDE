@@ -1,0 +1,10 @@
+module regex;
+
+type Regex;
+type Match;
+
+fn compile(pattern: string) -> Regex;
+fn is_match(pattern: string, input: string) -> bool;
+fn find(pattern: string, input: string) -> Array<Match>;
+fn replace(pattern: string, input: string, replacement: string) -> string;
+fn split(pattern: string, input: string) -> Array<string>;

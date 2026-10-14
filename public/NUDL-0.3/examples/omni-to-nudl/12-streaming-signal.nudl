@@ -1,0 +1,16 @@
+// NUDL translation example: streaming/signal-processing model
+module example.signal
+
+stream input samples: f32
+stream output filtered: f32
+
+state previous: f32 = 0.0
+
+on sample x {
+  let y = 0.8 * previous + 0.2 * x
+  previous = x
+  emit filtered(y)
+}
+
+// This is a general streaming model inspired by staged DSP execution.
+// It does not copy any Omni audio DSL implementation.

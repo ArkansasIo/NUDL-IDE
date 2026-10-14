@@ -1,0 +1,13 @@
+// NUDL translation example: mathematical computation
+module example.math
+
+import std.math
+
+let x: Real = 2.0
+let polynomial = x^3 + 2*x^2 - x + 1
+let derivative = differentiate(t => t^3 + 2*t^2 - t + 1, at: x)
+let integral = integrate(t => t^2, from: 0.0, to: x)
+
+print(polynomial)
+print(derivative)
+print(integral)

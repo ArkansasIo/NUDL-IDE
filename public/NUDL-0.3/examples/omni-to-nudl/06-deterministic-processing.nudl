@@ -1,0 +1,11 @@
+// NUDL translation example: deterministic execution
+module example.deterministic
+
+fn stable_sum(values: f64[]) -> f64 {
+  let ordered = values.sort()
+  return ordered.reduce(0.0, (a, b) => a + b)
+}
+
+let seed: u64 = 42
+let samples = random(seed, count: 8)
+print(stable_sum(samples))
