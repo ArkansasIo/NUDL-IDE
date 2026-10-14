@@ -1183,6 +1183,24 @@
       "mode": "100644",
       "sourceSha": "44bce9d495ee8514b784a1bb585bdff37dd214ba",
       "targetSha": "44bce9d495ee8514b784a1bb585bdff37dd214ba"
+    },
+    {
+      "path": "examples/universal-targets.nudl",
+      "mode": "100644",
+      "sourceSha": "1bce3e586e3a71b8aa2c40720c4c005dc50a0c0f",
+      "targetSha": "1bce3e586e3a71b8aa2c40720c4c005dc50a0c0f"
+    },
+    {
+      "path": "grammar/NUDL-0.3.ebnf",
+      "mode": "100644",
+      "sourceSha": "83eff6c4169b1f688e8537032ede7220798808b7",
+      "targetSha": "83eff6c4169b1f688e8537032ede7220798808b7"
+    },
+    {
+      "path": "plugins/README.md",
+      "mode": "100644",
+      "sourceSha": "4c84ee176c20b36e4fa44e81bae7c7a34aa900c6",
+      "targetSha": "4c84ee176c20b36e4fa44e81bae7c7a34aa900c6"
     }
   ]
 }
