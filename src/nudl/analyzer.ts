@@ -1,4 +1,9 @@
-import { Program, Diagnostic } from './types';
+import { Program, Diagnostic, TokenKind } from './types';
+import { lex } from './lexer';
+
+function diagnostic(code: string, message: string, line = 1, col = 1, severity: Diagnostic['severity'] = 'error'): Diagnostic {
+  return { code, message, line, col, severity };
+}
 
 export function analyzeProgram(
   source: string,
@@ -9,98 +14,130 @@ export function analyzeProgram(
   const diagnostics: Diagnostic[] = [...lexDiagnostics, ...parseDiagnostics];
 
   if (!source.trim()) {
-    diagnostics.push({
-      code: 'E000',
-      message: 'Source file is empty.',
-      line: 1,
-      col: 1,
-      severity: 'warning',
-    });
+    diagnostics.push(diagnostic('E000', 'Source file is empty.', 1, 1, 'warning'));
     return diagnostics;
   }
 
-  // Check unmatched braces
-  const openBraces = (source.match(/\{/g) || []).length;
-  const closeBraces = (source.match(/\}/g) || []).length;
-  if (openBraces !== closeBraces) {
-    diagnostics.push({
-      code: 'E102',
-      message: `Unmatched curly braces: ${openBraces} '{' vs ${closeBraces} '}'`,
-      line: 1,
-      col: 1,
-      severity: 'error',
-    });
+  // Balance syntax tokens, not raw characters: braces inside strings/comments are not delimiters.
+  const tokens = lex(source).tokens.filter((t) => t.kind !== TokenKind.Comment && t.kind !== TokenKind.End);
+  const pairs: Record<string, string> = {
+    [TokenKind.RBrace]: TokenKind.LBrace,
+    [TokenKind.RParen]: TokenKind.LParen,
+    [TokenKind.RBracket]: TokenKind.LBracket,
+  };
+  const opening = new Set<string>([TokenKind.LBrace, TokenKind.LParen, TokenKind.LBracket]);
+  const stack: Array<{ kind: string; line: number; col: number }> = [];
+  for (const token of tokens) {
+    if (opening.has(token.kind)) {
+      stack.push({ kind: token.kind, line: token.line, col: token.col });
+    } else if (token.kind in pairs) {
+      const expected = pairs[token.kind];
+      const top = stack[stack.length - 1];
+      if (!top || top.kind !== expected) {
+        diagnostics.push(diagnostic(
+          'E104',
+          `Unexpected closing delimiter '${token.text}'.`,
+          token.line,
+          token.col
+        ));
+      } else {
+        stack.pop();
+      }
+    }
+  }
+  for (const open of stack) {
+    const close = open.kind === TokenKind.LBrace ? '}' : open.kind === TokenKind.LParen ? ')' : ']';
+    diagnostics.push(diagnostic(
+      'E105',
+      `Unclosed delimiter; expected '${close}'.`,
+      open.line,
+      open.col
+    ));
   }
 
-  // Check unmatched parentheses
-  const openParens = (source.match(/\(/g) || []).length;
-  const closeParens = (source.match(/\)/g) || []).length;
-  if (openParens !== closeParens) {
-    diagnostics.push({
-      code: 'E103',
-      message: `Unmatched parentheses: ${openParens} '(' vs ${closeParens} ')'`,
-      line: 1,
-      col: 1,
-      severity: 'error',
-    });
-  }
-
-  // Check main function presence
+  // Entry-point guidance.
   const hasMain = program.functions.some((f) => f.name === 'main');
   const hasTopLevelStatements = program.statements.some(
     (s) => s.type === 'ExprStmt' || s.type === 'Binding' || s.type === 'While' || s.type === 'If'
   );
-
   if (!hasMain && !hasTopLevelStatements && program.functions.length > 0) {
-    diagnostics.push({
-      code: 'W101',
-      message: 'No `fn main() -> ...` entry point found. Top-level functions will not run automatically unless invoked.',
-      line: program.functions[0]?.line || 1,
-      col: 1,
-      severity: 'warning',
-    });
+    diagnostics.push(diagnostic(
+      'W101',
+      'No `fn main()` entry point found. Top-level functions will not run automatically unless invoked.',
+      program.functions[0]?.line || 1,
+      1,
+      'warning'
+    ));
   }
 
-  // Check for duplicate function names
+  // Duplicate function declarations.
   const seenFns = new Set<string>();
-  for (const f of program.functions) {
-    if (seenFns.has(f.name)) {
-      diagnostics.push({
-        code: 'E201',
-        message: `Duplicate function declaration '${f.name}'`,
-        line: f.line || 1,
-        col: 1,
-        severity: 'error',
-      });
+  for (const fn of program.functions) {
+    if (seenFns.has(fn.name)) {
+      diagnostics.push(diagnostic('E201', `Duplicate function declaration '${fn.name}'.`, fn.line || 1, 1));
     }
-    seenFns.add(f.name);
+    seenFns.add(fn.name);
   }
 
-  // Schema & Data validation
-  const schemas = new Map(program.schemas.map((s) => [s.name, s]));
-  for (const db of program.dataBlocks) {
-    const targetSchema = schemas.get(db.schemaName);
-    if (!targetSchema) {
-      diagnostics.push({
-        code: 'W202',
-        message: `Data block '${db.name}' references schema '${db.schemaName}' which is not declared in this file.`,
-        line: db.line || 1,
-        col: 1,
-        severity: 'warning',
-      });
-    } else {
-      // Check required fields
-      for (const rec of db.records) {
-        for (const sf of targetSchema.fields) {
-          if (sf.required && rec.values[sf.name] === undefined && sf.defaultValue === undefined) {
-            diagnostics.push({
-              code: 'E203',
-              message: `Record in data '${db.name}' is missing required field '${sf.name}' defined by schema '${targetSchema.name}'.`,
-              line: db.line || 1,
-              col: 1,
-              severity: 'error',
-            });
-          }
+  // Duplicate struct/schema declarations share a namespace in this initial implementation.
+  const seenTypes = new Set<string>();
+  for (const typeDecl of [...program.structs, ...program.schemas]) {
+    if (seenTypes.has(typeDecl.name)) {
+      diagnostics.push(diagnostic('E202', `Duplicate type declaration '${typeDecl.name}'.`, typeDecl.line || 1, 1));
+    }
+    seenTypes.add(typeDecl.name);
+  }
+
+  // Validate schema field names and data records.
+  const schemas = new Map(program.schemas.map((schema) => [schema.name, schema]));
+  for (const schema of program.schemas) {
+    const fields = new Set<string>();
+    for (const field of schema.fields) {
+      if (fields.has(field.name)) {
+        diagnostics.push(diagnostic(
+          'E206',
+          `Duplicate field '${field.name}' in schema '${schema.name}'.`,
+          schema.line || 1,
+          1
+        ));
+      }
+      fields.add(field.name);
+    }
+  }
+
+  for (const data of program.dataBlocks) {
+    const schema = schemas.get(data.schemaName);
+    if (!schema) {
+      diagnostics.push(diagnostic(
+        'W202',
+        `Data block '${data.name}' references schema '${data.schemaName}' which is not declared in this file.`,
+        data.line || 1,
+        1,
+        'warning'
+      ));
+      continue;
+    }
+
+    const knownFields = new Set(schema.fields.map((field) => field.name));
+    for (const record of data.records) {
+      for (const field of schema.fields) {
+        if (field.required && record.values[field.name] === undefined && field.defaultValue === undefined) {
+          diagnostics.push(diagnostic(
+            'E203',
+            `Record in data '${data.name}' is missing required field '${field.name}' defined by schema '${schema.name}'.`,
+            data.line || 1,
+            1
+          ));
+        }
+      }
+      for (const fieldName of Object.keys(record.values)) {
+        if (!knownFields.has(fieldName)) {
+          diagnostics.push(diagnostic(
+            'E204',
+            `Field '${fieldName}' is not declared in schema '${schema.name}'.`,
+            data.line || 1,
+            1
+          ));
         }
       }
     }
