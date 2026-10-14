@@ -961,6 +961,54 @@
       "mode": "100644",
       "sourceSha": "f9ac5cf18abaa5e1e04c931b86f56918d8085692",
       "targetSha": "f9ac5cf18abaa5e1e04c931b86f56918d8085692"
+    },
+    {
+      "path": "examples/05-arrays.nudl",
+      "mode": "100644",
+      "sourceSha": "f9ef108e22089ced92355bd56ae89f8804fd81ff",
+      "targetSha": "f9ef108e22089ced92355bd56ae89f8804fd81ff"
+    },
+    {
+      "path": "examples/06-records-and-structures.nudl",
+      "mode": "100644",
+      "sourceSha": "ec103a138f3cc35678e9b78c1a448c642d4cdc85",
+      "targetSha": "ec103a138f3cc35678e9b78c1a448c642d4cdc85"
+    },
+    {
+      "path": "examples/08-omni-inspired-pipeline.nudl",
+      "mode": "100644",
+      "sourceSha": "d6ff8546db72b1a084162dca20c1d7c174a9dab7",
+      "targetSha": "d6ff8546db72b1a084162dca20c1d7c174a9dab7"
+    },
+    {
+      "path": "examples/09-omni-input-output.nudl",
+      "mode": "100644",
+      "sourceSha": "177d18a9cfc8b441210e453b0d48580bbf16ec00",
+      "targetSha": "177d18a9cfc8b441210e453b0d48580bbf16ec00"
+    },
+    {
+      "path": "examples/10-omni-validation-error.nudl",
+      "mode": "100644",
+      "sourceSha": "92bcc55d55d15d630e196b8e4d01d98f3a65ff0b",
+      "targetSha": "92bcc55d55d15d630e196b8e4d01d98f3a65ff0b"
+    },
+    {
+      "path": "examples/11-omni-transform.nudl",
+      "mode": "100644",
+      "sourceSha": "da9cc4811045930dfc9e899708cfb815fd4a4271",
+      "targetSha": "da9cc4811045930dfc9e899708cfb815fd4a4271"
+    },
+    {
+      "path": "examples/12-nudl-composed-compilation.nudl",
+      "mode": "100644",
+      "sourceSha": "56c4a66ba534a4fa66bb8aa9dcc3c723a7b9b963",
+      "targetSha": "56c4a66ba534a4fa66bb8aa9dcc3c723a7b9b963"
+    },
+    {
+      "path": "examples/13-cross-language-basic.nudl",
+      "mode": "100644",
+      "sourceSha": "74f93a8b0768c3390c20c0f29dd0bc576a678632",
+      "targetSha": "74f93a8b0768c3390c20c0f29dd0bc576a678632"
     }
   ]
 }
