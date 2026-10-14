@@ -1237,6 +1237,36 @@
       "mode": "100644",
       "sourceSha": "afe455b6f0c70d925dce4dc8d0075b186ed8d758",
       "targetSha": "afe455b6f0c70d925dce4dc8d0075b186ed8d758"
+    },
+    {
+      "path": "runtime/README.md",
+      "mode": "100644",
+      "sourceSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b",
+      "targetSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b"
+    },
+    {
+      "path": "spec/BACKEND-SPEC-0.3.md",
+      "mode": "100644",
+      "sourceSha": "977cac3911189b0844511ae3e43161d0158bb05a",
+      "targetSha": "977cac3911189b0844511ae3e43161d0158bb05a"
+    },
+    {
+      "path": "spec/SPEC-0.3.md",
+      "mode": "100644",
+      "sourceSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c",
+      "targetSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c"
+    },
+    {
+      "path": "stdlib/README.md",
+      "mode": "100644",
+      "sourceSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4",
+      "targetSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4"
+    },
+    {
+      "path": "tests/README.md",
+      "mode": "100644",
+      "sourceSha": "ad1c73657d59f16b96201f0181b2c71ce9742934",
+      "targetSha": "ad1c73657d59f16b96201f0181b2c71ce9742934"
     }
   ]
 }
