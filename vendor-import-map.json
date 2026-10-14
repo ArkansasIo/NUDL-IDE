@@ -241,6 +241,54 @@
       "mode": "100644",
       "sourceSha": "a21d2a4f48c31506961203cb7405f76e2da07369",
       "targetSha": "a21d2a4f48c31506961203cb7405f76e2da07369"
+    },
+    {
+      "path": "08-documentation/ARCHITECTURE.md",
+      "mode": "100644",
+      "sourceSha": "1da58747222a4fe19772a361ace3504270abb20a",
+      "targetSha": "1da58747222a4fe19772a361ace3504270abb20a"
+    },
+    {
+      "path": "08-documentation/BUILD-VERSIONING.md",
+      "mode": "100644",
+      "sourceSha": "bd4affa6cf38ad775b7e227703452bd72b2dab8a",
+      "targetSha": "bd4affa6cf38ad775b7e227703452bd72b2dab8a"
+    },
+    {
+      "path": "08-documentation/LANGUAGE.md",
+      "mode": "100644",
+      "sourceSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab",
+      "targetSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab"
+    },
+    {
+      "path": "08-documentation/NUDL-LANGUAGE-LIBRARY.md",
+      "mode": "100644",
+      "sourceSha": "29de3b8014405de62c98ccb36859be5ca7477909",
+      "targetSha": "29de3b8014405de62c98ccb36859be5ca7477909"
+    },
+    {
+      "path": "08-documentation/NUDL-LOGIC-ALGORITHM-CATALOG.md",
+      "mode": "100644",
+      "sourceSha": "45047263d5d9552cd599827a73fefa97636896c0",
+      "targetSha": "45047263d5d9552cd599827a73fefa97636896c0"
+    },
+    {
+      "path": "08-documentation/NUDL-LOGIC-RESEARCH.md",
+      "mode": "100644",
+      "sourceSha": "2a1e7bebbaa3125a188752ba53a58737e135cefa",
+      "targetSha": "2a1e7bebbaa3125a188752ba53a58737e135cefa"
+    },
+    {
+      "path": "08-documentation/NUDL-MATH-DOMAIN-MAP.md",
+      "mode": "100644",
+      "sourceSha": "0a7e69f53cbdf2c8f0a3b256934e31c624a3474e",
+      "targetSha": "0a7e69f53cbdf2c8f0a3b256934e31c624a3474e"
+    },
+    {
+      "path": "08-documentation/NUDL-MATH-TEST-PLAN.md",
+      "mode": "100644",
+      "sourceSha": "48cea9ed87abacd94a797d867eb865d692d99ef4",
+      "targetSha": "48cea9ed87abacd94a797d867eb865d692d99ef4"
     }
   ]
 }
