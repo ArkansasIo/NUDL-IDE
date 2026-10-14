@@ -38,6 +38,7 @@ Run these commands locally or inspect the GitHub Actions workflow before claimin
 - [Language support matrix](docs/LANGUAGE-SUPPORT-MATRIX.md)
 - [Standard-library reference](docs/STANDARD-LIBRARY-REFERENCE.md)
 - [Testing guide](docs/TESTING.md)
+- [Workspace format and safety](docs/WORKSPACE-FORMAT.md)
 - [Build and deployment](docs/BUILD-AND-DEPLOY.md)
 - [Native NUDL language specification](https://github.com/ArkansasIo/NUDL-0.3/tree/main/spec)
 
