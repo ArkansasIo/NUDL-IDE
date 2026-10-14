@@ -289,6 +289,54 @@
       "mode": "100644",
       "sourceSha": "48cea9ed87abacd94a797d867eb865d692d99ef4",
       "targetSha": "48cea9ed87abacd94a797d867eb865d692d99ef4"
+    },
+    {
+      "path": "08-documentation/NUDL-ORDER-OF-OPERATIONS.md",
+      "mode": "100644",
+      "sourceSha": "297f8b45564784e384b00591e76345b7262aafb7",
+      "targetSha": "297f8b45564784e384b00591e76345b7262aafb7"
+    },
+    {
+      "path": "08-documentation/NUDL-PERFORMANCE-ROADMAP.md",
+      "mode": "100644",
+      "sourceSha": "ed7b09c91d73faaa410bdbdb5fa15f1101c3e135",
+      "targetSha": "ed7b09c91d73faaa410bdbdb5fa15f1101c3e135"
+    },
+    {
+      "path": "08-documentation/NUDL-PERFORMANCE-TEST-PLAN.md",
+      "mode": "100644",
+      "sourceSha": "e118b07991cc413d885f733978744ea0889ce91e",
+      "targetSha": "e118b07991cc413d885f733978744ea0889ce91e"
+    },
+    {
+      "path": "08-documentation/NUDL-REGEX-EXTENSION.md",
+      "mode": "100644",
+      "sourceSha": "d3e5a9012e543bc8808fb74839e1fb4216d3e464",
+      "targetSha": "d3e5a9012e543bc8808fb74839e1fb4216d3e464"
+    },
+    {
+      "path": "08-documentation/OMNI-NUDL-TRANSLATION-GUIDE.md",
+      "mode": "100644",
+      "sourceSha": "b7d151b7d10fa2b949ad4f24a593a0865bb5336b",
+      "targetSha": "b7d151b7d10fa2b949ad4f24a593a0865bb5336b"
+    },
+    {
+      "path": "08-documentation/ROADMAP-INDEX.md",
+      "mode": "100644",
+      "sourceSha": "3125a9ff583a05e0f7d9ea53e2c181c20f6df971",
+      "targetSha": "3125a9ff583a05e0f7d9ea53e2c181c20f6df971"
+    },
+    {
+      "path": "09-self-hosting/BUILD-PLAN.md",
+      "mode": "100644",
+      "sourceSha": "2accee4d189ba32c99e83805ff64be93e6150a58",
+      "targetSha": "2accee4d189ba32c99e83805ff64be93e6150a58"
+    },
+    {
+      "path": "09-self-hosting/CONFORMANCE.md",
+      "mode": "100644",
+      "sourceSha": "371c944bcf45fce825a494235c91b7c893598947",
+      "targetSha": "371c944bcf45fce825a494235c91b7c893598947"
     }
   ]
 }
