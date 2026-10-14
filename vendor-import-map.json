@@ -1219,6 +1219,24 @@
       "mode": "100644",
       "sourceSha": "a16e78ce86bf4d54da8b4b860c3237ec3571541d",
       "targetSha": "a16e78ce86bf4d54da8b4b860c3237ec3571541d"
+    },
+    {
+      "path": "plugins/regex/plugin.json",
+      "mode": "100644",
+      "sourceSha": "de2fae5f018f73c6a5bf29222a12e6ff5110eb1d",
+      "targetSha": "de2fae5f018f73c6a5bf29222a12e6ff5110eb1d"
+    },
+    {
+      "path": "plugins/regex/regex.nudl",
+      "mode": "100644",
+      "sourceSha": "15d777ea7c5972212cd899acd3f8d5b23a5d6a8d",
+      "targetSha": "15d777ea7c5972212cd899acd3f8d5b23a5d6a8d"
+    },
+    {
+      "path": "plugins/schema/plugin-manifest.schema.json",
+      "mode": "100644",
+      "sourceSha": "afe455b6f0c70d925dce4dc8d0075b186ed8d758",
+      "targetSha": "afe455b6f0c70d925dce4dc8d0075b186ed8d758"
     }
   ]
 }
