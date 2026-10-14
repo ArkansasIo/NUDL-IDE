@@ -1,0 +1,6 @@
+{
+  "name": "NUDL 0.3 Studio",
+  "description": "Noodle Language IDE, Visual Blueprint Editor, AST Explorer, and Multi-Target Compiler for NUDL 0.3.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
