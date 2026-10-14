@@ -24,6 +24,8 @@ interface TopbarProps {
   onClear: () => void;
   onSave: () => void;
   onDownloadNudl: () => void;
+  onImportWorkspace: () => void;
+  onExportWorkspace: () => void;
   onExportTarget: () => void;
   onOpenDocs: () => void;
   onNewFile: () => void;
@@ -43,6 +45,8 @@ export const Topbar: React.FC<TopbarProps> = ({
   onClear,
   onSave,
   onDownloadNudl,
+  onImportWorkspace,
+  onExportWorkspace,
   onExportTarget,
   onOpenDocs,
   onNewFile,
@@ -109,6 +113,25 @@ export const Topbar: React.FC<TopbarProps> = ({
                 >
                   <span>Save</span>
                   <span className="text-[10px] text-[#71869b] font-mono">Ctrl+S</span>
+                </button>
+                <div className="my-1 border-t border-[#20334a]" />
+                <button
+                  onClick={() => {
+                    closeMenu();
+                    onImportWorkspace();
+                  }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#16334b] text-[#dce8f5] flex items-center gap-2"
+                >
+                  <FolderGit2 className="w-3.5 h-3.5 text-[#6ee7ff]" /> Import Workspace (.json)
+                </button>
+                <button
+                  onClick={() => {
+                    closeMenu();
+                    onExportWorkspace();
+                  }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#16334b] text-[#dce8f5] flex items-center gap-2"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#a9c5dc]" /> Export Workspace (.json)
                 </button>
                 <div className="my-1 border-t border-[#20334a]" />
                 <button
