@@ -913,6 +913,54 @@
       "mode": "100644",
       "sourceSha": "d979baa550d9927f4d74a4de452e352eed570744",
       "targetSha": "d979baa550d9927f4d74a4de452e352eed570744"
+    },
+    {
+      "path": "docs/ide/blueprint.js",
+      "mode": "100644",
+      "sourceSha": "34c2f2a4b9e510ce95f1c09576dad50d06538632",
+      "targetSha": "34c2f2a4b9e510ce95f1c09576dad50d06538632"
+    },
+    {
+      "path": "docs/ide/index.html",
+      "mode": "100644",
+      "sourceSha": "325e1e100d6d780033d6a1b40dd541fb38264092",
+      "targetSha": "325e1e100d6d780033d6a1b40dd541fb38264092"
+    },
+    {
+      "path": "docs/ide/style.css",
+      "mode": "100644",
+      "sourceSha": "fb884394578abd3b2f89d124b3cd00bc92dc617c",
+      "targetSha": "fb884394578abd3b2f89d124b3cd00bc92dc617c"
+    },
+    {
+      "path": "docs/index.html",
+      "mode": "100644",
+      "sourceSha": "cf392b45ee4b940b4342c468dc1b5aa10244475b",
+      "targetSha": "cf392b45ee4b940b4342c468dc1b5aa10244475b"
+    },
+    {
+      "path": "examples/01-basic-types.nudl",
+      "mode": "100644",
+      "sourceSha": "9ea0f27ae9c480cd03e4f1b4e34542ef68960087",
+      "targetSha": "9ea0f27ae9c480cd03e4f1b4e34542ef68960087"
+    },
+    {
+      "path": "examples/02-functions.nudl",
+      "mode": "100644",
+      "sourceSha": "cac75998b693b2acc46dcae3af591a638be257c7",
+      "targetSha": "cac75998b693b2acc46dcae3af591a638be257c7"
+    },
+    {
+      "path": "examples/03-conditionals.nudl",
+      "mode": "100644",
+      "sourceSha": "baf8b62117a5da6422c49fd2581d1f46aaee60c3",
+      "targetSha": "baf8b62117a5da6422c49fd2581d1f46aaee60c3"
+    },
+    {
+      "path": "examples/04-loops.nudl",
+      "mode": "100644",
+      "sourceSha": "f9ac5cf18abaa5e1e04c931b86f56918d8085692",
+      "targetSha": "f9ac5cf18abaa5e1e04c931b86f56918d8085692"
     }
   ]
 }
