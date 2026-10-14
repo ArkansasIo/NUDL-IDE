@@ -97,6 +97,54 @@
       "mode": "100644",
       "sourceSha": "c6d159c82e72371350c84ac4ce0552ede1d99d20",
       "targetSha": "c6d159c82e72371350c84ac4ce0552ede1d99d20"
+    },
+    {
+      "path": "03-compiler/src/diagnostics.cpp",
+      "mode": "100644",
+      "sourceSha": "ea0793b7eb9695df897941ac0b8b2a4d5acee8bd",
+      "targetSha": "ea0793b7eb9695df897941ac0b8b2a4d5acee8bd"
+    },
+    {
+      "path": "03-compiler/src/interpreter.cpp",
+      "mode": "100644",
+      "sourceSha": "16c74f07be13a7183ed8ec79907c5772c6bda7fe",
+      "targetSha": "16c74f07be13a7183ed8ec79907c5772c6bda7fe"
+    },
+    {
+      "path": "03-compiler/src/lexer.cpp",
+      "mode": "100644",
+      "sourceSha": "5f578584500d0c90e8de9681b4c41a0acb2c8b0f",
+      "targetSha": "5f578584500d0c90e8de9681b4c41a0acb2c8b0f"
+    },
+    {
+      "path": "03-compiler/src/main.cpp",
+      "mode": "100644",
+      "sourceSha": "6039c3df7caec6cb43c62d761c221b4028533347",
+      "targetSha": "6039c3df7caec6cb43c62d761c221b4028533347"
+    },
+    {
+      "path": "03-compiler/src/parser.cpp",
+      "mode": "100644",
+      "sourceSha": "846eb676cdd5a767dc0e46d100e92b915e1f4deb",
+      "targetSha": "846eb676cdd5a767dc0e46d100e92b915e1f4deb"
+    },
+    {
+      "path": "04-runtime/README.md",
+      "mode": "100644",
+      "sourceSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b",
+      "targetSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b"
+    },
+    {
+      "path": "05-standard-library/NUDL-STDLIB-INDEX.md",
+      "mode": "100644",
+      "sourceSha": "9f9f5301adf1eaf4b0c2b4a04a6cb48db705260d",
+      "targetSha": "9f9f5301adf1eaf4b0c2b4a04a6cb48db705260d"
+    },
+    {
+      "path": "05-standard-library/README.md",
+      "mode": "100644",
+      "sourceSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4",
+      "targetSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4"
     }
   ]
 }
