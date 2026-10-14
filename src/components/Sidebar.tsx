@@ -11,6 +11,10 @@ import {
   CheckCircle,
   FileText,
   Boxes,
+  ChevronDown,
+  ChevronRight,
+  Folder,
+  FolderOpen,
 } from 'lucide-react';
 import { VirtualFile } from '../nudl/types';
 
@@ -26,6 +30,13 @@ interface SidebarProps {
   onSelectTab: (tab: 'terminal' | 'output' | 'problems' | 'console' | 'target' | 'ast' | 'tokens') => void;
 }
 
+interface FileTreeNode {
+  name: string;
+  path: string;
+  children: Record<string, FileTreeNode>;
+  fileIndex?: number;
+}
+
 export const Sidebar: React.FC<SidebarProps> = ({
   files,
   activeFileIndex,
@@ -38,6 +49,97 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onSelectTab,
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [collapsedFolders, setCollapsedFolders] = useState<Set<string>>(() => new Set());
+
+  const tree: FileTreeNode[] = [];
+  const nodeIndex = new Map<string, FileTreeNode>();
+  files.forEach((file, fileIndex) => {
+    const segments = file.name.replace(/\\/g, '/').split('/').filter(Boolean);
+    let siblings = tree;
+    let parentPath = '';
+    segments.forEach((segment, segmentIndex) => {
+      const path = parentPath ? `${parentPath}/${segment}` : segment;
+      let node = nodeIndex.get(path);
+      if (!node) {
+        node = { name: segment, path, children: {} };
+        nodeIndex.set(path, node);
+        if (parentPath) {
+          const parent = nodeIndex.get(parentPath);
+          if (parent) parent.children[segment] = node;
+        } else {
+          siblings.push(node);
+        }
+      }
+      if (segmentIndex === segments.length - 1) {
+        node.fileIndex = fileIndex;
+      }
+      parentPath = path;
+    });
+  });
+
+  const renderTree = (nodes: FileTreeNode[], depth = 0): React.ReactNode =>
+    nodes.map((node) => {
+      const isFolder = Object.keys(node.children).length > 0;
+      const isCollapsed = collapsedFolders.has(node.path);
+      if (isFolder) {
+        return (
+          <div key={node.path}>
+            <button
+              onClick={() => setCollapsedFolders((current) => {
+                const next = new Set(current);
+                if (next.has(node.path)) next.delete(node.path);
+                else next.add(node.path);
+                return next;
+              })}
+              className="w-full flex items-center gap-1.5 px-1.5 py-1.5 rounded text-left text-[#a9c5dc] hover:bg-[#102238]"
+              style={{ paddingLeft: `${8 + depth * 12}px` }}
+              aria-expanded={!isCollapsed}
+              title={node.path}
+            >
+              {isCollapsed ? <ChevronRight className="w-3 h-3 shrink-0" /> : <ChevronDown className="w-3 h-3 shrink-0" />}
+              {isCollapsed ? <Folder className="w-3.5 h-3.5 shrink-0 text-amber-300" /> : <FolderOpen className="w-3.5 h-3.5 shrink-0 text-amber-300" />}
+              <span className="truncate">{node.name}</span>
+            </button>
+            {!isCollapsed && <div>{renderTree(Object.values(node.children), depth + 1)}</div>}
+          </div>
+        );
+      }
+      const idx = node.fileIndex;
+      if (idx === undefined) return null;
+      const file = files[idx];
+      const isActive = idx === activeFileIndex;
+      return (
+        <div
+          key={node.path}
+          onMouseEnter={() => setHoveredIndex(idx)}
+          onMouseLeave={() => setHoveredIndex(null)}
+          onClick={() => onSelectFile(idx)}
+          className={`group flex items-center justify-between px-2 py-1.5 rounded cursor-pointer transition-colors ${isActive
+            ? 'bg-[#123044] text-white border border-[#3f829b]/60'
+            : 'text-[#c8d8e8] hover:bg-[#102238] border border-transparent'}`}
+          style={{ paddingLeft: `${22 + depth * 12}px` }}
+          title={file.name}
+        >
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="w-3.5 flex justify-center text-xs shrink-0">{getFileIcon(file)}</span>
+            <span className="truncate text-xs font-mono">{node.name}</span>
+          </div>
+          {hoveredIndex === idx && files.length > 1 && !file.readOnly && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                if (confirm(`Delete file "${file.name}"?`)) onDeleteFile(idx);
+              }}
+              className="p-1 rounded text-[#8298ae] hover:text-red-400 hover:bg-[#16334b]"
+              title={`Delete ${file.name}`}
+            >
+              <Trash2 className="w-3 h-3" />
+            </button>
+          )}
+        </div>
+      );
+    });
+
 
   const getFileIcon = (file: VirtualFile) => {
     if (file.isBlueprint || file.name.endsWith('.nblueprint')) {
@@ -74,42 +176,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="text-[9px] uppercase tracking-wider text-[#60778e] px-2 py-1 font-semibold">
           Source & Blueprints
         </div>
-        {files.map((file, idx) => {
-          const isActive = idx === activeFileIndex;
-          return (
-            <div
-              key={file.name}
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              onClick={() => onSelectFile(idx)}
-              className={`group flex items-center justify-between px-2.5 py-1.5 rounded cursor-pointer transition-colors ${
-                isActive
-                  ? 'bg-[#123044] text-white border border-[#3f829b]/60'
-                  : 'text-[#c8d8e8] hover:bg-[#102238] border border-transparent'
-              }`}
-            >
-              <div className="flex items-center gap-2 truncate">
-                <span className="w-3.5 flex justify-center text-xs">{getFileIcon(file)}</span>
-                <span className="truncate text-xs font-mono">{file.name}</span>
-              </div>
-
-              {hoveredIndex === idx && files.length > 1 && !file.readOnly && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (confirm(`Delete file "${file.name}"?`)) {
-                      onDeleteFile(idx);
-                    }
-                  }}
-                  className="p-1 rounded text-[#8298ae] hover:text-red-400 hover:bg-[#16334b]"
-                  title="Delete file"
-                >
-                  <Trash2 className="w-3 h-3" />
-                </button>
-              )}
-            </div>
-          );
-        })}
+        {renderTree(tree)}
 
         {/* Quick Views */}
         <div className="pt-3">
