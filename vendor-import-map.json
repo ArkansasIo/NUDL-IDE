@@ -1147,6 +1147,24 @@
       "mode": "100644",
       "sourceSha": "4a8b5913ab444ad4d34cbcdbbfc45f7ed6aceb32",
       "targetSha": "4a8b5913ab444ad4d34cbcdbbfc45f7ed6aceb32"
+    },
+    {
+      "path": "examples/omni-to-nudl/10-staged-compilation.nudl",
+      "mode": "100644",
+      "sourceSha": "9998fb4b27c4091398d84540665ccd45fe67e808",
+      "targetSha": "9998fb4b27c4091398d84540665ccd45fe67e808"
+    },
+    {
+      "path": "examples/omni-to-nudl/11-native-boundary.nudl",
+      "mode": "100644",
+      "sourceSha": "7e994dfec36666d90cad07b49b6468ace0997289",
+      "targetSha": "7e994dfec36666d90cad07b49b6468ace0997289"
+    },
+    {
+      "path": "examples/omni-to-nudl/12-streaming-signal.nudl",
+      "mode": "100644",
+      "sourceSha": "f1dc6fc9339dab59c7fe092406a8fb255df7bd7a",
+      "targetSha": "f1dc6fc9339dab59c7fe092406a8fb255df7bd7a"
     }
   ]
 }
