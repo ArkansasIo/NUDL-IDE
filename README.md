@@ -34,6 +34,8 @@ Run these commands locally or inspect the GitHub Actions workflow before claimin
 
 ## Documentation
 
+- [Changelog](CHANGELOG.md)
+
 - [IDE architecture](docs/IDE-ARCHITECTURE.md)
 - [Language support matrix](docs/LANGUAGE-SUPPORT-MATRIX.md)
 - [Standard-library reference](docs/STANDARD-LIBRARY-REFERENCE.md)
