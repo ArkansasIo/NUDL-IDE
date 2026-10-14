@@ -14,7 +14,10 @@ The baseline suite in `tests/nudl.test.ts` covers:
 - Token categories, comments, and unterminated strings.
 - Parsing and executing a simple `main` function.
 - Required schema field diagnostics.
-- Python source generation.
+- Python, JavaScript, and TypeScript source generation smoke checks.
+- Arithmetic precedence and parenthesized expressions.
+- Runtime handling for division by zero and function argument-count errors.
+- Built-in collection and conversion helpers (`len`, `str`, and `average`).
 - Lexical error reporting.
 
 ## Recommended next fixtures
