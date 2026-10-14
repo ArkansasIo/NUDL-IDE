@@ -577,6 +577,54 @@
       "mode": "100644",
       "sourceSha": "275c093b7d038043198f2fcc642d5dd28d0ceb83",
       "targetSha": "275c093b7d038043198f2fcc642d5dd28d0ceb83"
+    },
+    {
+      "path": "10-noodle-source/runtime/memory.nudl",
+      "mode": "100644",
+      "sourceSha": "e33127756e56b55516165da169ff87b15364e0f6",
+      "targetSha": "e33127756e56b55516165da169ff87b15364e0f6"
+    },
+    {
+      "path": "10-noodle-source/runtime/value.nudl",
+      "mode": "100644",
+      "sourceSha": "dce2ed49b5d7999c8b9a41e3641d4f1ee8b1ea2d",
+      "targetSha": "dce2ed49b5d7999c8b9a41e3641d4f1ee8b1ea2d"
+    },
+    {
+      "path": "10-noodle-source/stdlib/collections.nudl",
+      "mode": "100644",
+      "sourceSha": "89665d04ecdab03bf3f3bdb68e0346a31bd28600",
+      "targetSha": "89665d04ecdab03bf3f3bdb68e0346a31bd28600"
+    },
+    {
+      "path": "10-noodle-source/stdlib/math.nudl",
+      "mode": "100644",
+      "sourceSha": "23ff674314a6ec4352c457debb3e6a77c929be59",
+      "targetSha": "23ff674314a6ec4352c457debb3e6a77c929be59"
+    },
+    {
+      "path": "10-noodle-source/stdlib/regex.nudl",
+      "mode": "100644",
+      "sourceSha": "07acdc69b0f197574ef806662a32b8228cca2030",
+      "targetSha": "07acdc69b0f197574ef806662a32b8228cca2030"
+    },
+    {
+      "path": "10-noodle-source/stdlib/text.nudl",
+      "mode": "100644",
+      "sourceSha": "e9a19b669f3d1dde778ac8f88a81a253f0e56468",
+      "targetSha": "e9a19b669f3d1dde778ac8f88a81a253f0e56468"
+    },
+    {
+      "path": "11-education/README.md",
+      "mode": "100644",
+      "sourceSha": "4455d883dfe95752cd7ef1272bae685644c8749f",
+      "targetSha": "4455d883dfe95752cd7ef1272bae685644c8749f"
+    },
+    {
+      "path": "11-education/books/README.md",
+      "mode": "100644",
+      "sourceSha": "9d7b07b9775ddc25933398dabacc1b964eb7468d",
+      "targetSha": "9d7b07b9775ddc25933398dabacc1b964eb7468d"
     }
   ]
 }
