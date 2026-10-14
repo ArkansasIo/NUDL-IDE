@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { INITIAL_FILES } from './nudl/examples';
 import {
   VirtualFile,
@@ -223,6 +223,82 @@ export default function App() {
     setTimeout(() => URL.revokeObjectURL(url), 0);
   }, [program, target]);
 
+  // Export the entire workspace, including blueprint graph data, as a portable JSON project.
+  const handleExportWorkspace = useCallback(() => {
+    const project = {
+      format: 'NUDL-IDE-workspace',
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      files,
+    };
+    const blob = new Blob([JSON.stringify(project, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'nudl-workspace.json';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+    setOutputLog(`[Workspace] Exported ${files.length} file(s) to nudl-workspace.json.`);
+    setStatus('Success');
+  }, [files]);
+
+  const workspaceInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImportWorkspaceClick = useCallback(() => {
+    workspaceInputRef.current?.click();
+  }, []);
+
+  const handleWorkspaceFileChange = useCallback(async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = event.target.files?.[0];
+    event.target.value = '';
+    if (!selectedFile) return;
+
+    try {
+      const parsed: unknown = JSON.parse(await selectedFile.text());
+      if (!parsed || typeof parsed !== 'object' || !('format' in parsed) ||
+          parsed.format !== 'NUDL-IDE-workspace' || !('files' in parsed) ||
+          !Array.isArray(parsed.files) || parsed.files.length === 0) {
+        throw new Error('This is not a valid NUDL IDE workspace export.');
+      }
+
+      const importedFiles: VirtualFile[] = [];
+      const names = new Set<string>();
+      for (const entry of parsed.files) {
+        if (!entry || typeof entry !== 'object' ||
+            !('name' in entry) || typeof entry.name !== 'string' || !entry.name.trim() ||
+            !('content' in entry) || typeof entry.content !== 'string') {
+          throw new Error('A workspace file is missing a valid name or text content.');
+        }
+        const name = entry.name.trim();
+        const normalizedName = name.toLowerCase();
+        if (names.has(normalizedName)) {
+          throw new Error(`Duplicate filename in imported workspace: "${name}".`);
+        }
+        names.add(normalizedName);
+        importedFiles.push({
+          name,
+          content: entry.content,
+          isBlueprint: 'isBlueprint' in entry && typeof entry.isBlueprint === 'boolean'
+            ? entry.isBlueprint : name.endsWith('.nblueprint'),
+          blueprintData: 'blueprintData' in entry ? entry.blueprintData as BlueprintGraph | undefined : undefined,
+          readOnly: 'readOnly' in entry && typeof entry.readOnly === 'boolean' ? entry.readOnly : false,
+        });
+      }
+
+      setFiles(importedFiles);
+      setActiveFileIndex(0);
+      setMode(importedFiles[0].isBlueprint || importedFiles[0].name.endsWith('.nblueprint') ? 'blueprint' : 'text');
+      localStorage.setItem('nudl_workspace_files', JSON.stringify(importedFiles));
+      setOutputLog(`[Workspace] Imported ${importedFiles.length} file(s) from "${selectedFile.name}".`);
+      setStatus('Success');
+      setBottomTab('output');
+    } catch (error) {
+      setOutputLog(`[Workspace Import Error] ${error instanceof Error ? error.message : 'Could not read workspace file.'}`);
+      setStatus('Error');
+      setBottomTab('problems');
+    }
+  }, []);
+
   // New file modal/prompt
   const handleNewFile = useCallback(() => {
     const name = prompt('Enter new file name (e.g. calculator.nudl or Graph.nblueprint):');
@@ -384,6 +460,8 @@ export default function App() {
         onClear={handleClear}
         onSave={handleSave}
         onDownloadNudl={handleDownloadNudl}
+        onImportWorkspace={handleImportWorkspaceClick}
+        onExportWorkspace={handleExportWorkspace}
         onExportTarget={handleExportTarget}
         onOpenDocs={() => setIsDocsOpen(true)}
         onNewFile={handleNewFile}
@@ -488,6 +566,15 @@ export default function App() {
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
         </div>
       </footer>
+
+      <input
+        ref={workspaceInputRef}
+        type="file"
+        accept=".json,application/json"
+        className="hidden"
+        aria-label="Import NUDL IDE workspace"
+        onChange={handleWorkspaceFileChange}
+      />
 
       {/* Documentation Modal */}
       <DocsModal isOpen={isDocsOpen} onClose={() => setIsDocsOpen(false)} />
