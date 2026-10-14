@@ -1129,6 +1129,24 @@
       "mode": "100644",
       "sourceSha": "958a4acfd3eadb30935a72991cf8b7bb5434c2b2",
       "targetSha": "958a4acfd3eadb30935a72991cf8b7bb5434c2b2"
+    },
+    {
+      "path": "examples/omni-to-nudl/07-mathematics.nudl",
+      "mode": "100644",
+      "sourceSha": "5e5ee79c247b055f5a39fac7be19b39d91d5770b",
+      "targetSha": "5e5ee79c247b055f5a39fac7be19b39d91d5770b"
+    },
+    {
+      "path": "examples/omni-to-nudl/08-module-library.nudl",
+      "mode": "100644",
+      "sourceSha": "67bbfb92743c7479f9293d646805894ab64c107f",
+      "targetSha": "67bbfb92743c7479f9293d646805894ab64c107f"
+    },
+    {
+      "path": "examples/omni-to-nudl/09-error-handling.nudl",
+      "mode": "100644",
+      "sourceSha": "4a8b5913ab444ad4d34cbcdbbfc45f7ed6aceb32",
+      "targetSha": "4a8b5913ab444ad4d34cbcdbbfc45f7ed6aceb32"
     }
   ]
 }
