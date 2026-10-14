@@ -1201,6 +1201,24 @@
       "mode": "100644",
       "sourceSha": "4c84ee176c20b36e4fa44e81bae7c7a34aa900c6",
       "targetSha": "4c84ee176c20b36e4fa44e81bae7c7a34aa900c6"
+    },
+    {
+      "path": "plugins/examples/analytics/plugin.json",
+      "mode": "100644",
+      "sourceSha": "d12a3805ddce4fbc803b5254d63b41273f0d7cf4",
+      "targetSha": "d12a3805ddce4fbc803b5254d63b41273f0d7cf4"
+    },
+    {
+      "path": "plugins/include/nudl/plugin_api.hpp",
+      "mode": "100644",
+      "sourceSha": "723de2bf3470614334b0bf4e802ac0bb169f0dc0",
+      "targetSha": "723de2bf3470614334b0bf4e802ac0bb169f0dc0"
+    },
+    {
+      "path": "plugins/regex/README.md",
+      "mode": "100644",
+      "sourceSha": "a16e78ce86bf4d54da8b4b860c3237ec3571541d",
+      "targetSha": "a16e78ce86bf4d54da8b4b860c3237ec3571541d"
     }
   ]
 }
