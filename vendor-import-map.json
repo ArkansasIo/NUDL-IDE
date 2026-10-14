@@ -385,6 +385,54 @@
       "mode": "100644",
       "sourceSha": "ce2761ef82e0ffa0077ef21793c5f065184fde53",
       "targetSha": "ce2761ef82e0ffa0077ef21793c5f065184fde53"
+    },
+    {
+      "path": "09-self-hosting/lexer/token.nudl",
+      "mode": "100644",
+      "sourceSha": "692abab3a7b83ad16249a320ae34b892cbc10870",
+      "targetSha": "692abab3a7b83ad16249a320ae34b892cbc10870"
+    },
+    {
+      "path": "09-self-hosting/optimizer/optimizer.nudl",
+      "mode": "100644",
+      "sourceSha": "23747762e9c89761e35d887336db3dc052f77517",
+      "targetSha": "23747762e9c89761e35d887336db3dc052f77517"
+    },
+    {
+      "path": "09-self-hosting/parser/ast.nudl",
+      "mode": "100644",
+      "sourceSha": "62c57ef3c7ca1a174e5ef97260507626d4215f72",
+      "targetSha": "62c57ef3c7ca1a174e5ef97260507626d4215f72"
+    },
+    {
+      "path": "09-self-hosting/parser/parser.nudl",
+      "mode": "100644",
+      "sourceSha": "dec114acbdbda6fc1d3834b7f4509e241e3b2ec7",
+      "targetSha": "dec114acbdbda6fc1d3834b7f4509e241e3b2ec7"
+    },
+    {
+      "path": "09-self-hosting/semantic/analyzer.nudl",
+      "mode": "100644",
+      "sourceSha": "ed9a114e629892bfad58662a2718e5509d65f6ed",
+      "targetSha": "ed9a114e629892bfad58662a2718e5509d65f6ed"
+    },
+    {
+      "path": "09-self-hosting/semantic/types.nudl",
+      "mode": "100644",
+      "sourceSha": "84dc0287686dd13c39ab83ac33e4b6ca26099a56",
+      "targetSha": "84dc0287686dd13c39ab83ac33e4b6ca26099a56"
+    },
+    {
+      "path": "09-self-hosting/tests/self-hosting-smoke.nudl",
+      "mode": "100644",
+      "sourceSha": "4421754195ad7035a887ac1c62ab3db3c4e72262",
+      "targetSha": "4421754195ad7035a887ac1c62ab3db3c4e72262"
+    },
+    {
+      "path": "10-noodle-source/README.nudl",
+      "mode": "100644",
+      "sourceSha": "67c754fb7740e82436f74d5521db241a955a3e05",
+      "targetSha": "67c754fb7740e82436f74d5521db241a955a3e05"
     }
   ]
 }
