@@ -865,6 +865,54 @@
       "mode": "100644",
       "sourceSha": "f944550140709374d2991a6032c5ea92a61a6304",
       "targetSha": "f944550140709374d2991a6032c5ea92a61a6304"
+    },
+    {
+      "path": "docs/LANGUAGE.md",
+      "mode": "100644",
+      "sourceSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab",
+      "targetSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab"
+    },
+    {
+      "path": "docs/NOTEPAD-WORKFLOW.md",
+      "mode": "100644",
+      "sourceSha": "049762b0c96a4e1f99c0b2d0edc28e40c4a4349f",
+      "targetSha": "049762b0c96a4e1f99c0b2d0edc28e40c4a4349f"
+    },
+    {
+      "path": "docs/NUDL-DOCUMENTATION-INDEX.md",
+      "mode": "100644",
+      "sourceSha": "d9b109ac8675237958b4123becfbb17492241a71",
+      "targetSha": "d9b109ac8675237958b4123becfbb17492241a71"
+    },
+    {
+      "path": "docs/OMNI_LANGUAGE_RESEARCH.md",
+      "mode": "100644",
+      "sourceSha": "b7f3dd366b54ef5bd2cedf04abf12a9faab75eea",
+      "targetSha": "b7f3dd366b54ef5bd2cedf04abf12a9faab75eea"
+    },
+    {
+      "path": "docs/README.md",
+      "mode": "100644",
+      "sourceSha": "9917a4ad01f010af182632f1240f1616113e0aad",
+      "targetSha": "9917a4ad01f010af182632f1240f1616113e0aad"
+    },
+    {
+      "path": "docs/UNIVERSAL-LANGUAGE.md",
+      "mode": "100644",
+      "sourceSha": "f546790f70821f22658427236d0b9273e61dfa5e",
+      "targetSha": "f546790f70821f22658427236d0b9273e61dfa5e"
+    },
+    {
+      "path": "docs/ide/app.js",
+      "mode": "100644",
+      "sourceSha": "f5bf01db7ee4aeb5d6a93c3562a0acb553ffd15a",
+      "targetSha": "f5bf01db7ee4aeb5d6a93c3562a0acb553ffd15a"
+    },
+    {
+      "path": "docs/ide/blueprint.css",
+      "mode": "100644",
+      "sourceSha": "d979baa550d9927f4d74a4de452e352eed570744",
+      "targetSha": "d979baa550d9927f4d74a4de452e352eed570744"
     }
   ]
 }
