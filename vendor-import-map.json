@@ -1057,6 +1057,42 @@
       "mode": "100644",
       "sourceSha": "7873c5b5ebb8a1a770ca3d2419d0aaa4e3eeefaf",
       "targetSha": "7873c5b5ebb8a1a770ca3d2419d0aaa4e3eeefaf"
+    },
+    {
+      "path": "examples/PROGRAMMING-LANGUAGE-CORPUS.md",
+      "mode": "100644",
+      "sourceSha": "62b100e74e52ad5900f4d9587d8aac2e4244292f",
+      "targetSha": "62b100e74e52ad5900f4d9587d8aac2e4244292f"
+    },
+    {
+      "path": "examples/RESEARCH-CORPUS.md",
+      "mode": "100644",
+      "sourceSha": "c99d93d75fa8fc43e61318377f2ad4e67cd54322",
+      "targetSha": "c99d93d75fa8fc43e61318377f2ad4e67cd54322"
+    },
+    {
+      "path": "examples/data.nudl",
+      "mode": "100644",
+      "sourceSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709",
+      "targetSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709"
+    },
+    {
+      "path": "examples/functions-and-brackets.nudl",
+      "mode": "100644",
+      "sourceSha": "17c72bf69aebe9b6bed7d5146ae21c68887b3d05",
+      "targetSha": "17c72bf69aebe9b6bed7d5146ae21c68887b3d05"
+    },
+    {
+      "path": "examples/hello.nudl",
+      "mode": "100644",
+      "sourceSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c",
+      "targetSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c"
+    },
+    {
+      "path": "examples/notepad-input.nudl",
+      "mode": "100644",
+      "sourceSha": "2b23d253676e6920d5cc5bebd0091a5ef87ccdeb",
+      "targetSha": "2b23d253676e6920d5cc5bebd0091a5ef87ccdeb"
     }
   ]
 }
