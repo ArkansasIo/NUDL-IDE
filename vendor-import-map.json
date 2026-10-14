@@ -769,6 +769,54 @@
       "mode": "100644",
       "sourceSha": "a8141d3b18d3421ad3fd4ba372edf6e319252622",
       "targetSha": "a8141d3b18d3421ad3fd4ba372edf6e319252622"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.nudl",
+      "mode": "100644",
+      "sourceSha": "186ff782d30b4628bb924d2f8716195a6dc8089e",
+      "targetSha": "186ff782d30b4628bb924d2f8716195a6dc8089e"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.py.expected",
+      "mode": "100644",
+      "sourceSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d",
+      "targetSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.rs.expected",
+      "mode": "100644",
+      "sourceSha": "e7a11a969c037e00a796aafeff6258501ec15e9a",
+      "targetSha": "e7a11a969c037e00a796aafeff6258501ec15e9a"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.swift.expected",
+      "mode": "100644",
+      "sourceSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d",
+      "targetSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d"
+    },
+    {
+      "path": "BUILD-INFO.md",
+      "mode": "100644",
+      "sourceSha": "5d82de8e7bee823f3ad9d091245044c61399e51e",
+      "targetSha": "5d82de8e7bee823f3ad9d091245044c61399e51e"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "mode": "100644",
+      "sourceSha": "ead479bf825ffb4eaf46e4507073034383691499",
+      "targetSha": "ead479bf825ffb4eaf46e4507073034383691499"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "sourceSha": "3ac568f57de4caca4b446fa3cc9c19629140ba93",
+      "targetSha": "3ac568f57de4caca4b446fa3cc9c19629140ba93"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sourceSha": "fd213eac727a851cd08bf87e80f81295750e1336",
+      "targetSha": "fd213eac727a851cd08bf87e80f81295750e1336"
     }
   ]
 }
