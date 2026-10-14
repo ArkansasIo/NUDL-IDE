@@ -1,0 +1,1272 @@
+{
+  "source": "ArkansasIo/NUDL-0.3",
+  "sourceCommit": "39d3571a888094fe8d908b67133fbaaf8241d38d",
+  "files": [
+    {
+      "path": ".github/CODEOWNERS",
+      "mode": "100644",
+      "sourceSha": "1fd12cbcbe6156a1087750cf5a96810a66329f1e",
+      "targetSha": "1fd12cbcbe6156a1087750cf5a96810a66329f1e"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "mode": "100644",
+      "sourceSha": "6bb0aaf6377a0c3cf28b8acfda5b879e3016f536",
+      "targetSha": "6bb0aaf6377a0c3cf28b8acfda5b879e3016f536"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature.yml",
+      "mode": "100644",
+      "sourceSha": "73de76cbd6191e1822747f76789bd1ffaa2a05d5",
+      "targetSha": "73de76cbd6191e1822747f76789bd1ffaa2a05d5"
+    },
+    {
+      "path": ".github/workflows/cpp.yml",
+      "mode": "100644",
+      "sourceSha": "483678dcbd5120b0958dcaa0c06cc6f8b33949e2",
+      "targetSha": "483678dcbd5120b0958dcaa0c06cc6f8b33949e2"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "mode": "100644",
+      "sourceSha": "86531bf3f238ae4cc71927b8f069a8105fbaeadf",
+      "targetSha": "86531bf3f238ae4cc71927b8f069a8105fbaeadf"
+    },
+    {
+      "path": "01-specification/SPEC-0.3.md",
+      "mode": "100644",
+      "sourceSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c",
+      "targetSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c"
+    },
+    {
+      "path": "02-grammar/NUDL-0.3.ebnf",
+      "mode": "100644",
+      "sourceSha": "83eff6c4169b1f688e8537032ede7220798808b7",
+      "targetSha": "83eff6c4169b1f688e8537032ede7220798808b7"
+    },
+    {
+      "path": "03-compiler/README.md",
+      "mode": "100644",
+      "sourceSha": "a85759db773ab43741270fe20988094b94ba512a",
+      "targetSha": "a85759db773ab43741270fe20988094b94ba512a"
+    },
+    {
+      "path": "03-compiler/include/nudl/ast.hpp",
+      "mode": "100644",
+      "sourceSha": "865d3a99c4c745e0e570f6f6c3fd85de097a6af3",
+      "targetSha": "865d3a99c4c745e0e570f6f6c3fd85de097a6af3"
+    },
+    {
+      "path": "03-compiler/include/nudl/codegen.hpp",
+      "mode": "100644",
+      "sourceSha": "db5f19f1be30dbb7652d0a100a2ed96300e4efcc",
+      "targetSha": "db5f19f1be30dbb7652d0a100a2ed96300e4efcc"
+    },
+    {
+      "path": "03-compiler/include/nudl/diagnostics.hpp",
+      "mode": "100644",
+      "sourceSha": "73177644c874a346c0260a032ddefbc950f5dbcb",
+      "targetSha": "73177644c874a346c0260a032ddefbc950f5dbcb"
+    },
+    {
+      "path": "03-compiler/include/nudl/interpreter.hpp",
+      "mode": "100644",
+      "sourceSha": "4007de192c8882935e7b8f7e02c3550508f5205b",
+      "targetSha": "4007de192c8882935e7b8f7e02c3550508f5205b"
+    },
+    {
+      "path": "03-compiler/include/nudl/lexer.hpp",
+      "mode": "100644",
+      "sourceSha": "6a4f6703c4c97fbbc4a59911f380d8114b5ef3c6",
+      "targetSha": "6a4f6703c4c97fbbc4a59911f380d8114b5ef3c6"
+    },
+    {
+      "path": "03-compiler/include/nudl/parser.hpp",
+      "mode": "100644",
+      "sourceSha": "97005c9cd6ad10c2d17a777716a9d423b6879382",
+      "targetSha": "97005c9cd6ad10c2d17a777716a9d423b6879382"
+    },
+    {
+      "path": "03-compiler/include/nudl/token.hpp",
+      "mode": "100644",
+      "sourceSha": "132261c13ce21640c96e35d724a427c5a3126e8d",
+      "targetSha": "132261c13ce21640c96e35d724a427c5a3126e8d"
+    },
+    {
+      "path": "03-compiler/src/codegen.cpp",
+      "mode": "100644",
+      "sourceSha": "c6d159c82e72371350c84ac4ce0552ede1d99d20",
+      "targetSha": "c6d159c82e72371350c84ac4ce0552ede1d99d20"
+    },
+    {
+      "path": "03-compiler/src/diagnostics.cpp",
+      "mode": "100644",
+      "sourceSha": "ea0793b7eb9695df897941ac0b8b2a4d5acee8bd",
+      "targetSha": "ea0793b7eb9695df897941ac0b8b2a4d5acee8bd"
+    },
+    {
+      "path": "03-compiler/src/interpreter.cpp",
+      "mode": "100644",
+      "sourceSha": "16c74f07be13a7183ed8ec79907c5772c6bda7fe",
+      "targetSha": "16c74f07be13a7183ed8ec79907c5772c6bda7fe"
+    },
+    {
+      "path": "03-compiler/src/lexer.cpp",
+      "mode": "100644",
+      "sourceSha": "5f578584500d0c90e8de9681b4c41a0acb2c8b0f",
+      "targetSha": "5f578584500d0c90e8de9681b4c41a0acb2c8b0f"
+    },
+    {
+      "path": "03-compiler/src/main.cpp",
+      "mode": "100644",
+      "sourceSha": "6039c3df7caec6cb43c62d761c221b4028533347",
+      "targetSha": "6039c3df7caec6cb43c62d761c221b4028533347"
+    },
+    {
+      "path": "03-compiler/src/parser.cpp",
+      "mode": "100644",
+      "sourceSha": "846eb676cdd5a767dc0e46d100e92b915e1f4deb",
+      "targetSha": "846eb676cdd5a767dc0e46d100e92b915e1f4deb"
+    },
+    {
+      "path": "04-runtime/README.md",
+      "mode": "100644",
+      "sourceSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b",
+      "targetSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b"
+    },
+    {
+      "path": "05-standard-library/NUDL-STDLIB-INDEX.md",
+      "mode": "100644",
+      "sourceSha": "9f9f5301adf1eaf4b0c2b4a04a6cb48db705260d",
+      "targetSha": "9f9f5301adf1eaf4b0c2b4a04a6cb48db705260d"
+    },
+    {
+      "path": "05-standard-library/README.md",
+      "mode": "100644",
+      "sourceSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4",
+      "targetSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4"
+    },
+    {
+      "path": "05-standard-library/collections.nudl",
+      "mode": "100644",
+      "sourceSha": "8919258d65502c3d2b01a35c23d7aac39e151efa",
+      "targetSha": "8919258d65502c3d2b01a35c23d7aac39e151efa"
+    },
+    {
+      "path": "05-standard-library/core.nudl",
+      "mode": "100644",
+      "sourceSha": "3a6453238aa7dbe839a218ac1e0cc50e5c7505be",
+      "targetSha": "3a6453238aa7dbe839a218ac1e0cc50e5c7505be"
+    },
+    {
+      "path": "05-standard-library/math.nudl",
+      "mode": "100644",
+      "sourceSha": "3ad3688de05d38692e8c94f0933cbfe3f9385234",
+      "targetSha": "3ad3688de05d38692e8c94f0933cbfe3f9385234"
+    },
+    {
+      "path": "06-examples/data.nudl",
+      "mode": "100644",
+      "sourceSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709",
+      "targetSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709"
+    },
+    {
+      "path": "06-examples/hello.nudl",
+      "mode": "100644",
+      "sourceSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c",
+      "targetSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c"
+    },
+    {
+      "path": "06-examples/math/01-numeric-arithmetic.nudl",
+      "mode": "100644",
+      "sourceSha": "490b49024e831198ac301007eac3f601f24d1a86",
+      "targetSha": "490b49024e831198ac301007eac3f601f24d1a86"
+    },
+    {
+      "path": "06-examples/math/02-algebra-calculus.nudl",
+      "mode": "100644",
+      "sourceSha": "83803da932f61588759786b7c395cfda4fc96b8a",
+      "targetSha": "83803da932f61588759786b7c395cfda4fc96b8a"
+    },
+    {
+      "path": "06-examples/math/03-linear-algebra-statistics.nudl",
+      "mode": "100644",
+      "sourceSha": "99318de793d56b22d1c9b4ec6ba9141c8b37e691",
+      "targetSha": "99318de793d56b22d1c9b4ec6ba9141c8b37e691"
+    },
+    {
+      "path": "06-examples/math/04-geometry-trigonometry-ode.nudl",
+      "mode": "100644",
+      "sourceSha": "81cb00a4034557718becc47cc23b147771a81565",
+      "targetSha": "81cb00a4034557718becc47cc23b147771a81565"
+    },
+    {
+      "path": "06-examples/performance/01-vector-sum-benchmark.nudl",
+      "mode": "100644",
+      "sourceSha": "2ab2f7dfbb0139e690f07c4aeb2379ab5b2ff45d",
+      "targetSha": "2ab2f7dfbb0139e690f07c4aeb2379ab5b2ff45d"
+    },
+    {
+      "path": "07-tests/cpp/README.md",
+      "mode": "100644",
+      "sourceSha": "8154c6e63d9e77954391414af821360fda5dc415",
+      "targetSha": "8154c6e63d9e77954391414af821360fda5dc415"
+    },
+    {
+      "path": "07-tests/cpp/codegen_test.cpp",
+      "mode": "100644",
+      "sourceSha": "dca310826f2d16188043ef90fc2aff751ecf405b",
+      "targetSha": "dca310826f2d16188043ef90fc2aff751ecf405b"
+    },
+    {
+      "path": "07-tests/cpp/interpreter_test.cpp",
+      "mode": "100644",
+      "sourceSha": "0e1528fc2b95eb41eccd49adc664b3df121acbad",
+      "targetSha": "0e1528fc2b95eb41eccd49adc664b3df121acbad"
+    },
+    {
+      "path": "07-tests/cpp/smoke_test.cpp",
+      "mode": "100644",
+      "sourceSha": "359e5648c64dc22c96796316d2cdbbc97e65086d",
+      "targetSha": "359e5648c64dc22c96796316d2cdbbc97e65086d"
+    },
+    {
+      "path": "08-documentation/API/ACCELERATOR.md",
+      "mode": "100644",
+      "sourceSha": "489aaae4a2cf590ab6b8d1cb48e487ad50afd476",
+      "targetSha": "489aaae4a2cf590ab6b8d1cb48e487ad50afd476"
+    },
+    {
+      "path": "08-documentation/API/MATH.md",
+      "mode": "100644",
+      "sourceSha": "a21d2a4f48c31506961203cb7405f76e2da07369",
+      "targetSha": "a21d2a4f48c31506961203cb7405f76e2da07369"
+    },
+    {
+      "path": "08-documentation/ARCHITECTURE.md",
+      "mode": "100644",
+      "sourceSha": "1da58747222a4fe19772a361ace3504270abb20a",
+      "targetSha": "1da58747222a4fe19772a361ace3504270abb20a"
+    },
+    {
+      "path": "08-documentation/BUILD-VERSIONING.md",
+      "mode": "100644",
+      "sourceSha": "bd4affa6cf38ad775b7e227703452bd72b2dab8a",
+      "targetSha": "bd4affa6cf38ad775b7e227703452bd72b2dab8a"
+    },
+    {
+      "path": "08-documentation/LANGUAGE.md",
+      "mode": "100644",
+      "sourceSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab",
+      "targetSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab"
+    },
+    {
+      "path": "08-documentation/NUDL-LANGUAGE-LIBRARY.md",
+      "mode": "100644",
+      "sourceSha": "29de3b8014405de62c98ccb36859be5ca7477909",
+      "targetSha": "29de3b8014405de62c98ccb36859be5ca7477909"
+    },
+    {
+      "path": "08-documentation/NUDL-LOGIC-ALGORITHM-CATALOG.md",
+      "mode": "100644",
+      "sourceSha": "45047263d5d9552cd599827a73fefa97636896c0",
+      "targetSha": "45047263d5d9552cd599827a73fefa97636896c0"
+    },
+    {
+      "path": "08-documentation/NUDL-LOGIC-RESEARCH.md",
+      "mode": "100644",
+      "sourceSha": "2a1e7bebbaa3125a188752ba53a58737e135cefa",
+      "targetSha": "2a1e7bebbaa3125a188752ba53a58737e135cefa"
+    },
+    {
+      "path": "08-documentation/NUDL-MATH-DOMAIN-MAP.md",
+      "mode": "100644",
+      "sourceSha": "0a7e69f53cbdf2c8f0a3b256934e31c624a3474e",
+      "targetSha": "0a7e69f53cbdf2c8f0a3b256934e31c624a3474e"
+    },
+    {
+      "path": "08-documentation/NUDL-MATH-TEST-PLAN.md",
+      "mode": "100644",
+      "sourceSha": "48cea9ed87abacd94a797d867eb865d692d99ef4",
+      "targetSha": "48cea9ed87abacd94a797d867eb865d692d99ef4"
+    },
+    {
+      "path": "08-documentation/NUDL-ORDER-OF-OPERATIONS.md",
+      "mode": "100644",
+      "sourceSha": "297f8b45564784e384b00591e76345b7262aafb7",
+      "targetSha": "297f8b45564784e384b00591e76345b7262aafb7"
+    },
+    {
+      "path": "08-documentation/NUDL-PERFORMANCE-ROADMAP.md",
+      "mode": "100644",
+      "sourceSha": "ed7b09c91d73faaa410bdbdb5fa15f1101c3e135",
+      "targetSha": "ed7b09c91d73faaa410bdbdb5fa15f1101c3e135"
+    },
+    {
+      "path": "08-documentation/NUDL-PERFORMANCE-TEST-PLAN.md",
+      "mode": "100644",
+      "sourceSha": "e118b07991cc413d885f733978744ea0889ce91e",
+      "targetSha": "e118b07991cc413d885f733978744ea0889ce91e"
+    },
+    {
+      "path": "08-documentation/NUDL-REGEX-EXTENSION.md",
+      "mode": "100644",
+      "sourceSha": "d3e5a9012e543bc8808fb74839e1fb4216d3e464",
+      "targetSha": "d3e5a9012e543bc8808fb74839e1fb4216d3e464"
+    },
+    {
+      "path": "08-documentation/OMNI-NUDL-TRANSLATION-GUIDE.md",
+      "mode": "100644",
+      "sourceSha": "b7d151b7d10fa2b949ad4f24a593a0865bb5336b",
+      "targetSha": "b7d151b7d10fa2b949ad4f24a593a0865bb5336b"
+    },
+    {
+      "path": "08-documentation/ROADMAP-INDEX.md",
+      "mode": "100644",
+      "sourceSha": "3125a9ff583a05e0f7d9ea53e2c181c20f6df971",
+      "targetSha": "3125a9ff583a05e0f7d9ea53e2c181c20f6df971"
+    },
+    {
+      "path": "09-self-hosting/BUILD-PLAN.md",
+      "mode": "100644",
+      "sourceSha": "2accee4d189ba32c99e83805ff64be93e6150a58",
+      "targetSha": "2accee4d189ba32c99e83805ff64be93e6150a58"
+    },
+    {
+      "path": "09-self-hosting/CONFORMANCE.md",
+      "mode": "100644",
+      "sourceSha": "371c944bcf45fce825a494235c91b7c893598947",
+      "targetSha": "371c944bcf45fce825a494235c91b7c893598947"
+    },
+    {
+      "path": "09-self-hosting/CROSS-COMPILER.md",
+      "mode": "100644",
+      "sourceSha": "26144b711bab5c52f822f77db579a6613062fe8d",
+      "targetSha": "26144b711bab5c52f822f77db579a6613062fe8d"
+    },
+    {
+      "path": "09-self-hosting/README.md",
+      "mode": "100644",
+      "sourceSha": "1f9db9661908c008eceafe5faab8e0df626942fc",
+      "targetSha": "1f9db9661908c008eceafe5faab8e0df626942fc"
+    },
+    {
+      "path": "09-self-hosting/backend/native.nudl",
+      "mode": "100644",
+      "sourceSha": "38a8bb35a2d0c63e1ae584d8d49fd6abf24d2546",
+      "targetSha": "38a8bb35a2d0c63e1ae584d8d49fd6abf24d2546"
+    },
+    {
+      "path": "09-self-hosting/bootstrap.nudl",
+      "mode": "100644",
+      "sourceSha": "ee12e87e34abaefa725e232a59e86c7f21677f50",
+      "targetSha": "ee12e87e34abaefa725e232a59e86c7f21677f50"
+    },
+    {
+      "path": "09-self-hosting/driver.nudl",
+      "mode": "100644",
+      "sourceSha": "94c45506b8c7450a13f14c40f3910cd85baa4c68",
+      "targetSha": "94c45506b8c7450a13f14c40f3910cd85baa4c68"
+    },
+    {
+      "path": "09-self-hosting/ir/ir.nudl",
+      "mode": "100644",
+      "sourceSha": "39007d484e09fcd1a0567ab3dc46204e0c1f0be7",
+      "targetSha": "39007d484e09fcd1a0567ab3dc46204e0c1f0be7"
+    },
+    {
+      "path": "09-self-hosting/ir/lower.nudl",
+      "mode": "100644",
+      "sourceSha": "6c4e01e97647c59902f1ff43e1edecdbc2f00908",
+      "targetSha": "6c4e01e97647c59902f1ff43e1edecdbc2f00908"
+    },
+    {
+      "path": "09-self-hosting/lexer/lexer.nudl",
+      "mode": "100644",
+      "sourceSha": "ce2761ef82e0ffa0077ef21793c5f065184fde53",
+      "targetSha": "ce2761ef82e0ffa0077ef21793c5f065184fde53"
+    },
+    {
+      "path": "09-self-hosting/lexer/token.nudl",
+      "mode": "100644",
+      "sourceSha": "692abab3a7b83ad16249a320ae34b892cbc10870",
+      "targetSha": "692abab3a7b83ad16249a320ae34b892cbc10870"
+    },
+    {
+      "path": "09-self-hosting/optimizer/optimizer.nudl",
+      "mode": "100644",
+      "sourceSha": "23747762e9c89761e35d887336db3dc052f77517",
+      "targetSha": "23747762e9c89761e35d887336db3dc052f77517"
+    },
+    {
+      "path": "09-self-hosting/parser/ast.nudl",
+      "mode": "100644",
+      "sourceSha": "62c57ef3c7ca1a174e5ef97260507626d4215f72",
+      "targetSha": "62c57ef3c7ca1a174e5ef97260507626d4215f72"
+    },
+    {
+      "path": "09-self-hosting/parser/parser.nudl",
+      "mode": "100644",
+      "sourceSha": "dec114acbdbda6fc1d3834b7f4509e241e3b2ec7",
+      "targetSha": "dec114acbdbda6fc1d3834b7f4509e241e3b2ec7"
+    },
+    {
+      "path": "09-self-hosting/semantic/analyzer.nudl",
+      "mode": "100644",
+      "sourceSha": "ed9a114e629892bfad58662a2718e5509d65f6ed",
+      "targetSha": "ed9a114e629892bfad58662a2718e5509d65f6ed"
+    },
+    {
+      "path": "09-self-hosting/semantic/types.nudl",
+      "mode": "100644",
+      "sourceSha": "84dc0287686dd13c39ab83ac33e4b6ca26099a56",
+      "targetSha": "84dc0287686dd13c39ab83ac33e4b6ca26099a56"
+    },
+    {
+      "path": "09-self-hosting/tests/self-hosting-smoke.nudl",
+      "mode": "100644",
+      "sourceSha": "4421754195ad7035a887ac1c62ab3db3c4e72262",
+      "targetSha": "4421754195ad7035a887ac1c62ab3db3c4e72262"
+    },
+    {
+      "path": "10-noodle-source/README.nudl",
+      "mode": "100644",
+      "sourceSha": "67c754fb7740e82436f74d5521db241a955a3e05",
+      "targetSha": "67c754fb7740e82436f74d5521db241a955a3e05"
+    },
+    {
+      "path": "10-noodle-source/compiler/ast.nudl",
+      "mode": "100644",
+      "sourceSha": "abee786464b16b3119d0f2b744cd6bbedce49e26",
+      "targetSha": "abee786464b16b3119d0f2b744cd6bbedce49e26"
+    },
+    {
+      "path": "10-noodle-source/compiler/backend.nudl",
+      "mode": "100644",
+      "sourceSha": "340cfec1cc575ec10b86f2e0e925182dbef259c2",
+      "targetSha": "340cfec1cc575ec10b86f2e0e925182dbef259c2"
+    },
+    {
+      "path": "10-noodle-source/compiler/bootstrap.nudl",
+      "mode": "100644",
+      "sourceSha": "6cf468b9218592fd70101dd60c730f24677f26ac",
+      "targetSha": "6cf468b9218592fd70101dd60c730f24677f26ac"
+    },
+    {
+      "path": "10-noodle-source/compiler/driver.nudl",
+      "mode": "100644",
+      "sourceSha": "ebb2628570c5743c08fc64fee4939261752a06bb",
+      "targetSha": "ebb2628570c5743c08fc64fee4939261752a06bb"
+    },
+    {
+      "path": "10-noodle-source/compiler/ir.nudl",
+      "mode": "100644",
+      "sourceSha": "926609344c63aef68a43b9c7bca570ad929c2a2f",
+      "targetSha": "926609344c63aef68a43b9c7bca570ad929c2a2f"
+    },
+    {
+      "path": "10-noodle-source/compiler/lexer.nudl",
+      "mode": "100644",
+      "sourceSha": "1e96999afc335306d81a895502dead219e588242",
+      "targetSha": "1e96999afc335306d81a895502dead219e588242"
+    },
+    {
+      "path": "10-noodle-source/compiler/optimizer.nudl",
+      "mode": "100644",
+      "sourceSha": "a9b15f7889339a2329ceb7e33d87540029ceb036",
+      "targetSha": "a9b15f7889339a2329ceb7e33d87540029ceb036"
+    },
+    {
+      "path": "10-noodle-source/compiler/parser.nudl",
+      "mode": "100644",
+      "sourceSha": "e1a163a2580c73414e539ee0958733433d07f99b",
+      "targetSha": "e1a163a2580c73414e539ee0958733433d07f99b"
+    },
+    {
+      "path": "10-noodle-source/compiler/semantic.nudl",
+      "mode": "100644",
+      "sourceSha": "c11a0508f1fb8379b7ccb16626b3e9104a2c061c",
+      "targetSha": "c11a0508f1fb8379b7ccb16626b3e9104a2c061c"
+    },
+    {
+      "path": "10-noodle-source/compiler/token.nudl",
+      "mode": "100644",
+      "sourceSha": "648b129e087242bb348c3010f82240a50c99b88c",
+      "targetSha": "648b129e087242bb348c3010f82240a50c99b88c"
+    },
+    {
+      "path": "10-noodle-source/compiler/types.nudl",
+      "mode": "100644",
+      "sourceSha": "ac22ed100135dbb9f05ef686e2e435a0c0b1c684",
+      "targetSha": "ac22ed100135dbb9f05ef686e2e435a0c0b1c684"
+    },
+    {
+      "path": "10-noodle-source/examples/calculator.nudl",
+      "mode": "100644",
+      "sourceSha": "f1a23cbf359299db7021ba2a8c09c8aa3d902a9b",
+      "targetSha": "f1a23cbf359299db7021ba2a8c09c8aa3d902a9b"
+    },
+    {
+      "path": "10-noodle-source/logic/README.nudl",
+      "mode": "100644",
+      "sourceSha": "8096c9223f39dbc6e605742051036924cac1904a",
+      "targetSha": "8096c9223f39dbc6e605742051036924cac1904a"
+    },
+    {
+      "path": "10-noodle-source/logic/boolean.nudl",
+      "mode": "100644",
+      "sourceSha": "6969daf1ef1dc0df0d1174ec25b71ac4c6a3971a",
+      "targetSha": "6969daf1ef1dc0df0d1174ec25b71ac4c6a3971a"
+    },
+    {
+      "path": "10-noodle-source/logic/cnf.nudl",
+      "mode": "100644",
+      "sourceSha": "7e1a861e139de3fba8f7411d93048545e2a73d1a",
+      "targetSha": "7e1a861e139de3fba8f7411d93048545e2a73d1a"
+    },
+    {
+      "path": "10-noodle-source/logic/dpll.nudl",
+      "mode": "100644",
+      "sourceSha": "b6b06e64ec476bb6b3b6add8669b43fa348edd46",
+      "targetSha": "b6b06e64ec476bb6b3b6add8669b43fa348edd46"
+    },
+    {
+      "path": "10-noodle-source/logic/forward-chain.nudl",
+      "mode": "100644",
+      "sourceSha": "59569b2cfdbe176252cf648706980ab647853f6d",
+      "targetSha": "59569b2cfdbe176252cf648706980ab647853f6d"
+    },
+    {
+      "path": "10-noodle-source/logic/graph-closure.nudl",
+      "mode": "100644",
+      "sourceSha": "b37a17bd9986c849a7c54af899e2a1726c366991",
+      "targetSha": "b37a17bd9986c849a7c54af899e2a1726c366991"
+    },
+    {
+      "path": "10-noodle-source/logic/knowledge-base.nudl",
+      "mode": "100644",
+      "sourceSha": "27147a471a7846ab2989cfb5f643d0eeb331bb76",
+      "targetSha": "27147a471a7846ab2989cfb5f643d0eeb331bb76"
+    },
+    {
+      "path": "10-noodle-source/logic/model-check.nudl",
+      "mode": "100644",
+      "sourceSha": "18d4ccaa62424a847b8a629659e3fb0963865dd4",
+      "targetSha": "18d4ccaa62424a847b8a629659e3fb0963865dd4"
+    },
+    {
+      "path": "10-noodle-source/logic/resolution.nudl",
+      "mode": "100644",
+      "sourceSha": "9b319d87c46e76448af9b56dd9964e2b2df00846",
+      "targetSha": "9b319d87c46e76448af9b56dd9964e2b2df00846"
+    },
+    {
+      "path": "10-noodle-source/logic/truth-table.nudl",
+      "mode": "100644",
+      "sourceSha": "a6fc2083251521c40c30b0fa9b0cf471bc51aae9",
+      "targetSha": "a6fc2083251521c40c30b0fa9b0cf471bc51aae9"
+    },
+    {
+      "path": "10-noodle-source/logic/unification.nudl",
+      "mode": "100644",
+      "sourceSha": "1bf8d13189e35000ec82fba57721edb16f368c40",
+      "targetSha": "1bf8d13189e35000ec82fba57721edb16f368c40"
+    },
+    {
+      "path": "10-noodle-source/runtime/errors.nudl",
+      "mode": "100644",
+      "sourceSha": "275c093b7d038043198f2fcc642d5dd28d0ceb83",
+      "targetSha": "275c093b7d038043198f2fcc642d5dd28d0ceb83"
+    },
+    {
+      "path": "10-noodle-source/runtime/memory.nudl",
+      "mode": "100644",
+      "sourceSha": "e33127756e56b55516165da169ff87b15364e0f6",
+      "targetSha": "e33127756e56b55516165da169ff87b15364e0f6"
+    },
+    {
+      "path": "10-noodle-source/runtime/value.nudl",
+      "mode": "100644",
+      "sourceSha": "dce2ed49b5d7999c8b9a41e3641d4f1ee8b1ea2d",
+      "targetSha": "dce2ed49b5d7999c8b9a41e3641d4f1ee8b1ea2d"
+    },
+    {
+      "path": "10-noodle-source/stdlib/collections.nudl",
+      "mode": "100644",
+      "sourceSha": "89665d04ecdab03bf3f3bdb68e0346a31bd28600",
+      "targetSha": "89665d04ecdab03bf3f3bdb68e0346a31bd28600"
+    },
+    {
+      "path": "10-noodle-source/stdlib/math.nudl",
+      "mode": "100644",
+      "sourceSha": "23ff674314a6ec4352c457debb3e6a77c929be59",
+      "targetSha": "23ff674314a6ec4352c457debb3e6a77c929be59"
+    },
+    {
+      "path": "10-noodle-source/stdlib/regex.nudl",
+      "mode": "100644",
+      "sourceSha": "07acdc69b0f197574ef806662a32b8228cca2030",
+      "targetSha": "07acdc69b0f197574ef806662a32b8228cca2030"
+    },
+    {
+      "path": "10-noodle-source/stdlib/text.nudl",
+      "mode": "100644",
+      "sourceSha": "e9a19b669f3d1dde778ac8f88a81a253f0e56468",
+      "targetSha": "e9a19b669f3d1dde778ac8f88a81a253f0e56468"
+    },
+    {
+      "path": "11-education/README.md",
+      "mode": "100644",
+      "sourceSha": "4455d883dfe95752cd7ef1272bae685644c8749f",
+      "targetSha": "4455d883dfe95752cd7ef1272bae685644c8749f"
+    },
+    {
+      "path": "11-education/books/README.md",
+      "mode": "100644",
+      "sourceSha": "9d7b07b9775ddc25933398dabacc1b964eb7468d",
+      "targetSha": "9d7b07b9775ddc25933398dabacc1b964eb7468d"
+    },
+    {
+      "path": "11-education/books/elementary-advanced.md",
+      "mode": "100644",
+      "sourceSha": "792dd532ac817c014b4cb1deb4c3bc36debdc137",
+      "targetSha": "792dd532ac817c014b4cb1deb4c3bc36debdc137"
+    },
+    {
+      "path": "11-education/books/elementary-beginner.md",
+      "mode": "100644",
+      "sourceSha": "7ff28e963abcfd41a09bcdd96603930cdad11fde",
+      "targetSha": "7ff28e963abcfd41a09bcdd96603930cdad11fde"
+    },
+    {
+      "path": "11-education/books/elementary-intermediate.md",
+      "mode": "100644",
+      "sourceSha": "6731f70e9c7204677054b6db0195a6c59b0c5a8f",
+      "targetSha": "6731f70e9c7204677054b6db0195a6c59b0c5a8f"
+    },
+    {
+      "path": "11-education/books/high-school-beginner.md",
+      "mode": "100644",
+      "sourceSha": "301e782fdab501750dc034b1b633e6939437a4d1",
+      "targetSha": "301e782fdab501750dc034b1b633e6939437a4d1"
+    },
+    {
+      "path": "11-education/books/middle-school-advanced.md",
+      "mode": "100644",
+      "sourceSha": "bd525d85108b6c9e57538874cee8b4a61a2012e5",
+      "targetSha": "bd525d85108b6c9e57538874cee8b4a61a2012e5"
+    },
+    {
+      "path": "11-education/books/middle-school-beginner.md",
+      "mode": "100644",
+      "sourceSha": "d09161e678c47c222254a3f7c5ea9646befd6f9e",
+      "targetSha": "d09161e678c47c222254a3f7c5ea9646befd6f9e"
+    },
+    {
+      "path": "11-education/books/middle-school-intermediate.md",
+      "mode": "100644",
+      "sourceSha": "09a6fc2fa3c475a37b01102d5bfa0b88b75167b6",
+      "targetSha": "09a6fc2fa3c475a37b01102d5bfa0b88b75167b6"
+    },
+    {
+      "path": "11-education/curriculum/00-sequence.md",
+      "mode": "100644",
+      "sourceSha": "56698b5a25734aa07147a2454c1051216be002f1",
+      "targetSha": "56698b5a25734aa07147a2454c1051216be002f1"
+    },
+    {
+      "path": "11-education/curriculum/college.md",
+      "mode": "100644",
+      "sourceSha": "c0222d77a690a31aece7e49f31e25f962048759d",
+      "targetSha": "c0222d77a690a31aece7e49f31e25f962048759d"
+    },
+    {
+      "path": "11-education/curriculum/elementary.md",
+      "mode": "100644",
+      "sourceSha": "39e4eb7f508db70414a21879323ea17277617bde",
+      "targetSha": "39e4eb7f508db70414a21879323ea17277617bde"
+    },
+    {
+      "path": "11-education/curriculum/high-school.md",
+      "mode": "100644",
+      "sourceSha": "2572d62f88c367e720589e11ef1e15579400b0ba",
+      "targetSha": "2572d62f88c367e720589e11ef1e15579400b0ba"
+    },
+    {
+      "path": "11-education/curriculum/middle-school.md",
+      "mode": "100644",
+      "sourceSha": "953cc6b3fb03470d4e560f7b739458d7dba11913",
+      "targetSha": "953cc6b3fb03470d4e560f7b739458d7dba11913"
+    },
+    {
+      "path": "11-education/curriculum/university.md",
+      "mode": "100644",
+      "sourceSha": "ea59df386c6e9d106f707d49e9d1791da3303f5c",
+      "targetSha": "ea59df386c6e9d106f707d49e9d1791da3303f5c"
+    },
+    {
+      "path": "13-interoperability/ABI-FFI.md",
+      "mode": "100644",
+      "sourceSha": "2056dc2696175542f7c880cc847dcaf43313752a",
+      "targetSha": "2056dc2696175542f7c880cc847dcaf43313752a"
+    },
+    {
+      "path": "13-interoperability/BUILD-GENERATED-PROJECT.md",
+      "mode": "100644",
+      "sourceSha": "5f4e7ba29425f194dc1acaf417a077cb32ac5922",
+      "targetSha": "5f4e7ba29425f194dc1acaf417a077cb32ac5922"
+    },
+    {
+      "path": "13-interoperability/HELLO-WORLD-PIPELINE.md",
+      "mode": "100644",
+      "sourceSha": "b347ba00212f2aad41e309aa3ae071cf80b5cf9b",
+      "targetSha": "b347ba00212f2aad41e309aa3ae071cf80b5cf9b"
+    },
+    {
+      "path": "13-interoperability/README.md",
+      "mode": "100644",
+      "sourceSha": "e1bdc226280b5760268dfa43c66f0f6e7608c30d",
+      "targetSha": "e1bdc226280b5760268dfa43c66f0f6e7608c30d"
+    },
+    {
+      "path": "13-interoperability/TARGET-MATRIX.md",
+      "mode": "100644",
+      "sourceSha": "fc8f1d561a220ab69774c8250b9546dd46e11375",
+      "targetSha": "fc8f1d561a220ab69774c8250b9546dd46e11375"
+    },
+    {
+      "path": "13-interoperability/build-info.schema.json",
+      "mode": "100644",
+      "sourceSha": "e425ff6abbec92abf22ebbdbb022e8c279c6e327",
+      "targetSha": "e425ff6abbec92abf22ebbdbb022e8c279c6e327"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.c.expected",
+      "mode": "100644",
+      "sourceSha": "aef98c1c9c3a83f4293bef5114937792d803367a",
+      "targetSha": "aef98c1c9c3a83f4293bef5114937792d803367a"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.cpp.expected",
+      "mode": "100644",
+      "sourceSha": "54e47ecd1ebcec327363da2dbffbf97c84de9e52",
+      "targetSha": "54e47ecd1ebcec327363da2dbffbf97c84de9e52"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.cs.expected",
+      "mode": "100644",
+      "sourceSha": "e8cfebbfe4c98bb8112000c4123f04a1fe50fdad",
+      "targetSha": "e8cfebbfe4c98bb8112000c4123f04a1fe50fdad"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.java.expected",
+      "mode": "100644",
+      "sourceSha": "39fd604b3da1c330b8b236334eebd4445d55952c",
+      "targetSha": "39fd604b3da1c330b8b236334eebd4445d55952c"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.js.expected",
+      "mode": "100644",
+      "sourceSha": "a8141d3b18d3421ad3fd4ba372edf6e319252622",
+      "targetSha": "a8141d3b18d3421ad3fd4ba372edf6e319252622"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.nudl",
+      "mode": "100644",
+      "sourceSha": "186ff782d30b4628bb924d2f8716195a6dc8089e",
+      "targetSha": "186ff782d30b4628bb924d2f8716195a6dc8089e"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.py.expected",
+      "mode": "100644",
+      "sourceSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d",
+      "targetSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.rs.expected",
+      "mode": "100644",
+      "sourceSha": "e7a11a969c037e00a796aafeff6258501ec15e9a",
+      "targetSha": "e7a11a969c037e00a796aafeff6258501ec15e9a"
+    },
+    {
+      "path": "13-interoperability/examples/hello-world.swift.expected",
+      "mode": "100644",
+      "sourceSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d",
+      "targetSha": "f7cf60e14f9a9e9805e0463e7fa33b6c91204c4d"
+    },
+    {
+      "path": "BUILD-INFO.md",
+      "mode": "100644",
+      "sourceSha": "5d82de8e7bee823f3ad9d091245044c61399e51e",
+      "targetSha": "5d82de8e7bee823f3ad9d091245044c61399e51e"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "mode": "100644",
+      "sourceSha": "ead479bf825ffb4eaf46e4507073034383691499",
+      "targetSha": "ead479bf825ffb4eaf46e4507073034383691499"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "sourceSha": "3ac568f57de4caca4b446fa3cc9c19629140ba93",
+      "targetSha": "3ac568f57de4caca4b446fa3cc9c19629140ba93"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sourceSha": "fd213eac727a851cd08bf87e80f81295750e1336",
+      "targetSha": "fd213eac727a851cd08bf87e80f81295750e1336"
+    },
+    {
+      "path": "ROADMAP.md",
+      "mode": "100644",
+      "sourceSha": "c52464120d881ee7f9641361b9a1c66f5758773e",
+      "targetSha": "c52464120d881ee7f9641361b9a1c66f5758773e"
+    },
+    {
+      "path": "TEAM.md",
+      "mode": "100644",
+      "sourceSha": "ec320e6a18fea79a58353a5fd9002ebdc0d2e5f8",
+      "targetSha": "ec320e6a18fea79a58353a5fd9002ebdc0d2e5f8"
+    },
+    {
+      "path": "build/manifest.json",
+      "mode": "100644",
+      "sourceSha": "68cbf583a703224d8800aae3cf2c78b07e27bd4f",
+      "targetSha": "68cbf583a703224d8800aae3cf2c78b07e27bd4f"
+    },
+    {
+      "path": "compiler/README.md",
+      "mode": "100644",
+      "sourceSha": "a85759db773ab43741270fe20988094b94ba512a",
+      "targetSha": "a85759db773ab43741270fe20988094b94ba512a"
+    },
+    {
+      "path": "docs/.nojekyll",
+      "mode": "100644",
+      "sourceSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "targetSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/404.html",
+      "mode": "100644",
+      "sourceSha": "03fc26ff8dcf8586f3e753d0425d3a3afb6f17ce",
+      "targetSha": "03fc26ff8dcf8586f3e753d0425d3a3afb6f17ce"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "mode": "100644",
+      "sourceSha": "1da58747222a4fe19772a361ace3504270abb20a",
+      "targetSha": "1da58747222a4fe19772a361ace3504270abb20a"
+    },
+    {
+      "path": "docs/CROSS-LANGUAGE-COMPILATION.md",
+      "mode": "100644",
+      "sourceSha": "f944550140709374d2991a6032c5ea92a61a6304",
+      "targetSha": "f944550140709374d2991a6032c5ea92a61a6304"
+    },
+    {
+      "path": "docs/LANGUAGE.md",
+      "mode": "100644",
+      "sourceSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab",
+      "targetSha": "601674d28a2cea5b36ce5fe00d9707c16b882eab"
+    },
+    {
+      "path": "docs/NOTEPAD-WORKFLOW.md",
+      "mode": "100644",
+      "sourceSha": "049762b0c96a4e1f99c0b2d0edc28e40c4a4349f",
+      "targetSha": "049762b0c96a4e1f99c0b2d0edc28e40c4a4349f"
+    },
+    {
+      "path": "docs/NUDL-DOCUMENTATION-INDEX.md",
+      "mode": "100644",
+      "sourceSha": "d9b109ac8675237958b4123becfbb17492241a71",
+      "targetSha": "d9b109ac8675237958b4123becfbb17492241a71"
+    },
+    {
+      "path": "docs/OMNI_LANGUAGE_RESEARCH.md",
+      "mode": "100644",
+      "sourceSha": "b7f3dd366b54ef5bd2cedf04abf12a9faab75eea",
+      "targetSha": "b7f3dd366b54ef5bd2cedf04abf12a9faab75eea"
+    },
+    {
+      "path": "docs/README.md",
+      "mode": "100644",
+      "sourceSha": "9917a4ad01f010af182632f1240f1616113e0aad",
+      "targetSha": "9917a4ad01f010af182632f1240f1616113e0aad"
+    },
+    {
+      "path": "docs/UNIVERSAL-LANGUAGE.md",
+      "mode": "100644",
+      "sourceSha": "f546790f70821f22658427236d0b9273e61dfa5e",
+      "targetSha": "f546790f70821f22658427236d0b9273e61dfa5e"
+    },
+    {
+      "path": "docs/ide/app.js",
+      "mode": "100644",
+      "sourceSha": "f5bf01db7ee4aeb5d6a93c3562a0acb553ffd15a",
+      "targetSha": "f5bf01db7ee4aeb5d6a93c3562a0acb553ffd15a"
+    },
+    {
+      "path": "docs/ide/blueprint.css",
+      "mode": "100644",
+      "sourceSha": "d979baa550d9927f4d74a4de452e352eed570744",
+      "targetSha": "d979baa550d9927f4d74a4de452e352eed570744"
+    },
+    {
+      "path": "docs/ide/blueprint.js",
+      "mode": "100644",
+      "sourceSha": "34c2f2a4b9e510ce95f1c09576dad50d06538632",
+      "targetSha": "34c2f2a4b9e510ce95f1c09576dad50d06538632"
+    },
+    {
+      "path": "docs/ide/index.html",
+      "mode": "100644",
+      "sourceSha": "325e1e100d6d780033d6a1b40dd541fb38264092",
+      "targetSha": "325e1e100d6d780033d6a1b40dd541fb38264092"
+    },
+    {
+      "path": "docs/ide/style.css",
+      "mode": "100644",
+      "sourceSha": "fb884394578abd3b2f89d124b3cd00bc92dc617c",
+      "targetSha": "fb884394578abd3b2f89d124b3cd00bc92dc617c"
+    },
+    {
+      "path": "docs/index.html",
+      "mode": "100644",
+      "sourceSha": "cf392b45ee4b940b4342c468dc1b5aa10244475b",
+      "targetSha": "cf392b45ee4b940b4342c468dc1b5aa10244475b"
+    },
+    {
+      "path": "examples/01-basic-types.nudl",
+      "mode": "100644",
+      "sourceSha": "9ea0f27ae9c480cd03e4f1b4e34542ef68960087",
+      "targetSha": "9ea0f27ae9c480cd03e4f1b4e34542ef68960087"
+    },
+    {
+      "path": "examples/02-functions.nudl",
+      "mode": "100644",
+      "sourceSha": "cac75998b693b2acc46dcae3af591a638be257c7",
+      "targetSha": "cac75998b693b2acc46dcae3af591a638be257c7"
+    },
+    {
+      "path": "examples/03-conditionals.nudl",
+      "mode": "100644",
+      "sourceSha": "baf8b62117a5da6422c49fd2581d1f46aaee60c3",
+      "targetSha": "baf8b62117a5da6422c49fd2581d1f46aaee60c3"
+    },
+    {
+      "path": "examples/04-loops.nudl",
+      "mode": "100644",
+      "sourceSha": "f9ac5cf18abaa5e1e04c931b86f56918d8085692",
+      "targetSha": "f9ac5cf18abaa5e1e04c931b86f56918d8085692"
+    },
+    {
+      "path": "examples/05-arrays.nudl",
+      "mode": "100644",
+      "sourceSha": "f9ef108e22089ced92355bd56ae89f8804fd81ff",
+      "targetSha": "f9ef108e22089ced92355bd56ae89f8804fd81ff"
+    },
+    {
+      "path": "examples/06-records-and-structures.nudl",
+      "mode": "100644",
+      "sourceSha": "ec103a138f3cc35678e9b78c1a448c642d4cdc85",
+      "targetSha": "ec103a138f3cc35678e9b78c1a448c642d4cdc85"
+    },
+    {
+      "path": "examples/08-omni-inspired-pipeline.nudl",
+      "mode": "100644",
+      "sourceSha": "d6ff8546db72b1a084162dca20c1d7c174a9dab7",
+      "targetSha": "d6ff8546db72b1a084162dca20c1d7c174a9dab7"
+    },
+    {
+      "path": "examples/09-omni-input-output.nudl",
+      "mode": "100644",
+      "sourceSha": "177d18a9cfc8b441210e453b0d48580bbf16ec00",
+      "targetSha": "177d18a9cfc8b441210e453b0d48580bbf16ec00"
+    },
+    {
+      "path": "examples/10-omni-validation-error.nudl",
+      "mode": "100644",
+      "sourceSha": "92bcc55d55d15d630e196b8e4d01d98f3a65ff0b",
+      "targetSha": "92bcc55d55d15d630e196b8e4d01d98f3a65ff0b"
+    },
+    {
+      "path": "examples/11-omni-transform.nudl",
+      "mode": "100644",
+      "sourceSha": "da9cc4811045930dfc9e899708cfb815fd4a4271",
+      "targetSha": "da9cc4811045930dfc9e899708cfb815fd4a4271"
+    },
+    {
+      "path": "examples/12-nudl-composed-compilation.nudl",
+      "mode": "100644",
+      "sourceSha": "56c4a66ba534a4fa66bb8aa9dcc3c723a7b9b963",
+      "targetSha": "56c4a66ba534a4fa66bb8aa9dcc3c723a7b9b963"
+    },
+    {
+      "path": "examples/13-cross-language-basic.nudl",
+      "mode": "100644",
+      "sourceSha": "74f93a8b0768c3390c20c0f29dd0bc576a678632",
+      "targetSha": "74f93a8b0768c3390c20c0f29dd0bc576a678632"
+    },
+    {
+      "path": "examples/21-order-of-operations.nudl",
+      "mode": "100644",
+      "sourceSha": "2681d395b8e70031d020a3dae7b4b6a8849bc769",
+      "targetSha": "2681d395b8e70031d020a3dae7b4b6a8849bc769"
+    },
+    {
+      "path": "examples/22-function-evaluation-order.nudl",
+      "mode": "100644",
+      "sourceSha": "ef80b22b080e6e5304c154996f1f5f0909959818",
+      "targetSha": "ef80b22b080e6e5304c154996f1f5f0909959818"
+    },
+    {
+      "path": "examples/23-compiler-pipeline.nudl",
+      "mode": "100644",
+      "sourceSha": "b7b8d0fcbe5de80d6e10a826969e961691736420",
+      "targetSha": "b7b8d0fcbe5de80d6e10a826969e961691736420"
+    },
+    {
+      "path": "examples/24-numerical-order.nudl",
+      "mode": "100644",
+      "sourceSha": "c9e4f3282989862a01c9c7bb05296acd3c0b3986",
+      "targetSha": "c9e4f3282989862a01c9c7bb05296acd3c0b3986"
+    },
+    {
+      "path": "examples/25-data-validation-order.nudl",
+      "mode": "100644",
+      "sourceSha": "f6cbea0353c647cab288d47e1a0681e758778c89",
+      "targetSha": "f6cbea0353c647cab288d47e1a0681e758778c89"
+    },
+    {
+      "path": "examples/26-parallel-order.nudl",
+      "mode": "100644",
+      "sourceSha": "080848ad1d2b3aa0ad21a45482349f70eb4c7e9f",
+      "targetSha": "080848ad1d2b3aa0ad21a45482349f70eb4c7e9f"
+    },
+    {
+      "path": "examples/27-thesis-experiment.nudl",
+      "mode": "100644",
+      "sourceSha": "34a416b6bf231b2ad71e82d2c83a055471eb5e0d",
+      "targetSha": "34a416b6bf231b2ad71e82d2c83a055471eb5e0d"
+    },
+    {
+      "path": "examples/28-regex.nudl",
+      "mode": "100644",
+      "sourceSha": "7873c5b5ebb8a1a770ca3d2419d0aaa4e3eeefaf",
+      "targetSha": "7873c5b5ebb8a1a770ca3d2419d0aaa4e3eeefaf"
+    },
+    {
+      "path": "examples/PROGRAMMING-LANGUAGE-CORPUS.md",
+      "mode": "100644",
+      "sourceSha": "62b100e74e52ad5900f4d9587d8aac2e4244292f",
+      "targetSha": "62b100e74e52ad5900f4d9587d8aac2e4244292f"
+    },
+    {
+      "path": "examples/RESEARCH-CORPUS.md",
+      "mode": "100644",
+      "sourceSha": "c99d93d75fa8fc43e61318377f2ad4e67cd54322",
+      "targetSha": "c99d93d75fa8fc43e61318377f2ad4e67cd54322"
+    },
+    {
+      "path": "examples/data.nudl",
+      "mode": "100644",
+      "sourceSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709",
+      "targetSha": "13dd0dc9a634feb6c4b503f3f8bf62cee98c1709"
+    },
+    {
+      "path": "examples/functions-and-brackets.nudl",
+      "mode": "100644",
+      "sourceSha": "17c72bf69aebe9b6bed7d5146ae21c68887b3d05",
+      "targetSha": "17c72bf69aebe9b6bed7d5146ae21c68887b3d05"
+    },
+    {
+      "path": "examples/hello.nudl",
+      "mode": "100644",
+      "sourceSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c",
+      "targetSha": "85ecc0b40677649e4861c190c7ac7085c3cad12c"
+    },
+    {
+      "path": "examples/notepad-input.nudl",
+      "mode": "100644",
+      "sourceSha": "2b23d253676e6920d5cc5bebd0091a5ef87ccdeb",
+      "targetSha": "2b23d253676e6920d5cc5bebd0091a5ef87ccdeb"
+    },
+    {
+      "path": "examples/omni-to-nudl/01-hello-values.nudl",
+      "mode": "100644",
+      "sourceSha": "d4d31ba9eea1fca3faced42f337d010181fbd6ff",
+      "targetSha": "d4d31ba9eea1fca3faced42f337d010181fbd6ff"
+    },
+    {
+      "path": "examples/omni-to-nudl/02-functions-control.nudl",
+      "mode": "100644",
+      "sourceSha": "dac20f62e60da8b488d6cc5bba1eb4379b862de9",
+      "targetSha": "dac20f62e60da8b488d6cc5bba1eb4379b862de9"
+    },
+    {
+      "path": "examples/omni-to-nudl/03-record-validation.nudl",
+      "mode": "100644",
+      "sourceSha": "8a4abf9db6f96b184ddecaac76e7f729fd75a2df",
+      "targetSha": "8a4abf9db6f96b184ddecaac76e7f729fd75a2df"
+    },
+    {
+      "path": "examples/omni-to-nudl/04-collections-transform.nudl",
+      "mode": "100644",
+      "sourceSha": "88eda22d394020c92ee47953780ec2133ed636d0",
+      "targetSha": "88eda22d394020c92ee47953780ec2133ed636d0"
+    },
+    {
+      "path": "examples/omni-to-nudl/05-input-output-pipeline.nudl",
+      "mode": "100644",
+      "sourceSha": "4ed646fc0bb43dbe26f37eaf38ff2e00d0f116da",
+      "targetSha": "4ed646fc0bb43dbe26f37eaf38ff2e00d0f116da"
+    },
+    {
+      "path": "examples/omni-to-nudl/06-deterministic-processing.nudl",
+      "mode": "100644",
+      "sourceSha": "958a4acfd3eadb30935a72991cf8b7bb5434c2b2",
+      "targetSha": "958a4acfd3eadb30935a72991cf8b7bb5434c2b2"
+    },
+    {
+      "path": "examples/omni-to-nudl/07-mathematics.nudl",
+      "mode": "100644",
+      "sourceSha": "5e5ee79c247b055f5a39fac7be19b39d91d5770b",
+      "targetSha": "5e5ee79c247b055f5a39fac7be19b39d91d5770b"
+    },
+    {
+      "path": "examples/omni-to-nudl/08-module-library.nudl",
+      "mode": "100644",
+      "sourceSha": "67bbfb92743c7479f9293d646805894ab64c107f",
+      "targetSha": "67bbfb92743c7479f9293d646805894ab64c107f"
+    },
+    {
+      "path": "examples/omni-to-nudl/09-error-handling.nudl",
+      "mode": "100644",
+      "sourceSha": "4a8b5913ab444ad4d34cbcdbbfc45f7ed6aceb32",
+      "targetSha": "4a8b5913ab444ad4d34cbcdbbfc45f7ed6aceb32"
+    },
+    {
+      "path": "examples/omni-to-nudl/10-staged-compilation.nudl",
+      "mode": "100644",
+      "sourceSha": "9998fb4b27c4091398d84540665ccd45fe67e808",
+      "targetSha": "9998fb4b27c4091398d84540665ccd45fe67e808"
+    },
+    {
+      "path": "examples/omni-to-nudl/11-native-boundary.nudl",
+      "mode": "100644",
+      "sourceSha": "7e994dfec36666d90cad07b49b6468ace0997289",
+      "targetSha": "7e994dfec36666d90cad07b49b6468ace0997289"
+    },
+    {
+      "path": "examples/omni-to-nudl/12-streaming-signal.nudl",
+      "mode": "100644",
+      "sourceSha": "f1dc6fc9339dab59c7fe092406a8fb255df7bd7a",
+      "targetSha": "f1dc6fc9339dab59c7fe092406a8fb255df7bd7a"
+    },
+    {
+      "path": "examples/omni-to-nudl/13-quantum-simulation.nudl",
+      "mode": "100644",
+      "sourceSha": "95a0a80c22c7ebcbe546f40049e744fd0e6b1bca",
+      "targetSha": "95a0a80c22c7ebcbe546f40049e744fd0e6b1bca"
+    },
+    {
+      "path": "examples/omni-to-nudl/14-cross-language-composition.nudl",
+      "mode": "100644",
+      "sourceSha": "8655a49e950dc41c59c5a78e60748ff396023e18",
+      "targetSha": "8655a49e950dc41c59c5a78e60748ff396023e18"
+    },
+    {
+      "path": "examples/omni-to-nudl/README.md",
+      "mode": "100644",
+      "sourceSha": "44bce9d495ee8514b784a1bb585bdff37dd214ba",
+      "targetSha": "44bce9d495ee8514b784a1bb585bdff37dd214ba"
+    },
+    {
+      "path": "examples/universal-targets.nudl",
+      "mode": "100644",
+      "sourceSha": "1bce3e586e3a71b8aa2c40720c4c005dc50a0c0f",
+      "targetSha": "1bce3e586e3a71b8aa2c40720c4c005dc50a0c0f"
+    },
+    {
+      "path": "grammar/NUDL-0.3.ebnf",
+      "mode": "100644",
+      "sourceSha": "83eff6c4169b1f688e8537032ede7220798808b7",
+      "targetSha": "83eff6c4169b1f688e8537032ede7220798808b7"
+    },
+    {
+      "path": "plugins/README.md",
+      "mode": "100644",
+      "sourceSha": "4c84ee176c20b36e4fa44e81bae7c7a34aa900c6",
+      "targetSha": "4c84ee176c20b36e4fa44e81bae7c7a34aa900c6"
+    },
+    {
+      "path": "plugins/examples/analytics/plugin.json",
+      "mode": "100644",
+      "sourceSha": "d12a3805ddce4fbc803b5254d63b41273f0d7cf4",
+      "targetSha": "d12a3805ddce4fbc803b5254d63b41273f0d7cf4"
+    },
+    {
+      "path": "plugins/include/nudl/plugin_api.hpp",
+      "mode": "100644",
+      "sourceSha": "723de2bf3470614334b0bf4e802ac0bb169f0dc0",
+      "targetSha": "723de2bf3470614334b0bf4e802ac0bb169f0dc0"
+    },
+    {
+      "path": "plugins/regex/README.md",
+      "mode": "100644",
+      "sourceSha": "a16e78ce86bf4d54da8b4b860c3237ec3571541d",
+      "targetSha": "a16e78ce86bf4d54da8b4b860c3237ec3571541d"
+    },
+    {
+      "path": "plugins/regex/plugin.json",
+      "mode": "100644",
+      "sourceSha": "de2fae5f018f73c6a5bf29222a12e6ff5110eb1d",
+      "targetSha": "de2fae5f018f73c6a5bf29222a12e6ff5110eb1d"
+    },
+    {
+      "path": "plugins/regex/regex.nudl",
+      "mode": "100644",
+      "sourceSha": "15d777ea7c5972212cd899acd3f8d5b23a5d6a8d",
+      "targetSha": "15d777ea7c5972212cd899acd3f8d5b23a5d6a8d"
+    },
+    {
+      "path": "plugins/schema/plugin-manifest.schema.json",
+      "mode": "100644",
+      "sourceSha": "afe455b6f0c70d925dce4dc8d0075b186ed8d758",
+      "targetSha": "afe455b6f0c70d925dce4dc8d0075b186ed8d758"
+    },
+    {
+      "path": "runtime/README.md",
+      "mode": "100644",
+      "sourceSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b",
+      "targetSha": "10303f1a1b85ab7f379a93eb4a002e9afa0bd06b"
+    },
+    {
+      "path": "spec/BACKEND-SPEC-0.3.md",
+      "mode": "100644",
+      "sourceSha": "977cac3911189b0844511ae3e43161d0158bb05a",
+      "targetSha": "977cac3911189b0844511ae3e43161d0158bb05a"
+    },
+    {
+      "path": "spec/SPEC-0.3.md",
+      "mode": "100644",
+      "sourceSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c",
+      "targetSha": "6013add5421971a570e6e88cb9e6f7d195db1f2c"
+    },
+    {
+      "path": "stdlib/README.md",
+      "mode": "100644",
+      "sourceSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4",
+      "targetSha": "b600ec1aa492de9ac7cf0a516da6b088905c63d4"
+    },
+    {
+      "path": "tests/README.md",
+      "mode": "100644",
+      "sourceSha": "ad1c73657d59f16b96201f0181b2c71ce9742934",
+      "targetSha": "ad1c73657d59f16b96201f0181b2c71ce9742934"
+    }
+  ]
+}
