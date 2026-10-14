@@ -76,3 +76,43 @@ test('semantic analysis reports duplicate schema fields', () => {
   const { diagnostics } = compile(source);
   assert.ok(diagnostics.some((d) => d.code === 'E206'));
 });
+
+test('interpreter preserves arithmetic precedence and parentheses', () => {
+  const source = 'fn main() { print(2 + 3 * 4); print((2 + 3) * 4); }';
+  const { parsed, diagnostics } = compile(source);
+  assert.equal(diagnostics.filter((d) => d.severity === 'error').length, 0);
+  const result = new Interpreter(parsed.program).run();
+  assert.equal(result.error, undefined);
+  assert.deepEqual(result.output, ['14', '20']);
+});
+
+test('interpreter reports division by zero without throwing out of run()', () => {
+  const { parsed } = compile('fn main() { print(10 / 0); }');
+  const result = new Interpreter(parsed.program).run();
+  assert.match(result.error ?? '', /Division by zero/);
+});
+
+test('interpreter validates function argument counts', () => {
+  const { parsed } = compile('fn add(a: i64, b: i64) { return a + b; } fn main() { print(add(1)); }');
+  const result = new Interpreter(parsed.program).run();
+  assert.match(result.error ?? '', /expected 2 arguments, but received 1/);
+});
+
+test('interpreter supports built-in collection and conversion helpers', () => {
+  const source = 'fn main() { print(len("NUDL")); print(str(42)); print(average([2, 4, 6])); }';
+  const { parsed, diagnostics } = compile(source);
+  assert.equal(diagnostics.filter((d) => d.severity === 'error').length, 0);
+  const result = new Interpreter(parsed.program).run();
+  assert.equal(result.error, undefined);
+  assert.deepEqual(result.output, ['4', '42', '4']);
+});
+
+test('code generation emits JavaScript and TypeScript entry points', () => {
+  const { parsed } = compile('fn main() { print("hello"); }');
+  const js = generateCode(parsed.program, 'JavaScript');
+  const ts = generateCode(parsed.program, 'TypeScript');
+  assert.equal(js.filename, 'main.js');
+  assert.match(js.code, /console\.log\("hello"\)/);
+  assert.equal(ts.filename, 'main.ts');
+  assert.match(ts.code, /console\.log\("hello"\)/);
+});
