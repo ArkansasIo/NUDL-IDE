@@ -433,6 +433,54 @@
       "mode": "100644",
       "sourceSha": "67c754fb7740e82436f74d5521db241a955a3e05",
       "targetSha": "67c754fb7740e82436f74d5521db241a955a3e05"
+    },
+    {
+      "path": "10-noodle-source/compiler/ast.nudl",
+      "mode": "100644",
+      "sourceSha": "abee786464b16b3119d0f2b744cd6bbedce49e26",
+      "targetSha": "abee786464b16b3119d0f2b744cd6bbedce49e26"
+    },
+    {
+      "path": "10-noodle-source/compiler/backend.nudl",
+      "mode": "100644",
+      "sourceSha": "340cfec1cc575ec10b86f2e0e925182dbef259c2",
+      "targetSha": "340cfec1cc575ec10b86f2e0e925182dbef259c2"
+    },
+    {
+      "path": "10-noodle-source/compiler/bootstrap.nudl",
+      "mode": "100644",
+      "sourceSha": "6cf468b9218592fd70101dd60c730f24677f26ac",
+      "targetSha": "6cf468b9218592fd70101dd60c730f24677f26ac"
+    },
+    {
+      "path": "10-noodle-source/compiler/driver.nudl",
+      "mode": "100644",
+      "sourceSha": "ebb2628570c5743c08fc64fee4939261752a06bb",
+      "targetSha": "ebb2628570c5743c08fc64fee4939261752a06bb"
+    },
+    {
+      "path": "10-noodle-source/compiler/ir.nudl",
+      "mode": "100644",
+      "sourceSha": "926609344c63aef68a43b9c7bca570ad929c2a2f",
+      "targetSha": "926609344c63aef68a43b9c7bca570ad929c2a2f"
+    },
+    {
+      "path": "10-noodle-source/compiler/lexer.nudl",
+      "mode": "100644",
+      "sourceSha": "1e96999afc335306d81a895502dead219e588242",
+      "targetSha": "1e96999afc335306d81a895502dead219e588242"
+    },
+    {
+      "path": "10-noodle-source/compiler/optimizer.nudl",
+      "mode": "100644",
+      "sourceSha": "a9b15f7889339a2329ceb7e33d87540029ceb036",
+      "targetSha": "a9b15f7889339a2329ceb7e33d87540029ceb036"
+    },
+    {
+      "path": "10-noodle-source/compiler/parser.nudl",
+      "mode": "100644",
+      "sourceSha": "e1a163a2580c73414e539ee0958733433d07f99b",
+      "targetSha": "e1a163a2580c73414e539ee0958733433d07f99b"
     }
   ]
 }
