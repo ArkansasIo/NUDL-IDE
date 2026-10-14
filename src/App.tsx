@@ -269,7 +269,10 @@ export default function App() {
             !('content' in entry) || typeof entry.content !== 'string') {
           throw new Error('A workspace file is missing a valid name or text content.');
         }
-        const name = entry.name.trim();
+        const name = entry.name.trim().replace(/\\/g, '/');
+        if (name.startsWith('/') || name.split('/').some((part) => !part || part === '.' || part === '..')) {
+          throw new Error(`Invalid relative path in workspace: "${name}".`);
+        }
         const normalizedName = name.toLowerCase();
         if (names.has(normalizedName)) {
           throw new Error(`Duplicate filename in imported workspace: "${name}".`);
@@ -301,10 +304,15 @@ export default function App() {
 
   // New file modal/prompt
   const handleNewFile = useCallback(() => {
-    const name = prompt('Enter new file name (e.g. calculator.nudl or Graph.nblueprint):');
+    const name = prompt('Enter file path (e.g. src/calculator.nudl or Graph.nblueprint). Use / to create folders:');
     if (!name || !name.trim()) return;
 
-    const trimmed = name.trim();
+    const trimmed = name.trim().replace(/\\/g, '/');
+    if (trimmed.startsWith('/') || trimmed.split('/').some((part) => !part || part === '.' || part === '..')) {
+      setOutputLog('[File Error] Use a relative file path without empty, . or .. path segments.');
+      setStatus('Error');
+      return;
+    }
     if (files.some((file) => file.name.toLowerCase() === trimmed.toLowerCase())) {
       setOutputLog(`[File Error] "${trimmed}" already exists in this workspace.`);
       setStatus('Error');
