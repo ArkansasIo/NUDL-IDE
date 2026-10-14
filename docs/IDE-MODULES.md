@@ -1,27 +1,27 @@
-# NUDL IDE modules and extension points
+# NUDL IDE module reference
 
-This document describes module boundaries and the intended status of each capability.
+The IDE has two layers: the working browser implementation, and extension contracts for capabilities that need a backend or native runtime.
 
-## Source modules
+## Existing language modules
 
-- `src/nudl/`: language front-end, semantic diagnostics, interpreter, code generation and Blueprint conversion.
-- `src/components/`: React presentation components and editors.
-- `src/api/`: typed HTTP contracts and an optional API client. Endpoints are not assumed to exist.
-- `src/features/registry.ts`: declarative feature inventory with status and requirements.
-- `src/menus/registry.ts`: menu/command definitions for File, Edit, Build, View and Help.
-- `src/tools/toolRegistry.ts`: tool inventory that distinguishes usable tools from planned integrations.
-- `src/nudl/workspace.ts`: browser-storage access, workspace validation and import limits.
+- `src/nudl/lexer.ts`, `parser.ts`, `analyzer.ts`: tokenize, parse and diagnose source.
+- `src/nudl/interpreter.ts`: run the supported in-browser language subset.
+- `src/nudl/codegen.ts`: emit target source text for supported constructs.
+- `src/nudl/blueprintEngine.ts`: visual graph data and conversion helpers.
+- `src/components/`: React editor, menus, sidebars, panels and Blueprint UI.
 
-## API conventions
+## Added modules
 
-Responses use `ApiResult<T>`, stable error codes and optional request IDs. Configure a base URL at runtime; never embed server credentials in client source.
+- `src/nudl/workspace.ts`: best-effort browser storage with strict workspace validation.
+- `src/api/types.ts` and `src/api/client.ts`: typed API contracts and opt-in health/compile HTTP requests.
+- `src/features/registry.ts`: capability inventory with status and prerequisites.
+- `src/menus/registry.ts`: central menu and command inventory.
+- `src/tools/toolRegistry.ts`: tool descriptions and explicit availability state.
 
-The client exposes health and compile request methods as contracts only. A matching backend must be implemented and deployed before those methods can succeed. The current IDE interpreter and source emitter remain local modules and do not call this API automatically.
+## API boundaries
 
-## Plugin and tool policy
+The API client defaults to `/api` but does not create a backend. Until a compatible service is deployed, health and compile calls can return network errors. Do not put secrets in browser bundles. Use server-side authentication, authorization and secret management for remote builds or saved projects.
 
-Tool definitions expose explicit availability metadata. The UI should not claim a tool is functional unless its implementation is connected and tested. Native compilation, debugger stepping, collaboration and cloud sync are extension points rather than production services.
+## Workspace safeguards
 
-## Workspace constraints
-
-Import validation rejects absolute paths, traversal segments, duplicate names, invalid objects, excessive file counts and oversized source. Browser-local storage is best-effort and is not cloud backup.
+Imported workspace JSON is restricted to relative file paths, unique case-insensitive names, at most 500 files, 240-character file names, 2 MB per source file and 20 MB total text/import size. Browser storage is optional; download workspace JSON for backup.
