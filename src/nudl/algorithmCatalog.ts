@@ -26,7 +26,6 @@ const groups: Array<[string,string[]]> = [
   ['Machine Learning',['sigmoid','relu','softmax','mean_squared_error','cross_entropy','accuracy','precision','recall','f1_score','confusion_matrix']],
   ['Parsing',['token_count','balanced_delimiters','split_lines','csv_field_count','json_key_count','parse_integer','parse_float','quote_string','escape_string','unescape_string']],
   ['Simulation',['random_walk','monte_carlo_pi','queue_simulation','birth_death_step','cellular_step','boids_step','particle_step','decay_step','compound_growth','logistic_growth']],
-  ['Testing',['assert_equal','assert_true','assert_false','benchmark_wrapper','random_test_data','property_sorted','property_unique','property_round_trip','property_idempotent','property_bounds']],
 ];
 
 export const NUDL_ALGORITHM_CATALOG: NudlAlgorithmExample[] = groups.flatMap(([category, ids]) => ids.map(id => ({
