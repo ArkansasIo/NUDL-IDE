@@ -1,5 +1,6 @@
 import { VirtualFile } from './types';
 import { DEFAULT_BLUEPRINT_EXAMPLES } from './blueprintEngine';
+import { NUDL_ALGORITHM_FILES } from './algorithmCatalog';
 
 export const INITIAL_FILES: VirtualFile[] = [
   {
@@ -87,18 +88,11 @@ fn main() -> i64 {
     let numbers = [10, 20, 30, 40, 50];
     print("Array elements:");
     print(numbers);
-
     let first = numbers[0];
     let third = numbers[2];
-    print("First item:");
     print(first);
-    print("Third item:");
     print(third);
-
-    let sum = first + third;
-    print("Sum of first and third:");
-    print(sum);
-    return 0;
+    return first + third;
 }`,
   },
   {
@@ -108,86 +102,54 @@ struct Point {
     x: f64;
     y: f64;
 }
-
 struct Rectangle {
     origin: Point;
     width: f64;
     height: f64;
 }
-
 fn main() -> i64 {
     let p = Point { x: 12.5, y: 24.0 };
-    print("Point struct:");
     print(p);
-
     let r = Rectangle { origin: p, width: 100.0, height: 50.0 };
-    print("Rectangle struct:");
     print(r);
     return 0;
 }`,
   },
   {
     name: 'pipeline.nudl',
-    content: `// Omni-inspired NUDL 0.3 Data Pipeline
-schema SensorReading {
+    content: `schema SensorReading {
     id: u64 required;
     sensor: text required;
     value: f64 required;
     unit: text required;
     valid: bool = true;
 }
-
 data input_readings: SensorReading {
     { id: 1, sensor: "TEMP-A", value: 21.5, unit: "C", valid: true }
     { id: 2, sensor: "TEMP-A", value: 22.0, unit: "C", valid: true }
-    { id: 3, sensor: "TEMP-B", value: -999.0, unit: "C", valid: false }
-    { id: 4, sensor: "TEMP-B", value: 20.5, unit: "C", valid: true }
 }
-
 fn main() -> i64 {
-    print("Loaded data records for SensorReading:");
     print(input_readings);
-    print("Processing sensor pipeline complete.");
     return 0;
 }`,
   },
   {
     name: 'regex.nudl',
-    content: `// Noodle Regex Extension
-fn main() -> i64 {
-    let email_pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}$";
-    let test_email = "research@example.org";
-    let is_valid = regex.is_match(email_pattern, test_email);
-    print("Is valid email address?");
-    print(is_valid);
-
-    let raw_text = "Noodle    Unified    Data    Language";
-    let cleaned = regex.replace("[[:space:]]+", raw_text, " ");
-    print("Cleaned text:");
-    print(cleaned);
+    content: `fn main() -> i64 {
+    let pattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]{2,}$";
+    let valid = regex.is_match(pattern, "research@example.org");
+    print(valid);
     return 0;
 }`,
   },
   {
     name: 'logic_solver.nudl',
-    content: `// Noodle Logic & Truth Evaluation
-fn evaluate_implication(p: bool, q: bool) -> bool {
-    // p -> q is equivalent to (!p || q)
+    content: `fn evaluate_implication(p: bool, q: bool) -> bool {
     return !p || q;
 }
-
 fn main() -> i64 {
-    let t = true;
-    let f = false;
-
-    print("True implies False (should be false):");
-    print(evaluate_implication(t, f));
-
-    print("False implies True (should be true):");
-    print(evaluate_implication(f, t));
-
-    print("True implies True (should be true):");
-    print(evaluate_implication(t, t));
+    print(evaluate_implication(true, false));
+    print(evaluate_implication(false, true));
     return 0;
 }`,
   },
@@ -203,4 +165,8 @@ fn main() -> i64 {
     isBlueprint: true,
     blueprintData: DEFAULT_BLUEPRINT_EXAMPLES.health,
   },
+  ...NUDL_ALGORITHM_FILES.map((file) => ({
+    name: file.name,
+    content: file.content,
+  })),
 ];
