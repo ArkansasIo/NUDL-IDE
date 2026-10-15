@@ -1,0 +1,17 @@
+{
+  "id": "example.app-framework",
+  "name": "NUDL App Framework Example",
+  "version": "0.1.0",
+  "api": "0.1",
+  "nudl": "0.3",
+  "kind": "editor",
+  "entry": "app_framework",
+  "platforms": [
+    "windows",
+    "linux",
+    "macos",
+    "web"
+  ],
+  "capabilities": [],
+  "dependencies": []
+}
