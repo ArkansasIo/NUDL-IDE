@@ -22,6 +22,7 @@ import { RightPane } from './components/RightPane';
 import { BottomDock, BottomTabType } from './components/BottomDock';
 import { DocsModal } from './components/DocsModal';
 import { DEFAULT_BLUEPRINT_EXAMPLES } from './nudl/blueprintEngine';
+import { createExtensionPackage, parseExtensionPackage, serializeExtensionPackage, type ExtensionManifest } from './nudl/extensions';
 
 export default function App() {
   const [files, setFiles] = useState<VirtualFile[]>(() => {
@@ -243,6 +244,81 @@ export default function App() {
   }, [files]);
 
   const workspaceInputRef = useRef<HTMLInputElement>(null);
+  const extensionInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImportExtensionClick = useCallback(() => {
+    extensionInputRef.current?.click();
+  }, []);
+
+  const handleExportExtension = useCallback(() => {
+    try {
+      const manifest: ExtensionManifest = {
+        id: 'user.workspace',
+        name: 'NUDL IDE Workspace Extension',
+        version: '0.1.0',
+        api: '0.1',
+        nudl: '0.3',
+        kind: 'editor',
+        entry: 'workspace',
+        platforms: ['web'],
+        capabilities: [],
+        dependencies: [],
+      };
+      const extensionFiles = Object.fromEntries(files.map((file) => [file.name, file.content]));
+      const bundle = createExtensionPackage(manifest, extensionFiles);
+      const blob = new Blob([serializeExtensionPackage(bundle)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = 'nudl-workspace.nudlext';
+      anchor.click();
+      setTimeout(() => URL.revokeObjectURL(url), 0);
+      setOutputLog('[Extensions] Exported ' + Object.keys(extensionFiles).length + ' text file(s) to nudl-workspace.nudlext. Blueprint graph metadata is not included in this text-only package.');
+      setStatus('Success');
+      setBottomTab('output');
+    } catch (error) {
+      setOutputLog('[Extension Export Error] ' + (error instanceof Error ? error.message : 'Could not create extension package.'));
+      setStatus('Error');
+      setBottomTab('problems');
+    }
+  }, [files]);
+
+  const handleExtensionFileChange = useCallback(async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = event.target.files?.[0];
+    event.target.value = '';
+    if (!selectedFile) return;
+
+    try {
+      const parsed = parseExtensionPackage(await selectedFile.text());
+      if (!parsed.valid || !parsed.package) {
+        throw new Error(parsed.errors.join(' '));
+      }
+      const prefix = 'extensions/' + parsed.package.manifest.id + '/';
+      const currentNames = new Set(files.map((file) => file.name.toLowerCase()));
+      const importedFiles: VirtualFile[] = [];
+      for (const [path, content] of Object.entries(parsed.package.files)) {
+        const name = prefix + path;
+        if (currentNames.has(name.toLowerCase())) {
+          throw new Error('Import would overwrite an existing workspace file: "' + name + '".');
+        }
+        currentNames.add(name.toLowerCase());
+        importedFiles.push({ name, content, isBlueprint: name.endsWith('.nblueprint') });
+      }
+      if (files.length + importedFiles.length > 256) {
+        throw new Error('Import would exceed the 256-file workspace limit.');
+      }
+      const nextFiles = [...files, ...importedFiles];
+      setFiles(nextFiles);
+      localStorage.setItem('nudl_workspace_files', JSON.stringify(nextFiles));
+      setOutputLog('[Extensions] Validated "' + parsed.package.manifest.name + '" and imported ' + importedFiles.length + ' file(s). Package code was not executed.');
+      setStatus('Success');
+      setBottomTab('output');
+    } catch (error) {
+      setOutputLog('[Extension Import Error] ' + (error instanceof Error ? error.message : 'Could not read extension package.'));
+      setStatus('Error');
+      setBottomTab('problems');
+    }
+  }, [files]);
 
   const handleImportWorkspaceClick = useCallback(() => {
     workspaceInputRef.current?.click();
@@ -470,6 +546,8 @@ export default function App() {
         onDownloadNudl={handleDownloadNudl}
         onImportWorkspace={handleImportWorkspaceClick}
         onExportWorkspace={handleExportWorkspace}
+        onImportExtension={handleImportExtensionClick}
+        onExportExtension={handleExportExtension}
         onExportTarget={handleExportTarget}
         onOpenDocs={() => setIsDocsOpen(true)}
         onNewFile={handleNewFile}
@@ -582,6 +660,14 @@ export default function App() {
         className="hidden"
         aria-label="Import NUDL IDE workspace"
         onChange={handleWorkspaceFileChange}
+      />
+      <input
+        ref={extensionInputRef}
+        type="file"
+        accept=".nudlext,.json,application/json"
+        className="hidden"
+        aria-label="Import NUDL IDE extension package"
+        onChange={handleExtensionFileChange}
       />
 
       {/* Documentation Modal */}

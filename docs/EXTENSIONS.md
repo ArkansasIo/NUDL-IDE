@@ -46,3 +46,8 @@ The existing native plugin manifest convention is retained: id, name, version, a
 - serializeExtensionPackage(package): validate and serialize to formatted JSON.
 
 Run regression tests with npm test. This format is an IDE transport/package format; native runtime loading and extension sandboxing remain separate implementation work.
+
+
+## IDE integration
+
+The File menu exposes Import Extension (.nudlext) and Export Extension (.nudlext). Export creates a package from the workspace's text contents. Import validates the package, then adds files under `extensions/<manifest-id>/` to avoid overwriting ordinary workspace paths. Import never executes the package. Blueprint graph metadata is not serialized by this text-only extension package format.
