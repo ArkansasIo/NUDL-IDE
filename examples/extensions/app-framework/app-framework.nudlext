@@ -1,0 +1,25 @@
+{
+  "format": "NUDL-IDE-extension-package",
+  "version": 1,
+  "manifest": {
+    "id": "example.app-framework",
+    "name": "NUDL App Framework Example",
+    "version": "0.1.0",
+    "api": "0.1",
+    "nudl": "0.3",
+    "kind": "editor",
+    "entry": "app_framework",
+    "platforms": [
+      "windows",
+      "linux",
+      "macos",
+      "web"
+    ],
+    "capabilities": [],
+    "dependencies": []
+  },
+  "files": {
+    "README.md": "# NUDL App Framework Example\n\nA declarative sample extension package. This package is not executed by the browser IDE.\n",
+    "src/app-framework.nudl": "// Example source payload; extension declarations are not executed by the IDE.\nfn main() {\n    print(\"NUDL App Framework extension sample\");\n}\n"
+  }
+}

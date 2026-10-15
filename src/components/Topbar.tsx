@@ -26,6 +26,8 @@ interface TopbarProps {
   onDownloadNudl: () => void;
   onImportWorkspace: () => void;
   onExportWorkspace: () => void;
+  onImportExtension: () => void;
+  onExportExtension: () => void;
   onExportTarget: () => void;
   onOpenDocs: () => void;
   onNewFile: () => void;
@@ -47,6 +49,8 @@ export const Topbar: React.FC<TopbarProps> = ({
   onDownloadNudl,
   onImportWorkspace,
   onExportWorkspace,
+  onImportExtension,
+  onExportExtension,
   onExportTarget,
   onOpenDocs,
   onNewFile,
@@ -132,6 +136,24 @@ export const Topbar: React.FC<TopbarProps> = ({
                   className="w-full text-left px-3 py-1.5 hover:bg-[#16334b] text-[#dce8f5] flex items-center gap-2"
                 >
                   <Download className="w-3.5 h-3.5 text-[#a9c5dc]" /> Export Workspace (.json)
+                </button>
+                <button
+                  onClick={() => {
+                    closeMenu();
+                    onImportExtension();
+                  }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#16334b] text-[#dce8f5] flex items-center gap-2"
+                >
+                  <FolderGit2 className="w-3.5 h-3.5 text-[#6ee7ff]" /> Import Extension (.nudlext)
+                </button>
+                <button
+                  onClick={() => {
+                    closeMenu();
+                    onExportExtension();
+                  }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#16334b] text-[#dce8f5] flex items-center gap-2"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#6ee7ff]" /> Export Extension (.nudlext)
                 </button>
                 <div className="my-1 border-t border-[#20334a]" />
                 <button
