@@ -60,12 +60,21 @@ jobs:
       - name: Run Android emulator API integration tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 35
+          # API 34 is used for CI instrumentation stability. The app still
+          # targets SDK 35 and is built against compileSdk 35.
+          api-level: 34
           arch: x86_64
           profile: pixel_2
+          cores: 2
+          ram-size: 4096M
+          heap-size: 512M
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          disable-animations: true
+          disable-spellchecker: true
           script: gradle -p android-api/android :app:connectedDebugAndroidTest --no-daemon
 
       - name: Upload debug APK
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: nudl-android-debug
