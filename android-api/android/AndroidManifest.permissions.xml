@@ -1,0 +1,2 @@
+<!-- Merge the INTERNET permission into the application's AndroidManifest.xml when the app calls the NUDL API over the network. -->
+<uses-permission android:name="android.permission.INTERNET" />
