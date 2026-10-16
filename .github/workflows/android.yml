@@ -1,0 +1,39 @@
+name: Android
+
+on:
+  pull_request:
+    paths:
+      - "android-api/android/**"
+      - ".github/workflows/android.yml"
+  push:
+    branches: [main, "feature/**"]
+    paths:
+      - "android-api/android/**"
+      - ".github/workflows/android.yml"
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10"
+
+      - name: Build debug APK
+        run: gradle -p android-api/android :app:assembleDebug --no-daemon
+
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nudl-android-debug
+          path: android-api/android/app/build/outputs/apk/debug/app-debug.apk
