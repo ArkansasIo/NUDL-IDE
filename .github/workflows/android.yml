@@ -3,12 +3,12 @@ name: Android
 on:
   pull_request:
     paths:
-      - "android-api/android/**"
+      - "android-api/**"
       - ".github/workflows/android.yml"
   push:
     branches: [main, "feature/**"]
     paths:
-      - "android-api/android/**"
+      - "android-api/**"
       - ".github/workflows/android.yml"
 
 jobs:
@@ -17,6 +17,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install API dependencies
+        run: npm install
+
+      - name: Start NUDL API
+        run: |
+          nohup npm run api:dev > /tmp/nudl-api.log 2>&1 &
+          echo $! > /tmp/nudl-api.pid
+
+      - name: Wait for NUDL API
+        run: |
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8787/api/v1/health; then
+              echo
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nudl-api.log
+          exit 1
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -32,8 +57,24 @@ jobs:
       - name: Build debug APK
         run: gradle -p android-api/android :app:assembleDebug --no-daemon
 
+      - name: Run Android emulator API integration tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_2
+          script: gradle -p android-api/android :app:connectedDebugAndroidTest --no-daemon
+
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
           name: nudl-android-debug
           path: android-api/android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Stop NUDL API
+        if: always()
+        run: |
+          if [ -f /tmp/nudl-api.pid ]; then
+            kill "$(cat /tmp/nudl-api.pid)" || true
+          fi
+          cat /tmp/nudl-api.log || true
