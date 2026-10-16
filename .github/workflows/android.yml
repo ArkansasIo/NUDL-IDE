@@ -1,0 +1,89 @@
+name: Android
+
+on:
+  pull_request:
+    paths:
+      - "android-api/**"
+      - ".github/workflows/android.yml"
+  push:
+    branches: [main, "feature/**"]
+    paths:
+      - "android-api/**"
+      - ".github/workflows/android.yml"
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install API dependencies
+        run: npm install
+
+      - name: Start NUDL API
+        run: |
+          nohup npm run api:dev > /tmp/nudl-api.log 2>&1 &
+          echo $! > /tmp/nudl-api.pid
+
+      - name: Wait for NUDL API
+        run: |
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8787/api/v1/health; then
+              echo
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nudl-api.log
+          exit 1
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10"
+
+      - name: Build debug APK
+        run: gradle -p android-api/android :app:assembleDebug --no-daemon
+
+      - name: Run Android emulator API integration tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          # API 34 is used for CI instrumentation stability. The app still
+          # targets SDK 35 and is built against compileSdk 35.
+          api-level: 34
+          arch: x86_64
+          profile: pixel_2
+          cores: 2
+          ram-size: 4096M
+          heap-size: 512M
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
+          disable-animations: true
+          disable-spellchecker: true
+          script: gradle -p android-api/android :app:connectedDebugAndroidTest --no-daemon
+
+      - name: Upload debug APK
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nudl-android-debug
+          path: android-api/android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Stop NUDL API
+        if: always()
+        run: |
+          if [ -f /tmp/nudl-api.pid ]; then
+            kill "$(cat /tmp/nudl-api.pid)" || true
+          fi
+          cat /tmp/nudl-api.log || true

@@ -1,0 +1,105 @@
+name: NUDL API
+
+on:
+  pull_request:
+    paths:
+      - "android-api/**"
+      - "src/nudl/**"
+      - "tests/**"
+      - "package.json"
+      - "tsconfig.json"
+      - ".github/workflows/api.yml"
+  push:
+    branches: [main, "feature/**"]
+    paths:
+      - "android-api/**"
+      - "src/nudl/**"
+      - "tests/**"
+      - "package.json"
+      - "tsconfig.json"
+      - ".github/workflows/api.yml"
+
+jobs:
+  api-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run TypeScript tests
+        run: npm test
+
+      - name: Start NUDL API
+        run: |
+          nohup npm run api:dev > /tmp/nudl-api.log 2>&1 &
+          echo $! > /tmp/nudl-api.pid
+
+      - name: Wait for API health endpoint
+        run: |
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8787/api/v1/health; then
+              echo
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/nudl-api.log
+          exit 1
+
+      - name: Smoke test lex endpoint
+        run: |
+          curl --fail --silent \
+            -H 'Content-Type: application/json' \
+            -d '{"source":"let x = 42;"}' \
+            http://127.0.0.1:8787/api/v1/nudl/lex | tee /tmp/lex.json
+          grep -q '"ok":true' /tmp/lex.json
+
+      - name: Smoke test parse endpoint
+        run: |
+          curl --fail --silent \
+            -H 'Content-Type: application/json' \
+            -d '{"source":"fn main() { print(\"hello\"); }"}' \
+            http://127.0.0.1:8787/api/v1/nudl/parse | tee /tmp/parse.json
+          grep -q '"ok":true' /tmp/parse.json
+
+      - name: Smoke test analyze endpoint
+        run: |
+          curl --fail --silent \
+            -H 'Content-Type: application/json' \
+            -d '{"source":"fn main() { let x = 2 + 3; print(x); return x; }"}' \
+            http://127.0.0.1:8787/api/v1/nudl/analyze | tee /tmp/analyze.json
+          grep -q '"ok":true' /tmp/analyze.json
+
+      - name: Smoke test run endpoint
+        run: |
+          curl --fail --silent \
+            -H 'Content-Type: application/json' \
+            -d '{"source":"fn main() { let x = 2 + 3; print(x); return x; }"}' \
+            http://127.0.0.1:8787/api/v1/nudl/run | tee /tmp/run.json
+          grep -q '"ok":true' /tmp/run.json
+          grep -q '"returnValue":5' /tmp/run.json
+
+      - name: Smoke test generate endpoint
+        run: |
+          curl --fail --silent \
+            -H 'Content-Type: application/json' \
+            -d '{"source":"fn main() { print(\"hello\"); }","target":"TypeScript"}' \
+            http://127.0.0.1:8787/api/v1/nudl/generate | tee /tmp/generate.json
+          grep -q '"ok":true' /tmp/generate.json
+          grep -q '"target":"TypeScript"' /tmp/generate.json
+
+      - name: Stop NUDL API
+        if: always()
+        run: |
+          if [ -f /tmp/nudl-api.pid ]; then
+            kill "$(cat /tmp/nudl-api.pid)" || true
+          fi
+          cat /tmp/nudl-api.log || true
